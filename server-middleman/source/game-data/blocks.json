@@ -1,0 +1,6048 @@
+{
+  "0": {
+    "0": {
+      "shapeType": 0,
+      "drawLevel": 0,
+      "useBiomeColor": 0
+    },
+    "mask": "0x00",
+    "type": 0
+  },
+  "1": {
+    "0": {
+      "name": "Stone",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stone.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "2": {
+    "0": {
+      "name": "Grass",
+      "drawLevel": 0,
+      "shapeType": 4,
+      "useBiomeColor": 1,
+      "shapeName": "dirtBlock",
+      "defaultTexture": "grass_side.png",
+      "top": "grass_top.png",
+      "front2": "grass_side_overlay.png",
+      "back2": "grass_side_overlay.png",
+      "left2": "grass_side_overlay.png",
+      "right2": "grass_side_overlay.png",
+      "bottom": "dirt.png"
+    },
+    "1": {
+      "hidden": true,
+      "name": "Snow Grass",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "grass_side_snowed.png",
+      "bottom": "dirt.png",
+      "top": "snow.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "3": {
+    "0": {
+      "name": "Dirt",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "dirt.png"
+    },
+    "1": {
+      "name": "Grassless Dirt",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "dirt.png"
+    },
+    "2": {
+      "name": "Podzol",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "dirt_podzol_side.png",
+      "bottom": "dirt.png",
+      "top": "dirt_podzol_top.png"
+    },
+    "mask": "0x0F",
+    "type": 1
+  },
+  "4": {
+    "0": {
+      "name": "Cobblestone",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "cobblestone.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "5": {
+    "0": {
+      "name": "Oak Wood Planks",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_oak.png"
+    },
+    "1": {
+      "name": "Spruce Wood Planks",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "2": {
+      "name": "Birch Wood Planks",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_birch.png"
+    },
+    "3": {
+      "name": "Jungle Wood Planks",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "4": {
+      "name": "Acacia Wood Planks",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "5": {
+      "name": "Dark Oak Wood Planks",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "mask": "0x0F",
+    "type": 1
+  },
+  "6": {
+    "0": {
+      "name": "Oak Sapling",
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "sapling_oak.png"
+    },
+    "1": {
+      "name": "Spruce Sapling",
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "sapling_spruce.png"
+    },
+    "2": {
+      "name": "Birch Sapling",
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "sapling_birch.png"
+    },
+    "3": {
+      "name": "Jungle Sapling",
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "sapling_jungle.png"
+    },
+    "4": {
+      "name": "Acacia Sapling",
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "sapling_acacia.png"
+    },
+    "5": {
+      "name": "Dark Oak Sapling",
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "sapling_roofed_oak.png"
+    },
+    "mask": "0x05",
+    "type": 2
+  },
+  "7": {
+    "0": {
+      "name": "Bedrock",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "bedrock.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "8": {
+    "0": {
+      "name": "Water",
+      "drawLevel": 2,
+      "shapeType": 9,
+      "useBiomeColor": 3,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "water_still.png"
+    },
+    "mask": "0x0F",
+    "type": 301,
+    "lightTransmission": 0.7
+  },
+  "9": {
+    "0": {
+      "name": "Water",
+      "drawLevel": 2,
+      "shapeType": 9,
+      "useBiomeColor": 3,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "water_still.png"
+    },
+    "mask": "0x0F",
+    "type": 301,
+    "lightTransmission": 0.7
+  },
+  "10": {
+    "0": {
+      "name": "Lava",
+      "drawLevel": 0,
+      "shapeType": 9,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "lava_still.png"
+    },
+    "mask": "0x0F",
+    "type": 302,
+    "lightSource": 15
+  },
+  "11": {
+    "0": {
+      "name": "Lava",
+      "drawLevel": 0,
+      "shapeType": 9,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "lava_still.png"
+    },
+    "mask": "0x0F",
+    "type": 302,
+    "lightSource": 15
+  },
+  "12": {
+    "0": {
+      "name": "Sand",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "sand.png"
+    },
+    "1": {
+      "name": "Red Sand",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "red_sand.png"
+    },
+    "mask": "0x0F",
+    "type": 1
+  },
+  "13": {
+    "0": {
+      "name": "Gravel",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "gravel.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "14": {
+    "0": {
+      "name": "Gold Ore",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "gold_ore.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "15": {
+    "0": {
+      "name": "Iron Ore",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "iron_ore.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "16": {
+    "0": {
+      "name": "Coal Ore",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "coal_ore.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "17": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_oak.png",
+      "top": "log_oak_top.png",
+      "bottom": "log_oak_top.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_spruce.png",
+      "top": "log_spruce_top.png",
+      "bottom": "log_spruce_top.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_birch.png",
+      "top": "log_birch_top.png",
+      "bottom": "log_birch_top.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_jungle.png",
+      "top": "log_jungle_top.png",
+      "bottom": "log_jungle_top.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockNS",
+      "defaultTexture": "log_oak.png",
+      "front": "log_oak_top.png",
+      "back": "log_oak_top.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockNS",
+      "defaultTexture": "log_spruce.png",
+      "front": "log_spruce_top.png",
+      "back": "log_spruce_top.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockNS",
+      "defaultTexture": "log_birch.png",
+      "front": "log_spruce_top.png",
+      "back": "log_spruce_top.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockNS",
+      "defaultTexture": "log_jungle.png",
+      "front": "log_jungle_top.png",
+      "back": "log_jungle_top.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_oak.png",
+      "left": "log_oak_top.png",
+      "right": "log_oak_top.png"
+    },
+    "9": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_spruce.png",
+      "left": "log_spruce_top.png",
+      "right": "log_spruce_top.png"
+    },
+    "10": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_birch.png",
+      "left": "log_birch_top.png",
+      "right": "log_birch_top.png"
+    },
+    "11": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_jungle.png",
+      "left": "log_jungle_top.png",
+      "right": "log_jungle_top.png"
+    },
+    "12": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_oak.png"
+    },
+    "13": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_spruce.png"
+    },
+    "14": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_birch.png"
+    },
+    "15": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_jungle.png"
+    },
+    "mask": "0x0F",
+    "type": 1,
+    "name": "Wood"
+  },
+  "18": {
+    "0": {
+      "name": "Oak leaves",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 2,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "leaves_oak.png"
+    },
+    "1": {
+      "name": "Spruce leaves",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 2,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "leaves_spruce.png"
+    },
+    "2": {
+      "name": "Birch leaves",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 2,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "leaves_birch.png"
+    },
+    "3": {
+      "name": "Jungle leaves",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 2,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "leaves_jungle.png"
+    },
+    "mask": "0x03",
+    "type": 2,
+    "name": "Leaves",
+    "lightTransmission": 0.8
+  },
+  "19": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "sponge.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "name": "Sponge"
+  },
+  "20": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass.png"
+    },
+    "mask": "0x00",
+    "type": 2,
+    "name": "Glass"
+  },
+  "21": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "lapis_ore.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "name": "Lapis Ore"
+  },
+  "22": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "lapis_block.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "name": "Lapis Block"
+  },
+  "23": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "front": "dispenser_front_horizontal.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "back": "dispenser_front_horizontal.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "right": "dispenser_front_horizontal.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "left": "dispenser_front_horizontal.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "mask": "0x03",
+    "type": 1
+  },
+  "24": {
+    "0": {
+      "name": "Sandstone",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "sandstone_normal.png",
+      "top": "sandstone_top.png",
+      "bottom": "sandstone_bottom.png"
+    },
+    "1": {
+      "name": "Chiseled sandstone",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "sandstone_carved.png",
+      "top": "sandstone_top.png",
+      "bottom": "sandstone_top.png"
+    },
+    "2": {
+      "name": "Smooth sandstone",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "sandstone_smooth.png",
+      "top": "sandstone_top.png",
+      "bottom": "sandstone_top.png"
+    },
+    "mask": "0x0F",
+    "type": 1
+  },
+  "25": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "noteblock.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "name": "Note Block"
+  },
+  "26": {
+    "0": {
+      "roty": 1.57,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "bedFeet",
+      "defaultTexture": "bed_feet_side.png",
+      "top": "bed_feet_top.png",
+      "back": "bed_feet_end.png",
+      "front": "bed_feet_end.png"
+    },
+    "1": {
+      "roty": 3.14,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "bedFeet",
+      "defaultTexture": "bed_feet_side.png",
+      "top": "bed_feet_top.png",
+      "back": "bed_feet_end.png",
+      "front": "bed_feet_end.png"
+    },
+    "2": {
+      "roty": -1.57,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "bedFeet",
+      "defaultTexture": "bed_feet_side.png",
+      "top": "bed_feet_top.png",
+      "back": "bed_feet_end.png",
+      "front": "bed_feet_end.png"
+    },
+    "3": {
+      "roty": 0,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "bedFeet",
+      "defaultTexture": "bed_feet_side.png",
+      "top": "bed_feet_top.png",
+      "back": "bed_feet_end.png",
+      "front": "bed_feet_end.png"
+    },
+    "8": {
+      "roty": 1.57,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "bedHead",
+      "defaultTexture": "bed_feet_side.png",
+      "top": "bed_head_top.png",
+      "back": "bed_feet_end.png",
+      "front": "bed_feet_end.png"
+    },
+    "9": {
+      "roty": 3.14,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "bedHead",
+      "defaultTexture": "bed_feet_side.png",
+      "top": "bed_head_top.png",
+      "back": "bed_feet_end.png",
+      "front": "bed_feet_end.png"
+    },
+    "10": {
+      "roty": -1.57,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "bedHead",
+      "defaultTexture": "bed_feet_side.png",
+      "top": "bed_head_top.png",
+      "back": "bed_feet_end.png",
+      "front": "bed_feet_end.png"
+    },
+    "11": {
+      "roty": 0,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "bedHead",
+      "defaultTexture": "bed_feet_side.png",
+      "top": "bed_head_top.png",
+      "back": "bed_feet_end.png",
+      "front": "bed_feet_end.png"
+    },
+    "mask": "0x0B",
+    "type": 2,
+    "name": "Bed"
+  },
+  "27": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railNS",
+      "defaultTexture": "rail_golden.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railWE",
+      "defaultTexture": "rail_golden.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railE",
+      "defaultTexture": "rail_golden.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railW",
+      "defaultTexture": "rail_golden.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railN",
+      "defaultTexture": "rail_golden.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railS",
+      "defaultTexture": "rail_golden.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railNS",
+      "defaultTexture": "rail_golden_powered.png"
+    },
+    "9": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railWE",
+      "defaultTexture": "rail_golden_powered.png"
+    },
+    "10": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railE",
+      "defaultTexture": "rail_golden_powered.png"
+    },
+    "11": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railW",
+      "defaultTexture": "rail_golden_powered.png"
+    },
+    "12": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railN",
+      "defaultTexture": "rail_golden_powered.png"
+    },
+    "13": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railS",
+      "defaultTexture": "rail_golden_powered.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Golden Rail"
+  },
+  "28": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railNS",
+      "defaultTexture": "rail_detector.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railWE",
+      "defaultTexture": "rail_detector.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railE",
+      "defaultTexture": "rail_detector.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railW",
+      "defaultTexture": "rail_detector.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railN",
+      "defaultTexture": "rail_detector.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railS",
+      "defaultTexture": "rail_detector.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railNS",
+      "defaultTexture": "rail_detector_powered.png"
+    },
+    "9": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railWE",
+      "defaultTexture": "rail_detector_powered.png"
+    },
+    "10": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railE",
+      "defaultTexture": "rail_detector_powered.png"
+    },
+    "11": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railW",
+      "defaultTexture": "rail_detector_powered.png"
+    },
+    "12": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railN",
+      "defaultTexture": "rail_detector_powered.png"
+    },
+    "13": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railS",
+      "defaultTexture": "rail_detector_powered.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Detector Rail"
+  },
+  "29": {
+    "0": {
+      "rotx": 3.14,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_bottom.png"
+    },
+    "1": {
+      "rotx": 0,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_bottom.png"
+    },
+    "2": {
+      "rotx": 1.57,
+      "roty": 1.57,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_bottom.png"
+    },
+    "3": {
+      "rotx": 1.57,
+      "roty": -1.57,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_bottom.png"
+    },
+    "4": {
+      "rotx": 1.57,
+      "roty": 0,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_bottom.png"
+    },
+    "5": {
+      "rotx": 1.57,
+      "roty": 3.14,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_bottom.png"
+    },
+    "8": {
+      "rotx": 3.14,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "piston",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_inner.png",
+      "bottom": "piston_bottom.png"
+    },
+    "9": {
+      "rotx": 0,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "piston",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_inner.png",
+      "bottom": "piston_bottom.png"
+    },
+    "10": {
+      "rotx": 1.57,
+      "roty": 1.57,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "piston",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_inner.png",
+      "bottom": "piston_bottom.png"
+    },
+    "11": {
+      "rotx": 1.57,
+      "roty": -1.57,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "piston",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_inner.png",
+      "bottom": "piston_bottom.png"
+    },
+    "12": {
+      "rotx": 1.57,
+      "roty": 0,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "piston",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_inner.png",
+      "bottom": "piston_bottom.png"
+    },
+    "13": {
+      "rotx": 1.57,
+      "roty": 3.14,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "piston",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_bottom.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Piston"
+  },
+  "30": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "web.png"
+    },
+    "mask": "0x00",
+    "type": 2,
+    "name": "Web"
+  },
+  "31": {
+    "0": {
+      "name": "Shrub",
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "deadbush.png"
+    },
+    "1": {
+      "name": "Grass",
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 1,
+      "shapeName": "grassBlock",
+      "defaultTexture": "tallgrass.png"
+    },
+    "2": {
+      "name": "Fern",
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 1,
+      "shapeName": "grassBlock",
+      "defaultTexture": "fern.png"
+    },
+    "3": {
+      "name": "Grass",
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 1,
+      "shapeName": "grassBlock",
+      "defaultTexture": "deadbush.png"
+    },
+    "mask": "0x0F",
+    "type": 2
+  },
+  "32": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "deadbush.png"
+    },
+    "mask": "0x00",
+    "type": 2,
+    "name": "Dead Bush"
+  },
+  "33": {
+    "0": {
+      "rotx": 3.14,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_sticky.png",
+      "bottom": "piston_bottom.png"
+    },
+    "1": {
+      "rotx": 0,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_sticky.png",
+      "bottom": "piston_bottom.png"
+    },
+    "2": {
+      "rotx": 1.57,
+      "roty": 1.57,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_sticky.png",
+      "bottom": "piston_bottom.png"
+    },
+    "3": {
+      "rotx": 1.57,
+      "roty": -1.57,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_sticky.png",
+      "bottom": "piston_bottom.png"
+    },
+    "4": {
+      "rotx": 1.57,
+      "roty": 0,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_sticky.png",
+      "bottom": "piston_bottom.png"
+    },
+    "5": {
+      "rotx": 1.57,
+      "roty": 3.14,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_sticky.png",
+      "bottom": "piston_bottom.png"
+    },
+    "8": {
+      "rotx": 3.14,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "piston",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_inner.png",
+      "bottom": "piston_bottom.png"
+    },
+    "9": {
+      "rotx": 0,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "piston",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_inner.png",
+      "bottom": "piston_bottom.png"
+    },
+    "10": {
+      "rotx": 1.57,
+      "roty": 1.57,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "piston",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_inner.png",
+      "bottom": "piston_bottom.png"
+    },
+    "11": {
+      "rotx": 1.57,
+      "roty": -1.57,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "piston",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_inner.png",
+      "bottom": "piston_bottom.png"
+    },
+    "12": {
+      "rotx": 1.57,
+      "roty": 0,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "piston",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_inner.png",
+      "bottom": "piston_bottom.png"
+    },
+    "13": {
+      "rotx": 1.57,
+      "roty": 3.14,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "piston",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_bottom.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Piston"
+  },
+  "34": {
+    "0": {
+      "rotx": 3.14,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "pistonHead",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_top_normal.png"
+    },
+    "1": {
+      "rotx": 0,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "pistonHead",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_top_normal.png"
+    },
+    "2": {
+      "rotx": 1.57,
+      "roty": 1.57,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "pistonHead",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_top_normal.png"
+    },
+    "3": {
+      "rotx": 1.57,
+      "roty": -1.57,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "pistonHead",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_top_normal.png"
+    },
+    "4": {
+      "rotx": 1.57,
+      "roty": 0,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "pistonHead",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_top_normal.png"
+    },
+    "5": {
+      "rotx": 1.57,
+      "roty": 3.14,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "pistonHead",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_normal.png",
+      "bottom": "piston_top_normal.png"
+    },
+    "8": {
+      "rotx": 3.14,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "pistonHead",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_sticky.png",
+      "bottom": "piston_top_normal.png"
+    },
+    "9": {
+      "rotx": 0,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "pistonHead",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_sticky.png",
+      "bottom": "piston_top_normal.png"
+    },
+    "10": {
+      "rotx": 1.57,
+      "roty": 1.57,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "pistonHead",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_sticky.png",
+      "bottom": "piston_top_normal.png"
+    },
+    "11": {
+      "rotx": 1.57,
+      "roty": -1.57,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "pistonHead",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_sticky.png",
+      "bottom": "piston_top_normal.png"
+    },
+    "12": {
+      "rotx": 1.57,
+      "roty": 0,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "pistonHead",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_sticky.png",
+      "bottom": "piston_top_normal.png"
+    },
+    "13": {
+      "rotx": 1.57,
+      "roty": 3.14,
+      "normal": 0.8,
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "pistonHead",
+      "defaultTexture": "piston_side.png",
+      "top": "piston_top_sticky.png",
+      "bottom": "piston_top_normal.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Piston"
+  },
+  "35": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_white.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_orange.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_magenta.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_light_blue.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_yellow.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_lime.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_pink.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_gray.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_silver.png"
+    },
+    "9": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_cyan.png"
+    },
+    "10": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_purple.png"
+    },
+    "11": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_blue.png"
+    },
+    "12": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_brown.png"
+    },
+    "13": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_green.png"
+    },
+    "14": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_red.png"
+    },
+    "15": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "wool_colored_black.png"
+    },
+    "mask": "0x0F",
+    "type": 1,
+    "name": "Wool"
+  },
+  "37": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "flower_dandelion.png"
+    },
+    "mask": "0x00",
+    "type": 2
+  },
+  "38": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "flower_rose.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "flower_blue_orchid.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "flower_allium.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "flower_houstonia.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "flower_tulip_red.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "flower_tulip_orange.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "flower_tulip_white.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "flower_tulip_pink.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "flower_oxeye_daisy.png"
+    },
+    "mask": "0x0F",
+    "type": 2
+  },
+  "39": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "mushroom_brown.png"
+    },
+    "mask": "0x00",
+    "type": 2,
+    "lightSource": 2
+  },
+  "40": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "mushroom_red.png"
+    },
+    "mask": "0x00",
+    "type": 2
+  },
+  "41": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "gold_block.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "name": "Gold Block"
+  },
+  "42": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "iron_block.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "name": "Iron Block"
+  },
+  "43": {
+    "0": {
+      "name": "Stone Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stone_slab_side.png",
+      "top": "stone_slab_top.png",
+      "bottom": "stone_slab_top.png"
+    },
+    "1": {
+      "name": "Sandstone Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "2": {
+      "name": "Wooden Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_oak.png"
+    },
+    "3": {
+      "name": "Cobblestone Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "cobblestone.png"
+    },
+    "4": {
+      "name": "Brick Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "brick.png"
+    },
+    "5": {
+      "name": "Stone Brick Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stonebrick.png"
+    },
+    "6": {
+      "name": "Nether Brick Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "nether_brick.png"
+    },
+    "7": {
+      "name": "Quartz Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "8": {
+      "name": "Stone Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stone_slab_top.png"
+    },
+    "9": {
+      "name": "Sandstone Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "10": {
+      "name": "Wooden Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_oak.png"
+    },
+    "11": {
+      "name": "Cobblestone Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "cobblestone.png"
+    },
+    "12": {
+      "name": "Brick Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "brick.png"
+    },
+    "13": {
+      "name": "Stone Brick Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stonebrick.png"
+    },
+    "14": {
+      "name": "Nether Brick Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "nether_brick.png"
+    },
+    "15": {
+      "name": "Quartz Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "mask": "0x0F",
+    "type": 2
+  },
+  "44": {
+    "0": {
+      "name": "Stone Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "stone_slab_side.png",
+      "top": "stone_slab_top.png",
+      "bottom": "stone_slab_top.png"
+    },
+    "1": {
+      "name": "Sandstone Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "2": {
+      "name": "Wooden Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_oak.png"
+    },
+    "3": {
+      "name": "Cobblestone Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "cobblestone.png"
+    },
+    "4": {
+      "name": "Brick Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "brick.png"
+    },
+    "5": {
+      "name": "Stone Brick Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "stonebrick.png"
+    },
+    "6": {
+      "name": "Nether Brick Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "nether_brick.png"
+    },
+    "7": {
+      "name": "Quartz Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "8": {
+      "name": "Stone Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "stone_slab_side.png",
+      "top": "stone_slab_top.png",
+      "bottom": "stone_slab_top.png"
+    },
+    "9": {
+      "name": "Sandstone Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "10": {
+      "name": "Wooden Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_oak.png"
+    },
+    "11": {
+      "name": "Cobblestone Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "cobblestone.png"
+    },
+    "12": {
+      "name": "Brick Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "brick.png"
+    },
+    "13": {
+      "name": "Stone Brick Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "stonebrick.png"
+    },
+    "14": {
+      "name": "Nether Brick Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "nether_brick.png"
+    },
+    "15": {
+      "name": "Quartz Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "mask": "0x0F",
+    "type": 2
+  },
+  "45": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "brick.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "name": "Brick"
+  },
+  "46": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "tnt_side.png",
+      "top": "tnt_top.png",
+      "bottom": "tnt_bottom.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "name": "TNT"
+  },
+  "47": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "bookshelf.png",
+      "top": "planks_oak.png",
+      "bottom": "planks_oak.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "48": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "cobblestone_mossy.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "49": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "obsidian.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "50": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "torchTBlock",
+      "defaultTexture": "torch_on.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "torchRBlock",
+      "defaultTexture": "torch_on.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "torchLBlock",
+      "defaultTexture": "torch_on.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "torchFBlock",
+      "defaultTexture": "torch_on.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "torchBBlock",
+      "defaultTexture": "torch_on.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "lightSource": 14
+  },
+  "51": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "fire_layer_0.png"
+    },
+    "mask": "0x00",
+    "type": 2,
+    "name": "fire",
+    "lightSource": 15
+  },
+  "52": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mob_spawner.png"
+    },
+    "mask": "0x00",
+    "type": 2
+  },
+  "53": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsE",
+      "defaultTexture": "planks_oak.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsW",
+      "defaultTexture": "planks_oak.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsS",
+      "defaultTexture": "planks_oak.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsN",
+      "defaultTexture": "planks_oak.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUE",
+      "defaultTexture": "planks_oak.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUW",
+      "defaultTexture": "planks_oak.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUS",
+      "defaultTexture": "planks_oak.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUN",
+      "defaultTexture": "planks_oak.png"
+    },
+    "8": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_oak.png"
+    },
+    "9": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_oak.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "small1Block",
+      "defaultTexture": "planks_oak.png"
+    },
+    "mask": "0x0F",
+    "type": 6
+  },
+  "55": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 12,
+      "useBiomeColor": 0,
+      "shapeName": "redstoneNS",
+      "defaultTexture": "redstone_dust_line.png"
+    },
+    "1": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 12,
+      "useBiomeColor": 0,
+      "shapeName": "redstoneWE",
+      "defaultTexture": "redstone_dust_line.png"
+    },
+    "2": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 12,
+      "useBiomeColor": 0,
+      "shapeName": "redstoneNS",
+      "defaultTexture": "redstone_dust_cross.png"
+    },
+    "3": {
+      "hidden": true,
+      "roty": 1.57,
+      "drawLevel": 0,
+      "shapeType": 12,
+      "useBiomeColor": 0,
+      "shapeName": "redstoneC2",
+      "defaultTexture": "redstone_dust_cross.png"
+    },
+    "4": {
+      "hidden": true,
+      "roty": 3.14,
+      "drawLevel": 0,
+      "shapeType": 12,
+      "useBiomeColor": 0,
+      "shapeName": "redstoneC2",
+      "defaultTexture": "redstone_dust_cross.png"
+    },
+    "5": {
+      "hidden": true,
+      "roty": -1.57,
+      "drawLevel": 0,
+      "shapeType": 12,
+      "useBiomeColor": 0,
+      "shapeName": "redstoneC2",
+      "defaultTexture": "redstone_dust_cross.png"
+    },
+    "6": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 12,
+      "useBiomeColor": 0,
+      "shapeName": "redstoneC2",
+      "defaultTexture": "redstone_dust_cross.png"
+    },
+    "7": {
+      "hidden": true,
+      "roty": 1.57,
+      "drawLevel": 0,
+      "shapeType": 12,
+      "useBiomeColor": 0,
+      "shapeName": "redstoneC3",
+      "defaultTexture": "redstone_dust_cross.png"
+    },
+    "8": {
+      "hidden": true,
+      "roty": 3.14,
+      "drawLevel": 0,
+      "shapeType": 12,
+      "useBiomeColor": 0,
+      "shapeName": "redstoneC3",
+      "defaultTexture": "redstone_dust_cross.png"
+    },
+    "9": {
+      "hidden": true,
+      "roty": -1.57,
+      "drawLevel": 0,
+      "shapeType": 12,
+      "useBiomeColor": 0,
+      "shapeName": "redstoneC3",
+      "defaultTexture": "redstone_dust_cross.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 12,
+      "useBiomeColor": 0,
+      "shapeName": "redstoneC3",
+      "defaultTexture": "redstone_dust_cross.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Redstone",
+    "shapeType": 12
+  },
+  "56": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "diamond_ore.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "name": "Diamond Ore"
+  },
+  "57": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "diamond_block.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "name": "Diamond Block"
+  },
+  "58": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "crafting_table_side.png",
+      "front": "crafting_table_front.png",
+      "top": "crafting_table_top.png",
+      "bottom": "crafting_table_top.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "name": "Crafting Table"
+  },
+  "59": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "wheat_stage_0.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "wheat_stage_1.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "wheat_stage_2.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "wheat_stage_3.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "wheat_stage_4.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "wheat_stage_5.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "wheat_stage_6.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "wheat_stage_7.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Wheat"
+  },
+  "60": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "dirt.png",
+      "top": "farmland_dry.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "dirt.png",
+      "top": "farmland_wet.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "dirt.png",
+      "top": "farmland_wet.png"
+    },
+    "mask": "0x0F",
+    "type": 1,
+    "name": "Farmland"
+  },
+  "61": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "front": "furnace_front_off.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "back": "furnace_front_off.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "right": "furnace_front_off.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "left": "furnace_front_off.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "mask": "0x03",
+    "type": 1
+  },
+  "62": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "front": "furnace_front_on.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "back": "furnace_front_on.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "right": "furnace_front_on.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "left": "furnace_front_on.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "mask": "0x03",
+    "type": 1
+  },
+  "63": {
+    "0": {
+      "roty": 1.57,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "1": {
+      "roty": 1.9625,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "2": {
+      "roty": 2.355,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "3": {
+      "roty": 2.7475,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "4": {
+      "roty": 3.14,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "5": {
+      "roty": 3.5325,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "6": {
+      "roty": 3.925,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "7": {
+      "roty": 4.3175,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "8": {
+      "roty": 4.71,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "9": {
+      "roty": 5.1025,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "10": {
+      "roty": 5.495,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "11": {
+      "roty": 5.8875,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "12": {
+      "roty": 6.28,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "13": {
+      "roty": 6.6725,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "14": {
+      "roty": 7.065,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "15": {
+      "roty": 7.4575,
+      "drawLevel": 0,
+      "normal": 0.8,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "sign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Sign"
+  },
+  "65": {
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 6,
+      "useBiomeColor": 0,
+      "shapeName": "ladderBlock",
+      "defaultTexture": "ladder.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 6,
+      "useBiomeColor": 0,
+      "shapeName": "ladderBlock",
+      "defaultTexture": "ladder.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 6,
+      "useBiomeColor": 0,
+      "shapeName": "ladderBlock",
+      "defaultTexture": "ladder.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 6,
+      "useBiomeColor": 0,
+      "shapeName": "ladderBlock",
+      "defaultTexture": "ladder.png"
+    },
+    "mask": "0x0F",
+    "type": 2
+  },
+  "66": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railNS",
+      "defaultTexture": "rail_normal.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railWE",
+      "defaultTexture": "rail_normal.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railE",
+      "defaultTexture": "rail_normal.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railW",
+      "defaultTexture": "rail_normal.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railN",
+      "defaultTexture": "rail_normal.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railS",
+      "defaultTexture": "rail_normal.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railES",
+      "defaultTexture": "rail_normal_turned.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railWS",
+      "defaultTexture": "rail_normal_turned.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railWN",
+      "defaultTexture": "rail_normal_turned.png"
+    },
+    "9": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railEN",
+      "defaultTexture": "rail_normal_turned.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Rail"
+  },
+  "67": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsE",
+      "defaultTexture": "cobblestone.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsW",
+      "defaultTexture": "cobblestone.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsS",
+      "defaultTexture": "cobblestone.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsN",
+      "defaultTexture": "cobblestone.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUE",
+      "defaultTexture": "cobblestone.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUW",
+      "defaultTexture": "cobblestone.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUS",
+      "defaultTexture": "cobblestone.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUN",
+      "defaultTexture": "cobblestone.png"
+    },
+    "8": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "cobblestone.png"
+    },
+    "9": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "cobblestone.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "small1Block",
+      "defaultTexture": "cobblestone.png"
+    },
+    "mask": "0x0F",
+    "type": 6
+  },
+  "68": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "wallSign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "2": {
+      "roty": -1.57,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "wallSign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "3": {
+      "roty": 1.57,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "wallSign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "4": {
+      "roty": 3.14,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "wallSign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "5": {
+      "roty": 0,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "wallSign",
+      "defaultTexture": "planks_oak.png"
+    },
+    "mask": "0x0F",
+    "type": 2
+  },
+  "70": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "stone.png"
+    },
+    "mask": "0x00",
+    "type": 2,
+    "name": "Stone Pressure Plate"
+  },
+  "72": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "planks_oak.png"
+    },
+    "mask": "0x00",
+    "type": 2,
+    "name": "Wooden Pressure Plate"
+  },
+  "73": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "redstone_ore.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "74": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "redstone_ore.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "75": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "torchTBlock",
+      "defaultTexture": "redstone_torch_off.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "torchRBlock",
+      "defaultTexture": "redstone_torch_off.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "torchLBlock",
+      "defaultTexture": "redstone_torch_off.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "torchFBlock",
+      "defaultTexture": "redstone_torch_off.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "torchBBlock",
+      "defaultTexture": "redstone_torch_off.png"
+    },
+    "mask": "0x0F",
+    "type": 2
+  },
+  "76": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "torchTBlock",
+      "defaultTexture": "redstone_torch_on.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "torchRBlock",
+      "defaultTexture": "redstone_torch_on.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "torchLBlock",
+      "defaultTexture": "redstone_torch_on.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "torchFBlock",
+      "defaultTexture": "redstone_torch_on.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "torchBBlock",
+      "defaultTexture": "redstone_torch_on.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "lightSource": 7
+  },
+  "77": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "button",
+      "defaultTexture": "stone.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "button",
+      "defaultTexture": "stone.png"
+    },
+    "2": {
+      "roty": 3.14,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "button",
+      "defaultTexture": "stone.png"
+    },
+    "3": {
+      "roty": 1.57,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "button",
+      "defaultTexture": "stone.png"
+    },
+    "4": {
+      "roty": -1.57,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "button",
+      "defaultTexture": "stone.png"
+    },
+    "mask": "0x07",
+    "type": 2,
+    "name": "Stone Button"
+  },
+  "78": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple2yBlock",
+      "defaultTexture": "snow.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple4yBlock",
+      "defaultTexture": "snow.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple6yBlock",
+      "defaultTexture": "snow.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "snow.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple10yBlock",
+      "defaultTexture": "snow.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple12yBlock",
+      "defaultTexture": "snow.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple14yBlock",
+      "defaultTexture": "snow.png"
+    },
+    "7": {
+      "replace": false,
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "snow.png"
+    },
+    "mask": "0x0F",
+    "name": "Snow",
+    "type": 300,
+    "replace": true
+  },
+  "79": {
+    "0": {
+      "drawLevel": 3,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "ice.png"
+    },
+    "mask": "0x00",
+    "name": "Ice",
+    "lightTransmission": 1,
+    "type": 302
+  },
+  "80": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "snow.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "81": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "cactusBlock",
+      "defaultTexture": "cactus_side.png",
+      "top": "cactus_top.png",
+      "bottom": "cactus_bottom.png"
+    },
+    "mask": "0x00",
+    "type": 2
+  },
+  "82": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "clay.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "83": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grassBlock",
+      "defaultTexture": "reeds.png"
+    },
+    "mask": "0x00",
+    "type": 2
+  },
+  "84": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "jukebox_side.png",
+      "top": "jukebox_top.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "85": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "fence",
+      "defaultTexture": "planks_oak.png"
+    },
+    "mask": "0x00",
+    "type": 4,
+    "name": "Fence"
+  },
+  "86": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "pumpkin_side.png",
+      "top": "pumpkin_top.png",
+      "bottom": "pumpkin_top.png",
+      "front": "pumpkin_face_off.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "87": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "netherrack.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "88": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "soul_sand.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "89": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glowstone.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "lightSource": 15
+  },
+  "91": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "pumpkin_side.png",
+      "top": "pumpkin_top.png",
+      "bottom": "pumpkin_top.png",
+      "front": "pumpkin_face_on.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "lightSource": 15
+  },
+  "95": {
+    "0": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_white.png"
+    },
+    "1": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_orange.png"
+    },
+    "2": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_magenta.png"
+    },
+    "3": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_light_blue.png"
+    },
+    "4": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_yellow.png"
+    },
+    "5": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_lime.png"
+    },
+    "6": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_pink.png"
+    },
+    "7": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_gray.png"
+    },
+    "8": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_silver.png"
+    },
+    "9": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_cyan.png"
+    },
+    "10": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_purple.png"
+    },
+    "11": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_blue.png"
+    },
+    "12": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_brown.png"
+    },
+    "13": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_green.png"
+    },
+    "14": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_red.png"
+    },
+    "15": {
+      "drawLevel": 2,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass_black.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Stained Glass"
+  },
+  "97": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stone.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "cobblestone.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stonebrick.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stonebrick_mossy.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stonebrick_cracked.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stonebrick_carved.png"
+    },
+    "mask": "0x0F",
+    "type": 1
+  },
+  "98": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stonebrick.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stonebrick_mossy.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stonebrick_cracked.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "stonebrick_carved.png"
+    },
+    "mask": "0x0F",
+    "type": 1
+  },
+  "99": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_brown.png",
+      "front": "mushroom_block_skin_brown.png",
+      "right": "mushroom_block_skin_brown.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_brown.png",
+      "right": "mushroom_block_skin_brown.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_brown.png",
+      "back": "mushroom_block_skin_brown.png",
+      "right": "mushroom_block_skin_brown.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_brown.png",
+      "front": "mushroom_block_skin_brown.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_brown.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_brown.png",
+      "back": "mushroom_block_skin_brown.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_brown.png",
+      "front": "mushroom_block_skin_brown.png",
+      "left": "mushroom_block_skin_brown.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_brown.png",
+      "left": "mushroom_block_skin_brown.png"
+    },
+    "9": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_brown.png",
+      "back": "mushroom_block_skin_brown.png",
+      "left": "mushroom_block_skin_brown.png"
+    },
+    "10": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_skin_stem.png",
+      "top": "mushroom_block_inside.png",
+      "bottom": "mushroom_block_inside.png"
+    },
+    "11": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_skin_brown.png"
+    },
+    "12": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_skin_stem.png"
+    },
+    "mask": "0xFF",
+    "type": 1,
+    "name": "Huge Brown Mushroom"
+  },
+  "100": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_red.png",
+      "front": "mushroom_block_skin_red.png",
+      "right": "mushroom_block_skin_red.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_red.png",
+      "right": "mushroom_block_skin_red.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_red.png",
+      "back": "mushroom_block_skin_red.png",
+      "right": "mushroom_block_skin_red.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_red.png",
+      "front": "mushroom_block_skin_red.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_red.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_red.png",
+      "back": "mushroom_block_skin_red.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_red.png",
+      "front": "mushroom_block_skin_red.png",
+      "left": "mushroom_block_skin_red.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_red.png",
+      "left": "mushroom_block_skin_red.png"
+    },
+    "9": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_inside.png",
+      "top": "mushroom_block_skin_red.png",
+      "back": "mushroom_block_skin_red.png",
+      "left": "mushroom_block_skin_red.png"
+    },
+    "10": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_skin_stem.png",
+      "top": "mushroom_block_inside.png",
+      "bottom": "mushroom_block_inside.png"
+    },
+    "11": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_skin_red.png"
+    },
+    "12": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mushroom_block_skin_stem.png"
+    },
+    "mask": "0xFF",
+    "type": 1,
+    "name": "Huge Red Mushroom"
+  },
+  "101": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "iron_bars.png"
+    },
+    "mask": "0x00",
+    "type": 4
+  },
+  "102": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass.png"
+    },
+    "mask": "0x00",
+    "type": 4
+  },
+  "103": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "melon_side.png",
+      "top": "melon_top.png",
+      "bottom": "melon_top.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "106": {
+    "0": {
+      "shapeType": 10,
+      "drawLevel": 0,
+      "useBiomeColor": 2,
+      "shapeName": "vineBlock",
+      "defaultTexture": "vine.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Vines"
+  },
+  "108": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsE",
+      "defaultTexture": "brick.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsW",
+      "defaultTexture": "brick.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsS",
+      "defaultTexture": "brick.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsN",
+      "defaultTexture": "brick.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUE",
+      "defaultTexture": "brick.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUW",
+      "defaultTexture": "brick.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUS",
+      "defaultTexture": "brick.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUN",
+      "defaultTexture": "brick.png"
+    },
+    "8": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "brick.png"
+    },
+    "9": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "brick.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "small1Block",
+      "defaultTexture": "brick.png"
+    },
+    "mask": "0x0F",
+    "type": 6
+  },
+  "109": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsE",
+      "defaultTexture": "stonebrick.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsW",
+      "defaultTexture": "stonebrick.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsS",
+      "defaultTexture": "stonebrick.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsN",
+      "defaultTexture": "stonebrick.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUE",
+      "defaultTexture": "stonebrick.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUW",
+      "defaultTexture": "stonebrick.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUS",
+      "defaultTexture": "stonebrick.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUN",
+      "defaultTexture": "stonebrick.png"
+    },
+    "8": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "stonebrick.png"
+    },
+    "9": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "stonebrick.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "small1Block",
+      "defaultTexture": "stonebrick.png"
+    },
+    "mask": "0x0F",
+    "type": 6
+  },
+  "110": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "mycelium_side.png",
+      "top": "mycelium_top.png",
+      "bottom": "dirt.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "111": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 1,
+      "shapeName": "bottomBlock",
+      "defaultTexture": "waterlily.png"
+    },
+    "mask": "0x00",
+    "type": 2
+  },
+  "112": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "nether_brick.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "113": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "fence",
+      "defaultTexture": "nether_brick.png"
+    },
+    "mask": "0x00",
+    "type": 4,
+    "name": "Nether Brick Fence"
+  },
+  "114": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsE",
+      "defaultTexture": "nether_brick.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsW",
+      "defaultTexture": "nether_brick.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsS",
+      "defaultTexture": "nether_brick.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsN",
+      "defaultTexture": "nether_brick.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUE",
+      "defaultTexture": "nether_brick.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUW",
+      "defaultTexture": "nether_brick.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUS",
+      "defaultTexture": "nether_brick.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUN",
+      "defaultTexture": "nether_brick.png"
+    },
+    "8": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "nether_brick.png"
+    },
+    "9": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "nether_brick.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "small1Block",
+      "defaultTexture": "nether_brick.png"
+    },
+    "mask": "0x0F",
+    "type": 6
+  },
+  "115": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "nether_wart_stage_0.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "nether_wart_stage_1.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "nether_wart_stage_1.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "nether_wart_stage_2.png"
+    },
+    "mask": "0x03",
+    "name": "Nether Wart",
+    "type": 2
+  },
+  "121": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "end_stone.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "123": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "redstone_lamp_off.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "124": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "redstone_lamp_on.png"
+    },
+    "mask": "0x00",
+    "type": 1,
+    "lightSource": 15
+  },
+  "125": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_oak.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_birch.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "mask": "0x0F",
+    "type": 1,
+    "name": "Wooden Double Slab"
+  },
+  "126": {
+    "0": {
+      "name": "Oak Wood Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_oak.png"
+    },
+    "1": {
+      "name": "Spruce Wood Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "2": {
+      "name": "Birch Wood Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_birch.png"
+    },
+    "3": {
+      "name": "Jungle Wood Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "4": {
+      "name": "Acacia Wood Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "5": {
+      "name": "Dark Oak Wood Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "8": {
+      "name": "Oak Wood Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_oak.png"
+    },
+    "9": {
+      "name": "Spruce Wood Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "10": {
+      "name": "Birch Wood Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_birch.png"
+    },
+    "11": {
+      "name": "Jungle Wood Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "12": {
+      "name": "Acacia Wood Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "13": {
+      "name": "Dark Oak Wood Slab",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "mask": "0x0F",
+    "type": 2
+  },
+  "128": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsE",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsW",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsS",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsN",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUE",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUW",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUS",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUN",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "8": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "9": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "small1Block",
+      "defaultTexture": "sandstone_top.png"
+    },
+    "mask": "0x0F",
+    "type": 6
+  },
+  "129": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "emerald_ore.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "131": {
+    "0": {
+      "roty": 1.57,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "tripwirehook",
+      "defaultTexture": "planks_oak.png"
+    },
+    "1": {
+      "roty": 3.14,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "tripwirehook",
+      "defaultTexture": "planks_oak.png"
+    },
+    "2": {
+      "roty": -1.57,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "tripwirehook",
+      "defaultTexture": "planks_oak.png"
+    },
+    "3": {
+      "roty": 0,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "tripwirehook",
+      "defaultTexture": "planks_oak.png"
+    },
+    "mask": "0x03",
+    "type": 2,
+    "name": "Tripwire Hook"
+  },
+  "132": {
+    "0": {
+      "roty": 0,
+      "drawLevel": 2,
+      "shapeType": 13,
+      "useBiomeColor": 0,
+      "shapeName": "tripwire",
+      "defaultTexture": "trip_wire.png"
+    },
+    "1": {
+      "hidden": true,
+      "roty": 3.14,
+      "drawLevel": 2,
+      "shapeType": 13,
+      "useBiomeColor": 0,
+      "shapeName": "tripwire",
+      "defaultTexture": "trip_wire.png"
+    },
+    "2": {
+      "hidden": true,
+      "roty": 1.57,
+      "drawLevel": 2,
+      "shapeType": 13,
+      "useBiomeColor": 0,
+      "shapeName": "tripwire",
+      "defaultTexture": "trip_wire.png"
+    },
+    "3": {
+      "hidden": true,
+      "roty": -1.57,
+      "drawLevel": 2,
+      "shapeType": 13,
+      "useBiomeColor": 0,
+      "shapeName": "tripwire",
+      "defaultTexture": "trip_wire.png"
+    },
+    "mask": "0x00",
+    "type": 2,
+    "name": "Tripwire",
+    "shapeType": 13
+  },
+  "133": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "emerald_block.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "134": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsE",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsW",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsS",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsN",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUE",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUW",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUS",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUN",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "8": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "9": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "small1Block",
+      "defaultTexture": "planks_spruce.png"
+    },
+    "mask": "0x0F",
+    "type": 6
+  },
+  "135": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsE",
+      "defaultTexture": "planks_birch.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsW",
+      "defaultTexture": "planks_birch.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsS",
+      "defaultTexture": "planks_birch.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsN",
+      "defaultTexture": "planks_birch.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUE",
+      "defaultTexture": "planks_birch.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUW",
+      "defaultTexture": "planks_birch.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUS",
+      "defaultTexture": "planks_birch.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUN",
+      "defaultTexture": "planks_birch.png"
+    },
+    "8": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_birch.png"
+    },
+    "9": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_birch.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "small1Block",
+      "defaultTexture": "planks_birch.png"
+    },
+    "mask": "0x0F",
+    "type": 6
+  },
+  "136": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsE",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsW",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsS",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsN",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUE",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUW",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUS",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUN",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "8": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "9": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "small1Block",
+      "defaultTexture": "planks_jungle.png"
+    },
+    "mask": "0x0F",
+    "type": 6
+  },
+  "137": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "command_block.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "138": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "glass.png"
+    },
+    "mask": "0x00",
+    "type": 2,
+    "lightSource": 15,
+    "name": "Beacon"
+  },
+  "139": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "wall",
+      "defaultTexture": "cobblestone.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "wall",
+      "defaultTexture": "cobblestone_mossy.png"
+    },
+    "mask": "0x03",
+    "type": 2
+  },
+  "141": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "carrots_stage_0.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "carrots_stage_0.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "carrots_stage_1.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "carrots_stage_1.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "carrots_stage_2.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "carrots_stage_2.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "carrots_stage_2.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "carrots_stage_3.png"
+    },
+    "mask": "0x0F",
+    "type": 2
+  },
+  "142": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "potatoes_stage_0.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "potatoes_stage_0.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "potatoes_stage_1.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "potatoes_stage_1.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "potatoes_stage_2.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "potatoes_stage_2.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "potatoes_stage_2.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 2,
+      "useBiomeColor": 0,
+      "shapeName": "wheatBlock",
+      "defaultTexture": "potatoes_stage_3.png"
+    },
+    "mask": "0x0F",
+    "type": 2
+  },
+  "143": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "button",
+      "defaultTexture": "planks_oak.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "button",
+      "defaultTexture": "planks_oak.png"
+    },
+    "2": {
+      "roty": 3.14,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "button",
+      "defaultTexture": "planks_oak.png"
+    },
+    "3": {
+      "roty": 1.57,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "button",
+      "defaultTexture": "planks_oak.png"
+    },
+    "4": {
+      "roty": -1.57,
+      "drawLevel": 0,
+      "shapeType": 11,
+      "useBiomeColor": 0,
+      "shapeName": "button",
+      "defaultTexture": "planks_oak.png"
+    },
+    "mask": "0x07",
+    "type": 2,
+    "name": "Wooden Button"
+  },
+  "147": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "gold_block.png"
+    },
+    "mask": "0x00",
+    "type": 2,
+    "name": "Pressure Plate"
+  },
+  "148": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "iron_block.png"
+    },
+    "mask": "0x00",
+    "type": 2,
+    "name": "Pressure Plate"
+  },
+  "151": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple6yBlock",
+      "defaultTexture": "daylight_detector_side.png",
+      "top": "daylight_detector_top.png"
+    },
+    "mask": "0x00",
+    "type": 2,
+    "replace": true
+  },
+  "152": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "redstone_block.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "153": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "quartz_ore.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "155": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "quartz_block_side.png",
+      "top": "quartz_block_top.png",
+      "bottom": "quartz_block_bottom.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "quartz_block_chiseled.png",
+      "top": "quartz_block_chiseled_top.png",
+      "bottom": "quartz_block_bottom.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "quartz_block_lines.png",
+      "top": "quartz_block_lines_top.png",
+      "bottom": "quartz_block_bottom.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockNS",
+      "defaultTexture": "quartz_block_lines.png",
+      "front": "quartz_block_lines_top.png",
+      "back": "quartz_block_bottom.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "quartz_block_lines.png",
+      "left": "quartz_block_lines_top.png",
+      "right": "quartz_block_bottom.png"
+    },
+    "mask": "0x0F",
+    "name": "Quartz Block",
+    "type": 1
+  },
+  "156": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsE",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsW",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsS",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsN",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUE",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUW",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUS",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUN",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "8": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "9": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "small1Block",
+      "defaultTexture": "quartz_block_top.png"
+    },
+    "mask": "0x0F",
+    "type": 6
+  },
+  "157": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railNS",
+      "defaultTexture": "rail_activator.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railWE",
+      "defaultTexture": "rail_activator.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railE",
+      "defaultTexture": "rail_activator.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railW",
+      "defaultTexture": "rail_activator.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railN",
+      "defaultTexture": "rail_activator.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railS",
+      "defaultTexture": "rail_activator.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railNS",
+      "defaultTexture": "rail_activator_powered.png"
+    },
+    "9": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railWE",
+      "defaultTexture": "rail_activator_powered.png"
+    },
+    "10": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railE",
+      "defaultTexture": "rail_activator_powered.png"
+    },
+    "11": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railW",
+      "defaultTexture": "rail_activator_powered.png"
+    },
+    "12": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railN",
+      "defaultTexture": "rail_activator_powered.png"
+    },
+    "13": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "railS",
+      "defaultTexture": "rail_activator_powered.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Activator Rail"
+  },
+  "158": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "front": "dropper_front_horizontal.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "back": "dropper_front_horizontal.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "right": "dropper_front_horizontal.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "furnace_side.png",
+      "left": "dropper_front_horizontal.png",
+      "top": "furnace_top.png",
+      "bottom": "furnace_top.png"
+    },
+    "mask": "0x03",
+    "type": 1
+  },
+  "159": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_white.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_orange.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_magenta.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_light_blue.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_yellow.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_lime.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_pink.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_gray.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_silver.png"
+    },
+    "9": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_cyan.png"
+    },
+    "10": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_purple.png"
+    },
+    "11": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_blue.png"
+    },
+    "12": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_brown.png"
+    },
+    "13": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_green.png"
+    },
+    "14": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_red.png"
+    },
+    "15": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay_stained_black.png"
+    },
+    "mask": "0x0F",
+    "type": 1
+  },
+  "160": {
+    "0": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_white.png"
+    },
+    "1": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_orange.png"
+    },
+    "2": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_magenta.png"
+    },
+    "3": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_light_blue.png"
+    },
+    "4": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_yellow.png"
+    },
+    "5": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_lime.png"
+    },
+    "6": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_pink.png"
+    },
+    "7": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_gray.png"
+    },
+    "8": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_silver.png"
+    },
+    "9": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_cyan.png"
+    },
+    "10": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_purple.png"
+    },
+    "11": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_blue.png"
+    },
+    "12": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_brown.png"
+    },
+    "13": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_green.png"
+    },
+    "14": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_red.png"
+    },
+    "15": {
+      "drawLevel": 2,
+      "shapeType": 5,
+      "useBiomeColor": 0,
+      "shapeName": "glass",
+      "defaultTexture": "glass_black.png"
+    },
+    "mask": "0x0F",
+    "type": 4,
+    "name": "Stained Glass Pane"
+  },
+  "161": {
+    "0": {
+      "name": "Acacia leaves",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 2,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "leaves_acacia.png"
+    },
+    "1": {
+      "name": "Dark Oak leaves",
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 2,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "leaves_big_oak.png"
+    },
+    "mask": "0x03",
+    "type": 2,
+    "lightTransmission": 0.8
+  },
+  "162": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_acacia.png",
+      "top": "log_acacia_top.png",
+      "bottom": "log_acacia_top.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_big_oak.png",
+      "top": "log_big_oak_top.png",
+      "bottom": "log_big_oak_top.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_acacia.png",
+      "top": "log_acacia_top.png",
+      "bottom": "log_acacia_top.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_big_oak.png",
+      "top": "log_big_oak_top.png",
+      "bottom": "log_big_oak_top.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockNS",
+      "defaultTexture": "log_acacia.png",
+      "front": "log_acacia_top.png",
+      "back": "log_acacia_top.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockNS",
+      "defaultTexture": "log_big_oak.png",
+      "front": "log_big_oak_top.png",
+      "back": "log_big_oak_top.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockNS",
+      "defaultTexture": "log_acacia.png",
+      "front": "log_acacia_top.png",
+      "back": "log_acacia_top.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockNS",
+      "defaultTexture": "log_big_oak.png",
+      "front": "log_big_oak_top.png",
+      "back": "log_big_oak_top.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_acacia.png",
+      "left": "log_acacia_top.png",
+      "right": "log_acacia_top.png"
+    },
+    "9": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_big_oak.png",
+      "left": "log_big_oak_top.png",
+      "right": "log_big_oak_top.png"
+    },
+    "10": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_acacia.png",
+      "left": "log_acacia_top.png",
+      "right": "log_acacia_top.png"
+    },
+    "11": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_big_oak.png",
+      "left": "log_big_oak_top.png",
+      "right": "log_big_oak_top.png"
+    },
+    "12": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_acacia.png"
+    },
+    "13": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_big_oak.png"
+    },
+    "14": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_acacia.png"
+    },
+    "15": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "log_big_oak.png"
+    },
+    "mask": "0x0F",
+    "type": 1
+  },
+  "163": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsE",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsW",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsS",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsN",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUE",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUW",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUS",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUN",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "8": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "9": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "small1Block",
+      "defaultTexture": "planks_acacia.png"
+    },
+    "mask": "0x0F",
+    "type": 6
+  },
+  "164": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsE",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsW",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsS",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsN",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUE",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUW",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUS",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "stairsUN",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "8": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab1Block",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "9": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "slab2Block",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "10": {
+      "hidden": true,
+      "drawLevel": 0,
+      "shapeType": 8,
+      "useBiomeColor": 0,
+      "shapeName": "small1Block",
+      "defaultTexture": "planks_big_oak.png"
+    },
+    "mask": "0x0F",
+    "type": 6
+  },
+  "170": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hay_block_side.png",
+      "top": "hay_block_top.png",
+      "bottom": "hay_block_top.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "171": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_white.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_orange.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_magenta.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_light_blue.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_yellow.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_lime.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_pink.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_gray.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_silver.png"
+    },
+    "9": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_cyan.png"
+    },
+    "10": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_purple.png"
+    },
+    "11": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_blue.png"
+    },
+    "12": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_brown.png"
+    },
+    "13": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_green.png"
+    },
+    "14": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_red.png"
+    },
+    "15": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simple1yBlock",
+      "defaultTexture": "wool_colored_black.png"
+    },
+    "mask": "0x0F",
+    "type": 2,
+    "name": "Carpet"
+  },
+  "172": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "hardened_clay.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "173": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "coal_block.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "174": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlock",
+      "defaultTexture": "ice_packed.png"
+    },
+    "mask": "0x00",
+    "type": 1
+  },
+  "175": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grass3Block",
+      "defaultTexture": "double_plant_sunflower_bottom.png",
+      "mesh2": "double_plant_sunflower_top.png",
+      "front": "double_plant_sunflower_back.png",
+      "back": "double_plant_sunflower_front.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grass2Block",
+      "defaultTexture": "double_plant_syringa_bottom.png",
+      "mesh2": "double_plant_syringa_top.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 1,
+      "shapeName": "grass2Block",
+      "defaultTexture": "double_plant_grass_bottom.png",
+      "mesh2": "double_plant_grass_top.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 1,
+      "shapeName": "grass2Block",
+      "defaultTexture": "double_plant_fern_bottom.png",
+      "mesh2": "double_plant_fern_top.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grass2Block",
+      "defaultTexture": "double_plant_rose_bottom.png",
+      "mesh2": "double_plant_rose_top.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 3,
+      "useBiomeColor": 0,
+      "shapeName": "grass2Block",
+      "defaultTexture": "double_plant_paeonia_bottom.png",
+      "mesh2": "double_plant_paeonia_top.png"
+    },
+    "8": {
+      "hidden": true,
+      "shapeType": 0
+    },
+    "9": {
+      "hidden": true,
+      "shapeType": 0
+    },
+    "10": {
+      "hidden": true,
+      "shapeType": 0
+    },
+    "11": {
+      "hidden": true,
+      "shapeType": 0
+    },
+    "12": {
+      "hidden": true,
+      "shapeType": 0
+    },
+    "13": {
+      "hidden": true,
+      "shapeType": 0
+    },
+    "14": {
+      "hidden": true,
+      "shapeType": 0
+    },
+    "15": {
+      "hidden": true,
+      "shapeType": 0
+    },
+    "mask": "0x0F",
+    "type": 2
+  },
+  "200": {
+    "0": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockVT",
+      "defaultTexture": "stone.png"
+    },
+    "1": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockVF",
+      "defaultTexture": "stone.png"
+    },
+    "2": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockVB",
+      "defaultTexture": "stone.png"
+    },
+    "3": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockVL",
+      "defaultTexture": "stone.png"
+    },
+    "4": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockVR",
+      "defaultTexture": "stone.png"
+    },
+    "5": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockVFL",
+      "defaultTexture": "stone.png"
+    },
+    "6": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockVBL",
+      "defaultTexture": "stone.png"
+    },
+    "7": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockVL",
+      "defaultTexture": "stone.png"
+    },
+    "8": {
+      "drawLevel": 0,
+      "shapeType": 1,
+      "useBiomeColor": 0,
+      "shapeName": "simpleBlockVR",
+      "defaultTexture": "stone.png"
+    },
+    "mask": "0x00",
+    "type": 0
+  }
+}
