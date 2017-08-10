@@ -46,17 +46,6 @@ function spiralLoop(b) {
   return e;
 }
 
-function Settings() {
-  var b = {};
-  window.location.search.substr(1).split('&').forEach(function(c) {
-    b[c.split('=')[0]] = c.split('=')[1];
-  }), window.location.hash.substr(1).split('&').forEach(function(c) {
-    b[c.split('=')[0]] = c.split('=')[1];
-  });
-  var d = JSON.parse(Readfile.readTxt('game-data/settings.json'));
-  console.log(d), this.gameRoot = d.gameroot.value, void 0 !== b.gameroot && d.gameroot.url && (this.gameRoot = b.gameroot), this.worldName = d.worldname.value, void 0 !== b.worldname && d.worldname.url && (this.worldName = b.worldname), this.server = void 0, void 0 !== d.server && (this.server = d.server.value), void 0 !== b.server && (this.server = b.server), this.distanceLevel = [10, 10, 10], void 0 !== d.distanceLevel && (this.distanceLevel[0] = parseInt(d.distanceLevel.value.split('-')[0]) || this.distanceLevel[0], this.distanceLevel[1] = parseInt(d.distanceLevel.value.split('-')[1]) || this.distanceLevel[1], this.distanceLevel[2] = parseInt(d.distanceLevel.value.split('-')[2]) || this.distanceLevel[2]), void 0 !== b.distanceLevel && d.distanceLevel.url && (this.distanceLevel[0] = parseInt(b.distanceLevel.split('-')[0]) || this.distanceLevel[0], this.distanceLevel[1] = parseInt(b.distanceLevel.split('-')[1]) || this.distanceLevel[1], this.distanceLevel[2] = parseInt(b.distanceLevel.split('-')[2]) || this.distanceLevel[2]), 10 > this.distanceLevel[0] && (this.distanceLevel[0] = 10), this.distanceLevel[1] < this.distanceLevel[0] && (this.distanceLevel[1] = this.distanceLevel[0]), this.distanceLevel[2] < this.distanceLevel[0] && (this.distanceLevel[2] = this.distanceLevel[0]), 100 < this.distanceLevel[0] && (this.distanceLevel[0] = 100), 100 < this.distanceLevel[1] && (this.distanceLevel[1] = 100), 100 < this.distanceLevel[2] && (this.distanceLevel[2] = 100), this.waterlevel = 49, void 0 !== d.waterlevel && (this.waterlevel = parseInt(d.waterlevel.value)), void 0 !== b.waterlevel && d.waterlevel.url && (this.waterlevel = parseInt(b.waterlevel)), this.sensitivity = 50, void 0 !== d.mouseSensitivity && (this.sensitivity = parseInt(d.mouseSensitivity.value)), void 0 !== b.mouseSensitivity && d.mouseSensitivity.url && (this.sensitivity = parseInt(b.mouseSensitivity)), 10 > this.sensitivity && (this.sensitivity = 10), 100 < this.sensitivity && (this.sensitivity = 100), this.pos = [0, 100, 0], this.rot = [0, 0], void 0 !== d.pos && (this.pos[0] = parseFloat(d.pos.value.split('+')[0]) || this.pos[0], this.pos[1] = parseFloat(d.pos.value.split('+')[1]) || this.pos[1], this.pos[2] = parseFloat(d.pos.value.split('+')[2]) || this.pos[2]), void 0 !== b.pos && d.pos.url && (this.pos[0] = parseFloat(b.pos.split('+')[0]) || this.pos[0], this.pos[1] = parseFloat(b.pos.split('+')[1]) || this.pos[1], this.pos[2] = parseFloat(b.pos.split('+')[2]) || this.pos[2]), void 0 !== d.rot && (this.rot[0] = parseFloat(d.rot.value.split('+')[0]) || this.rot[0], this.rot[1] = parseFloat(d.rot.value.split('+')[1]) || this.rot[1]), void 0 !== b.rot && d.rot.url && (this.rot[0] = parseFloat(b.rot.split('+')[0]) || this.rot[0], this.rot[1] = parseFloat(b.rot.split('+')[1]) || this.rot[1]), this.skyColor = new Float32Array([1, 1, 1, 1]), void 0 !== d.skyColor && (this.skyColor[0] = parseFloat(d.skyColor.value.split('-')[0]) / 255 || this.skyColor[0], this.skyColor[1] = parseFloat(d.skyColor.value.split('-')[1]) / 255 || this.skyColor[1], this.skyColor[2] = parseFloat(d.skyColor.value.split('-')[2]) / 255 || this.skyColor[2]), void 0 !== b.skyColor && d.skyColor.url && (this.skyColor[0] = parseFloat(b.skyColor.split('-')[0]) / 255 || this.skyColor[0], this.skyColor[1] = parseFloat(b.skyColor.split('-')[1]) / 255 || this.skyColor[1], this.skyColor[2] = parseFloat(b.skyColor.split('-')[2]) / 255 || this.skyColor[2]), this.sun = 1, void 0 !== d.sun && (this.sun = parseFloat(d.sun.value) + 0.01 || this.sun), void 0 !== b.sun && d.sun.url && (this.sun = parseFloat(b.sun) + 0.01 || this.sun), 1 < this.sun && (this.sun = 1), this.brightness = 0.3, void 0 !== d.brightness && (this.brightness = parseFloat(d.brightness.value) + 0.01 || this.brightness), void 0 !== b.brightness && d.brightness.url && (this.brightness = parseFloat(b.brightness) + 0.01 || this.brightness), this.loadLag = 3, void 0 !== d.loadLag && (this.loadLag = parseFloat(d.loadLag.value) || this.loadLag), void 0 !== b.loadLag && d.loadLag.url && (this.loadLag = parseFloat(b.loadLag) || this.loadLag), this.loadSpeed = 1, void 0 !== d.loadSpeed && (this.loadSpeed = parseFloat(d.loadSpeed.value) || this.loadSpeed), void 0 !== b.loadSpeed && d.loadSpeed.url && (this.loadSpeed = parseFloat(b.loadSpeed) || this.loadSpeed), this.worldShader = 'standard', void 0 !== d.worldShader && (this.worldShader = d.worldShader.value || this.worldShader), void 0 !== b.worldShader && d.worldShader.url && (this.worldShader = b.worldShader || this.worldShader), this.edit = !0, void 0 !== d.edit && (this.edit = d.edit.value), void 0 !== d.edit && d.edit.url && ('true' === b.edit && (this.edit = !0), 'false' === b.edit && (this.edit = !1)), this.lightInit = !1, void 0 !== d.lightInit && (this.lightInit = d.lightInit.value), void 0 !== d.lightInit && d.lightInit.url && ('true' === b.lightInit && (this.lightInit = !0), 'false' === b.lightInit && (this.lightInit = !1)), this.allowTools = !0, this.cameraType = d.camera.value, void 0 !== b.camera && d.camera.url && (this.cameraType = b.camera);
-}
-
 function Gluu() {
   this.selectionShader = this.lineShader = this.standardShader = null, this.mvMatrix = mat4.create(), this.objStrMatrix = mat4.create([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]), this.mvMatrixStack = [], this.pMatrix = mat4.create();
 }
@@ -351,27 +340,6 @@ shadersCode.fs.bloom = 'precision mediump float;varying vec2 vTextureCoord;varyi
 var threadsCode = [];
 threadsCode.loadRegionThread = "self.addEventListener('message', function(e) {        var x = e.data.x;        var y = e.data.y;        var xhr = new XMLHttpRequest();        xhr.open('GET', e.data.name, false);        xhr.responseType = 'arraybuffer';        try{            xhr.send();        } catch(e) {            self.postMessage({loaded: 0, x: x, y: y});            self.close();            return;        }        var regionData =  new Uint8Array(xhr.response);        self.postMessage({loaded: 1, x: x, y: y, data: regionData.buffer}, [regionData.buffer]);        self.close();    }, false);", String.prototype.equalsIgnoreCase = function(b) {
     return this.toUpperCase() === b.toUpperCase();
-  }, Settings.prototype.setDistanceLevel = function(b) {
-    this.distanceLevel = [b, b, b], document.getElementById('setDstLvl_val').innerHTML = this.distanceLevel[0], this.getSettingsURL();
-  }, Settings.prototype.setSkyColor = function(b) {
-    this.skyColor[0] = b[0], this.skyColor[1] = b[1], this.skyColor[2] = b[2], this.getSettingsURL();
-  }, Settings.prototype.setSun = function(b) {
-    this.sun = b, document.getElementById('setSun_val').innerHTML = this.sun, this.getSettingsURL();
-  }, Settings.prototype.setBrightness = function(b) {
-    this.brightness = b, document.getElementById('setBrightness_val').innerHTML = this.brightness, this.getSettingsURL();
-  }, Settings.prototype.getSettingsURL = function() {
-    var b = document.location.href.split(/#/)[0],
-      b = b.split(/\?/),
-      d;
-    d = void 0 === b[1] ? [] : b[1].split(/&/);
-    var c = b[0] + '?',
-      e = {},
-      f = this;
-    d.forEach(function(b) {
-      c += '&', 'sun' === b.split(/=/)[0].toLowerCase() ? (e.sun = !0, c += 'sun=' + f.sun) : 'skycolor' === b.split(/=/)[0].toLowerCase() ? (e.skyColor = !0, c += 'skyColor=' + Math.floor(255 * f.skyColor[0]) + '-' + Math.floor(255 * f.skyColor[1]) + '-' + Math.floor(255 * f.skyColor[2])) : 'brightness' === b.split(/=/)[0].toLowerCase() ? (e.brightness = !0, c += 'brightness=' + f.brightness) : 'worldshader' === b.split(/=/)[0].toLowerCase() ? (e.worldshader = !0, c += 'worldShader=' + f.worldShader) : 'distancelevel' === b.split(/=/)[0].toLowerCase() ? (e.distancelevel = !0, c += 'distanceLevel=' + f.distanceLevel[0]) : c += b;
-    }), !0 !== e.sun && (c += '&sun=' + this.sun), !0 !== e.worldshader && (c += '&worldShader=' + this.worldShader), !0 !== e.brightness && (c += '&brightness=' + this.brightness), !0 !== e.distancelevel && (c += '&distanceLevel=' + this.distanceLevel[0]), !0 !== e.skyColor && (c += '&skyColor=' + Math.floor(255 * this.skyColor[0]) + '-' + Math.floor(255 * this.skyColor[1]) + '-' + Math.floor(255 * this.skyColor[2])), document.getElementById('settingsURL').value = c + window.location.hash;
-  }, Settings.prototype.setHashURL = function(b, d, c) {
-    window.location.hash = 'pos=' + b[0].toFixed(2) + '+' + b[1].toFixed(2) + '+' + b[2].toFixed(2) + '&rot=' + d[0].toFixed(2) + '+' + d[1].toFixed(2) + '&camera=' + c;
   }, WebGLUtils = function(b) {
     return b = function(b, c) {
       for (var e = ['webgl', 'experimental-webgl', 'webkit-3d', 'moz-webgl'], f = null, l = 0; l < e.length; ++l) {
@@ -4204,7 +4172,6 @@ Camera.prototype.setPos = function(b, d, c) {
 var gl, gluu = new Gluu(),
   glCanvas, lastTarget = !1,
   codeEditor = null,
-  settings = new Settings(),
   biomes, mcWorld, block, blockTexture = {
     loaded: !1
   },
