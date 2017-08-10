@@ -14,6 +14,8 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 page '/index.html', layout: 'game'
 
+ignore 'worlds/*'
+
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
