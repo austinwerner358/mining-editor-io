@@ -142,46 +142,42 @@ Settings::setBrightness = (b) ->
   return
 
 Settings::getSettingsURL = ->
-  `var b`
-  b = document.location.href.split(/#/)[0]
-  b = b.split(/\?/)
-  d = undefined
-  d = if undefined == b[1] then [] else b[1].split(/&/)
-  c = b[0] + '?'
-  e = {}
-  f = this
-  d.forEach((b) ->
-    c += '&'
-    if 'sun' == b.split(RegExp('='))[0].toLowerCase()
-      e.sun = !0
-      c += 'sun=' + f.sun
-    else
-      if 'skycolor' == b.split(RegExp('='))[0].toLowerCase()
-        e.skyColor = !0
-        c += 'skyColor=' + Math.floor(255 * f.skyColor[0]) + '-' + Math.floor(255 * f.skyColor[1]) + '-' + Math.floor(255 * f.skyColor[2])
+  # Ignore the hash portion of the url.
+  urlCurrent = document.location.href.split(/#/)[0]
+  # Split url into address and params.
+  urlSplit = urlCurrent.split(/\?/)
+  # Get array or params or empty array.
+  params = if undefined == urlSplit[1] then [] else urlSplit[1].split(/&/)
+  # Use the same address.
+  urlUpdated = urlSplit[0] + '?'
+  hasParam = {}
+  # TODO: test what errors when using ->
+  params.forEach (param) =>
+    switch param.split(RegExp('='))[0].toLowerCase()
+      when 'sun'
+        hasParam.sun = !0
+        urlUpdated += '&sun=' + @sun
+      when 'skycolor'
+        hasParam.skyColor = !0
+        urlUpdated += '&skyColor=' + Math.floor(255 * @skyColor[0]) + '-' + Math.floor(255 * @skyColor[1]) + '-' + Math.floor(255 * @skyColor[2])
+      when'brightness'
+        hasParam.brightness = !0
+        urlUpdated += '&brightness=' + @brightness
+      when'worldshader'
+        hasParam.worldshader = !0
+        urlUpdated += '&worldShader=' + @worldShader
+      when'distancelevel'
+        hasParam.distancelevel = !0
+        urlUpdated += '&distanceLevel=' + @distanceLevel[0]
       else
-        if 'brightness' == b.split(RegExp('='))[0].toLowerCase()
-          e.brightness = !0
-          c += 'brightness=' + f.brightness
-        else
-          if 'worldshader' == b.split(RegExp('='))[0].toLowerCase()
-            e.worldshader = !0
-            c += 'worldShader=' + f.worldShader
-          else
-            if 'distancelevel' == b.split(RegExp('='))[0].toLowerCase()
-              e.distancelevel = !0
-              c += 'distanceLevel=' + f.distanceLevel[0]
-            else
-              (c += b)
+        urlUpdated += param
     return
-  )
-  !0 != e.sun and (c += '&sun=' + @sun)
-  !0 != e.worldshader and (c += '&worldShader=' + @worldShader)
-  !0 != e.brightness and (c += '&brightness=' + @brightness)
-  !0 != e.distancelevel and (c += '&distanceLevel=' + @distanceLevel[0])
-  !0 != e.skyColor and (c += '&skyColor=' + Math.floor(255 * @skyColor[0]) + '-' + Math.floor(255 * @skyColor[1]) + '-' + Math.floor(255 * @skyColor[2]))
-  document.getElementById('settingsURL').value = c + window.location.hash
-  return
+  !0 != hasParam.sun and (urlUpdated += '&sun=' + @sun)
+  !0 != hasParam.worldshader and (urlUpdated += '&worldShader=' + @worldShader)
+  !0 != hasParam.brightness and (urlUpdated += '&brightness=' + @brightness)
+  !0 != hasParam.distancelevel and (urlUpdated += '&distanceLevel=' + @distanceLevel[0])
+  !0 != hasParam.skyColor and (urlUpdated += '&skyColor=' + Math.floor(255 * @skyColor[0]) + '-' + Math.floor(255 * @skyColor[1]) + '-' + Math.floor(255 * @skyColor[2]))
+  document.getElementById('settingsURL').value = urlUpdated + window.location.hash
 
 Settings::setHashURL = (b, d, c) ->
   window.location.hash = 'pos=' + b[0].toFixed(2) + '+' + b[1].toFixed(2) + '+' + b[2].toFixed(2) + '&rot=' + d[0].toFixed(2) + '+' + d[1].toFixed(2) + '&camera=' + c
