@@ -9,8 +9,33 @@
     <title><%= current_page.data.title || "Mining Editor" %></title>
     <%= stylesheet_link_tag "game" %>
     <!-- Game -->
+    <%= javascript_include_tag "game/math_utils/other_utils_obf" %>
+    <%= javascript_include_tag "game/math_utils/graphics_utils_obf" %>
+    <%= javascript_include_tag "game/math_utils/other_algorithms_obf" %>
+    <%= javascript_include_tag "game/graphics/webgl_init_obf" %>
+    <%= javascript_include_tag "game/graphics/intersection_obf" %>
+    <%= javascript_include_tag "game/graphics/gui_elements_obf" %>
+    <%= javascript_include_tag "game/asset_loading/blocks_init_obf.js" %>
+    <%= javascript_include_tag "game/file_utils_obf" %>
+    <%= javascript_include_tag "game/nbt_utils_obf" %>
+    <%= javascript_include_tag "game/game_start_obf" %>
     <%= javascript_include_tag "game/misc_game_code" %>
     <%= javascript_include_tag "game/settings" %>
+    <%= javascript_include_tag "game/tick_obf" %>
+    <%= javascript_include_tag "game/shaders_temp_file" %>
+    <%= javascript_include_tag "game/load_region_temp_file" %>
+    <%= javascript_include_tag "game/controls_obf" %>
+    <%= javascript_include_tag "game/entities/mob_obf" %>
+    <%= javascript_include_tag "game/entities/humanoid_obf" %>
+    <%= javascript_include_tag "game/world/chunk_obf" %>
+    <%= javascript_include_tag "game/world/region" %>
+    <%= javascript_include_tag "game/world/region_obf" %>
+    <%= javascript_include_tag "game/world/region_svr_obf" %>
+    <%= javascript_include_tag "game/world/world_obf" %>
+    <%= javascript_include_tag "game/camera/aerial_obf" %>
+    <%= javascript_include_tag "game/camera/ghost_obf" %>
+    <%= javascript_include_tag "game/camera/player_obf" %>
+    <%= javascript_include_tag "game/camera/spectator_obf" %>
     <!-- Code Editor -->
     <%= javascript_include_tag "ace-editor/ace" %>
     <!-- Color Picker -->
