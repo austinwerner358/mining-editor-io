@@ -1,22 +1,38 @@
 Settings = ->
-  b = {distanceLevel: '10-10-10', pos: '20+80+70', rot: '-5.5+0.0', skyColor: '230-248-255'}
-  window.location.search.substr(1).split('&').forEach((c) ->
-    b[c.split('=')[0]] = c.split('=')[1]
+  # Init settings.
+  @local = false
+  @ready = false
+  @initSettings()
+  return
+
+Settings::initSettings = ->
+  urlParams = {distanceLevel: '10-10-10', pos: '20+80+70', rot: '-5.5+0.0', skyColor: '230-248-255'}
+  window.location.search.substr(1).split('&').forEach (param) ->
+    keyValue = param.split('=')
+    urlParams[keyValue[0]] = keyValue[1]
     return
-  )
-  window.location.hash.substr(1).split('&').forEach((c) ->
-    b[c.split('=')[0]] = c.split('=')[1]
+  window.location.hash.substr(1).split('&').forEach (param) ->
+    keyValue = param.split('=')
+    urlParams[keyValue[0]] = keyValue[1]
     return
-  )
+  if urlParams.local and !@local
+    # Bring up overlay, set states and return.
+    @setLocalMode(true)
+    @local = true
+    @ready = false
+    document.getElementById('worldSelectOverlay').style.visibility = 'visible';
+    return
+  else
+    @ready = true
   d = JSON.parse(Readfile.readTxt('game-data/settings.json'))
   console.log(d)
   @gameRoot = d.gameroot.value
-  undefined != b.gameroot and d.gameroot.url and (@gameRoot = b.gameroot)
+  undefined != urlParams.gameroot and d.gameroot.url and (@gameRoot = urlParams.gameroot)
   @worldName = d.worldname.value
-  undefined != b.worldname and d.worldname.url and (@worldName = b.worldname)
+  undefined != urlParams.worldname and d.worldname.url and (@worldName = urlParams.worldname)
   @server = undefined
   undefined != d.server and (@server = d.server.value)
-  undefined != b.server and (@server = b.server)
+  undefined != urlParams.server and (@server = urlParams.server)
   @distanceLevel = [
     10
     10
@@ -26,9 +42,9 @@ Settings = ->
   @distanceLevel[1] = parseInt(d.distanceLevel.value.split('-')[1]) or @distanceLevel[1]
   @distanceLevel[2] = parseInt(d.distanceLevel.value.split('-')[2]) or @distanceLevel[2]
 
-  undefined != b.distanceLevel and d.distanceLevel.url and @distanceLevel[0] = parseInt(b.distanceLevel.split('-')[0]) or @distanceLevel[0]
-  @distanceLevel[1] = parseInt(b.distanceLevel.split('-')[1]) or @distanceLevel[1]
-  @distanceLevel[2] = parseInt(b.distanceLevel.split('-')[2]) or @distanceLevel[2]
+  undefined != urlParams.distanceLevel and d.distanceLevel.url and @distanceLevel[0] = parseInt(urlParams.distanceLevel.split('-')[0]) or @distanceLevel[0]
+  @distanceLevel[1] = parseInt(urlParams.distanceLevel.split('-')[1]) or @distanceLevel[1]
+  @distanceLevel[2] = parseInt(urlParams.distanceLevel.split('-')[2]) or @distanceLevel[2]
 
   10 > @distanceLevel[0] and (@distanceLevel[0] = 10)
   @distanceLevel[1] < @distanceLevel[0] and (@distanceLevel[1] = @distanceLevel[0])
@@ -38,10 +54,10 @@ Settings = ->
   100 < @distanceLevel[2] and (@distanceLevel[2] = 100)
   @waterlevel = 49
   undefined != d.waterlevel and (@waterlevel = parseInt(d.waterlevel.value))
-  undefined != b.waterlevel and d.waterlevel.url and (@waterlevel = parseInt(b.waterlevel))
+  undefined != urlParams.waterlevel and d.waterlevel.url and (@waterlevel = parseInt(urlParams.waterlevel))
   @sensitivity = 50
   undefined != d.mouseSensitivity and (@sensitivity = parseInt(d.mouseSensitivity.value))
-  undefined != b.mouseSensitivity and d.mouseSensitivity.url and (@sensitivity = parseInt(b.mouseSensitivity))
+  undefined != urlParams.mouseSensitivity and d.mouseSensitivity.url and (@sensitivity = parseInt(urlParams.mouseSensitivity))
   10 > @sensitivity and (@sensitivity = 10)
   100 < @sensitivity and (@sensitivity = 100)
   @pos = [
@@ -57,15 +73,15 @@ Settings = ->
   @pos[1] = parseFloat(d.pos.value.split('+')[1]) or @pos[1]
   @pos[2] = parseFloat(d.pos.value.split('+')[2]) or @pos[2]
 
-  undefined != b.pos and d.pos.url and @pos[0] = parseFloat(b.pos.split('+')[0]) or @pos[0]
-  @pos[1] = parseFloat(b.pos.split('+')[1]) or @pos[1]
-  @pos[2] = parseFloat(b.pos.split('+')[2]) or @pos[2]
+  undefined != urlParams.pos and d.pos.url and @pos[0] = parseFloat(urlParams.pos.split('+')[0]) or @pos[0]
+  @pos[1] = parseFloat(urlParams.pos.split('+')[1]) or @pos[1]
+  @pos[2] = parseFloat(urlParams.pos.split('+')[2]) or @pos[2]
 
   undefined != d.rot and @rot[0] = parseFloat(d.rot.value.split('+')[0]) or @rot[0]
   @rot[1] = parseFloat(d.rot.value.split('+')[1]) or @rot[1]
 
-  undefined != b.rot and d.rot.url and @rot[0] = parseFloat(b.rot.split('+')[0]) or @rot[0]
-  @rot[1] = parseFloat(b.rot.split('+')[1]) or @rot[1]
+  undefined != urlParams.rot and d.rot.url and @rot[0] = parseFloat(urlParams.rot.split('+')[0]) or @rot[0]
+  @rot[1] = parseFloat(urlParams.rot.split('+')[1]) or @rot[1]
 
   @skyColor = new Float32Array([
     1
@@ -77,39 +93,39 @@ Settings = ->
   @skyColor[1] = parseFloat(d.skyColor.value.split('-')[1]) / 255 or @skyColor[1]
   @skyColor[2] = parseFloat(d.skyColor.value.split('-')[2]) / 255 or @skyColor[2]
 
-  undefined != b.skyColor and d.skyColor.url and @skyColor[0] = parseFloat(b.skyColor.split('-')[0]) / 255 or @skyColor[0]
-  @skyColor[1] = parseFloat(b.skyColor.split('-')[1]) / 255 or @skyColor[1]
-  @skyColor[2] = parseFloat(b.skyColor.split('-')[2]) / 255 or @skyColor[2]
+  undefined != urlParams.skyColor and d.skyColor.url and @skyColor[0] = parseFloat(urlParams.skyColor.split('-')[0]) / 255 or @skyColor[0]
+  @skyColor[1] = parseFloat(urlParams.skyColor.split('-')[1]) / 255 or @skyColor[1]
+  @skyColor[2] = parseFloat(urlParams.skyColor.split('-')[2]) / 255 or @skyColor[2]
 
   @sun = 1
   undefined != d.sun and (@sun = parseFloat(d.sun.value) + 0.01 or @sun)
-  undefined != b.sun and d.sun.url and (@sun = parseFloat(b.sun) + 0.01 or @sun)
+  undefined != urlParams.sun and d.sun.url and (@sun = parseFloat(urlParams.sun) + 0.01 or @sun)
   1 < @sun and (@sun = 1)
   @brightness = 0.3
   undefined != d.brightness and (@brightness = parseFloat(d.brightness.value) + 0.01 or @brightness)
-  undefined != b.brightness and d.brightness.url and (@brightness = parseFloat(b.brightness) + 0.01 or @brightness)
+  undefined != urlParams.brightness and d.brightness.url and (@brightness = parseFloat(urlParams.brightness) + 0.01 or @brightness)
   @loadLag = 3
   undefined != d.loadLag and (@loadLag = parseFloat(d.loadLag.value) or @loadLag)
-  undefined != b.loadLag and d.loadLag.url and (@loadLag = parseFloat(b.loadLag) or @loadLag)
+  undefined != urlParams.loadLag and d.loadLag.url and (@loadLag = parseFloat(urlParams.loadLag) or @loadLag)
   @loadSpeed = 1
   undefined != d.loadSpeed and (@loadSpeed = parseFloat(d.loadSpeed.value) or @loadSpeed)
-  undefined != b.loadSpeed and d.loadSpeed.url and (@loadSpeed = parseFloat(b.loadSpeed) or @loadSpeed)
+  undefined != urlParams.loadSpeed and d.loadSpeed.url and (@loadSpeed = parseFloat(urlParams.loadSpeed) or @loadSpeed)
   @worldShader = 'standard'
   undefined != d.worldShader and (@worldShader = d.worldShader.value or @worldShader)
-  undefined != b.worldShader and d.worldShader.url and (@worldShader = b.worldShader or @worldShader)
+  undefined != urlParams.worldShader and d.worldShader.url and (@worldShader = urlParams.worldShader or @worldShader)
   @edit = !0
   undefined != d.edit and (@edit = d.edit.value)
-  undefined != d.edit and d.edit.url and 'true' == b.edit and (@edit = !0)
-  'false' == b.edit and (@edit = !1)
+  undefined != d.edit and d.edit.url and 'true' == urlParams.edit and (@edit = !0)
+  'false' == urlParams.edit and (@edit = !1)
 
   @lightInit = !1
   undefined != d.lightInit and (@lightInit = d.lightInit.value)
-  undefined != d.lightInit and d.lightInit.url and 'true' == b.lightInit and (@lightInit = !0)
-  'false' == b.lightInit and (@lightInit = !1)
+  undefined != d.lightInit and d.lightInit.url and 'true' == urlParams.lightInit and (@lightInit = !0)
+  'false' == urlParams.lightInit and (@lightInit = !1)
 
   @allowTools = !0
   @cameraType = d.camera.value
-  undefined != b.camera and d.camera.url and (@cameraType = b.camera)
+  undefined != urlParams.camera and d.camera.url and (@cameraType = urlParams.camera)
   return
 
 Settings::setDistanceLevel = (b) ->
@@ -183,5 +199,8 @@ Settings::setHashURL = (b, d, c) ->
   window.location.hash = 'pos=' + b[0].toFixed(2) + '+' + b[1].toFixed(2) + '+' + b[2].toFixed(2) + '&rot=' + d[0].toFixed(2) + '+' + d[1].toFixed(2) + '&camera=' + c
   return
 
+Settings::setLocalMode = (enabled) ->
+  @local = enabled
+  console.log "Local mode set to: #{enabled}"
 
 window.settings = new Settings
