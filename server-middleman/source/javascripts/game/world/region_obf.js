@@ -383,61 +383,6 @@ WorldRegion.prototype.loadChunkFromStorage = function(m1, ticks, dataAndEvents) 
   }
 };
 /**
- * @param {number} r
- * @param {number} v
- * @return {undefined}
- */
-WorldRegion.prototype.loadRegion = function(r, v) {
-  if (this.region[1E3 * r + v] = {}, this.region[1E3 * r + v].loaded = -2, void 0 !== window.threadsCode) {
-    /** @type {Blob} */
-    var self = new Blob([threadsCode.loadRegionThread], {
-      type : "application/javascript"
-    });
-    /** @type {Worker} */
-    self = new Worker(window.URL.createObjectURL(self));
-  } else {
-    /** @type {Worker} */
-    self = new Worker("threads/loadRegionThread.js");
-  }
-  self.worldRegionThisContext = this;
-  self.region = this.region[1E3 * r + v];
-  /**
-   * @param {Uint8Array} ev
-   * @return {undefined}
-   */
-  self.onmessage = function(ev) {
-    this.worldRegionThisContext.regionLoaded(ev);
-  };
-  /**
-   * @param {?} er
-   * @return {undefined}
-   */
-  self.onerror = function(er) {
-    /** @type {number} */
-    this.region.loaded = -1;
-  };
-  /** @type {string} */
-  var i = this.gameRoot + "/" + this.worldName + "/region/r." + r + "." + v + ".mca";
-  /** @type {string} */
-  var text = "";
-  if (-1 === this.gameRoot.indexOf(":")) {
-    /** @type {string} */
-    text = document.location.href.split(/\?|#/)[0];
-    /** @type {number} */
-    var idx = text.indexOf("index");
-    if (-1 !== idx) {
-      /** @type {string} */
-      text = text.substring(0, idx);
-    }
-  }
-  console.log(text + i);
-  self.postMessage({
-    x : r,
-    y : v,
-    name : text + i
-  });
-};
-/**
  * @param {Uint8Array} data
  * @return {undefined}
  */
