@@ -31,17 +31,34 @@ chronometer.tick = function() {
       }
       h_u_d.gameStateHtml.innerHTML += "<br/>Players online: " + (e + 1) + "";
     }
-    /** @type {boolean} */
     chronometer.newSec = false;
     if (chronometer.lastTime % 1E3 > newTime % 1E3) {
-      /** @type {boolean} */
       chronometer.newSec = true;
       chronometer.sec++;
     }
-    /** @type {boolean} */
-    var y = false;
-    if (chronometer.lastTime % 100 > newTime % 100 && (y = true), e = false, newTime > chronometer.last50msTime + 50 && (chronometer.last50msTime = newTime, e = true), chronometer.lastTime = newTime, camera.updatePosition(fps), chronometer.iLag += settings.loadSpeed, chronometer.iLag > settings.loadLag && (chronometer.iLag = settings.loadLag), settings.edit && (y && (blockSelection = mcWorld.renderSelection()), selectE)) {
-      switch(currentBlock = blockSelection, selectE = false, console.log("y: " + currentBlock.y + " z: " + currentBlock.z + " x: " + currentBlock.x + " chx: " + currentBlock.chx + " chz: " + currentBlock.chz + " side: " + currentBlock.side), selectT) {
+    var timeHasPassed = false;
+    if (chronometer.lastTime % 100 > newTime % 100) {
+      timeHasPassed = true;
+    }
+    hasBeen50ms = false;
+    if (newTime > chronometer.last50msTime + 50) {
+      chronometer.last50msTime = newTime;
+      hasBeen50ms = true;
+    }
+    chronometer.lastTime = newTime;
+    camera.updatePosition(fps);
+    chronometer.iLag += settings.loadSpeed
+    if (chronometer.iLag > settings.loadLag) {
+      chronometer.iLag = settings.loadLag;
+    }
+    if (settings.edit && timeHasPassed) {
+      blockSelection = mcWorld.renderSelection();
+    }
+    if (selectE) {
+      currentBlock = blockSelection;
+      selectE = false;
+      console.log("y: " + currentBlock.y + " z: " + currentBlock.z + " x: " + currentBlock.x + " chx: " + currentBlock.chx + " chz: " + currentBlock.chz + " side: " + currentBlock.side);
+      switch(selectT) {
         case 0:
           mcWorld.updateChunkBlock(currentBlock.chx, currentBlock.chz, currentBlock.x, currentBlock.y, currentBlock.z, 0, 0);
           break;
@@ -147,7 +164,7 @@ chronometer.tick = function() {
       selectBox.render(blockSelection);
       pointer.render();
     }
-    if (e) {
+    if (hasBeen50ms) {
       mcWorld.new50msec();
     }
     if (chronometer.newSec) {
