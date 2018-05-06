@@ -104,6 +104,7 @@ chronometer.lastTime = 0;
 chronometer.last50msTime = 0;
 chronometer.fps = 0;
 chronometer.gpuMem = 0;
+var controls = {};
 /** @type {number} */
 var click = 0;
 /** @type {boolean} */
