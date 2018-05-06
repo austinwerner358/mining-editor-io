@@ -9,7 +9,7 @@ function WorldRegion(dataAndEvents, deepDataAndEvents) {
   /** @type {string} */
   this.worldName = deepDataAndEvents;
   /** @type {Array} */
-  this.region = [];
+  this.worldRegionData = [];
   /** @type {Array} */
   this.localIChunk = [];
   /** @type {Array} */
@@ -18,6 +18,35 @@ function WorldRegion(dataAndEvents, deepDataAndEvents) {
   this.iChunk = 0;
   /** @type {boolean} */
   _gameStop = false;
+  // TODO: potentially turn the thread code object into multiple steps and add error handling (such as setting assigning a file url instead)
+  this.threadCodeBlobUrlForServerFile = window.URL.createObjectURL(new Blob([ "self.addEventListener('message', (function(e) {\
+    var regionData, xhr;\
+    xhr = new XMLHttpRequest;\
+    xhr.open('GET', e.data.name, false);\
+    xhr.responseType = 'arraybuffer';\
+    xhr.send();\
+    if (xhr.status === 200) {\
+      regionData = new Uint8Array(xhr.response);\
+    } else {\
+      self.postMessage({\
+        loaded: 0,\
+        x: e.data.x,\
+        y: e.data.y,\
+        error: xhr.statusText\
+      });\
+      self.close();\
+      return;\
+    }\
+    self.postMessage({\
+      loaded: 1,\
+      x: e.data.x,\
+      y: e.data.y,\
+      data: regionData.buffer\
+    }, [regionData.buffer]);\
+    self.close();\
+  }), false);"], { type: 'application/javascript' } ));
+  // NOTE: if a deconstructor is made for the WorldRegion object, move the blob object to a global context or deallocate with the following
+  // window.URL.revokeObjectURL(loadFileLoadingThreadCodeUrl);
 }
 /**
  * @return {undefined}
@@ -390,16 +419,16 @@ WorldRegion.prototype.regionLoaded = function(data) {
   var t = data.data.x;
   var b = data.data.y;
   if (1 !== data.data.loaded) {
-    t = this.region[1E3 * t + b];
+    t = this.worldRegionData[1E3 * t + b];
     /** @type {number} */
     t.loaded = -1;
   } else {
     if (data = new Uint8Array(data.data.data), 1E3 > data.length) {
-      t = this.region[1E3 * t + b];
+      t = this.worldRegionData[1E3 * t + b];
       /** @type {number} */
       t.loaded = -1;
     } else {
-      t = this.region[1E3 * t + b];
+      t = this.worldRegionData[1E3 * t + b];
       /** @type {Uint8Array} */
       t.regionData = data;
       /** @type {number} */
@@ -457,15 +486,15 @@ WorldRegion.prototype.requestChunk = function(m1, ticks, data) {
   data = Math.floor(m1 / 32);
   /** @type {number} */
   var attempted = Math.floor(ticks / 32);
-  if (void 0 === this.region[1E3 * data + attempted] && this.loadRegion(data, attempted), -1 === this.region[1E3 * data + attempted].loaded) {
+  if (void 0 === this.worldRegionData[1E3 * data + attempted] && this.loadRegion(data, attempted), -1 === this.worldRegionData[1E3 * data + attempted].loaded) {
     return this.rchunk[unlock] = -1;
   }
-  if (-2 === this.region[1E3 * data + attempted].loaded) {
+  if (-2 === this.worldRegionData[1E3 * data + attempted].loaded) {
     return-2;
   }
-  if (0 === this.region[1E3 * data + attempted].loaded) {
-    if (m1 %= 32, 0 > m1 && (m1 += 32), ticks %= 32, 0 > ticks && (ticks += 32), ticks = m1 + 32 * ticks, 0 < this.region[1E3 * data + attempted].chunkPos[ticks]) {
-      return console.log("chunk " + unlock + " : " + this.region[1E3 * data + attempted].chunkPos[ticks] + " " + this.region[1E3 * data + attempted].chunkLen[ticks]), this.iChunk++, this.rchunk[unlock] = WorldRegion.loadChunk(4096 * this.region[1E3 * data + attempted].chunkPos[ticks], this.region[1E3 * data + attempted].regionData, true), this.rchunk[unlock];
+  if (0 === this.worldRegionData[1E3 * data + attempted].loaded) {
+    if (m1 %= 32, 0 > m1 && (m1 += 32), ticks %= 32, 0 > ticks && (ticks += 32), ticks = m1 + 32 * ticks, 0 < this.worldRegionData[1E3 * data + attempted].chunkPos[ticks]) {
+      return console.log("chunk " + unlock + " : " + this.worldRegionData[1E3 * data + attempted].chunkPos[ticks] + " " + this.worldRegionData[1E3 * data + attempted].chunkLen[ticks]), this.iChunk++, this.rchunk[unlock] = WorldRegion.loadChunk(4096 * this.worldRegionData[1E3 * data + attempted].chunkPos[ticks], this.worldRegionData[1E3 * data + attempted].regionData, true), this.rchunk[unlock];
     }
     /** @type {number} */
     this.rchunk[unlock] = -1;

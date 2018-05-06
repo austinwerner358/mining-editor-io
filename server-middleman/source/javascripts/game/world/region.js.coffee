@@ -1,40 +1,70 @@
 WorldRegion::loadRegion = (region_x, region_y) ->
-  # Destroy and init region.
-  @region[1e3 * region_x + region_y] = {}
-  @region[1e3 * region_x + region_y].loaded = -2
+  @worldRegionData[1e3 * region_x + region_y] = {}
+  @worldRegionData[1e3 * region_x + region_y].loaded = -2
   fileName = "r.#{region_x}.#{region_y}.mca"
-  if window.threadsCode
-    ###* @type {Blob} ###
-    self = new Blob([ threadsCode.loadRegionThread ], type: 'application/javascript')
-    ###* @type {Worker} ###
-    self = new Worker(window.URL.createObjectURL(self))
+  console.log fileName
+  console.log "Using local files: #{settings.local}"
+  if window.settings.local
+    @loadRegionFromLocal fileName, region_x, region_y
   else
-    ###* @type {Worker} ###
-    self = new Worker('threads/loadRegionThread.js')
-  self.worldRegionThisContext = this
-  self.region = @region[1e3 * region_x + region_y]
-  ###*
-  # @param {Uint8Array} ev
-  ###
-  self.onmessage = (ev) ->
-    @worldRegionThisContext.regionLoaded ev
+    @loadRegionFromServer fileName, region_x, region_y, @workerFromCodeBlob(@threadCodeBlobUrlForServerFile, region_x, region_y)
+  return
+
+WorldRegion::workerFromCodeBlob = (blobUrl, region_x, region_y) ->
+  alert('Web workers are undefined in this browser; can not load region files.') unless typeof(Worker)
+  # Create new worker with url of shared Blob code (or file reference).
+  worker = new Worker(blobUrl)
+  # Instead of manually assigning references to the current context and relevant region, use => to give these callbacks the current context.
+  worker.onmessage = (event) =>
+    @regionLoaded event
     return
-  ###*
-  # @param {?} er
-  ###
-  self.onerror = (er) ->
-    @region.loaded = -1
+  worker.onerror = (event) =>
+    alert('REGION LOADING WORKER ERROR')
+    console.error(event)
+    @regionLoadFailure(region_x, region_y, message)
     return
-  path = "#{@gameRoot}/#{@worldName}/region/#{fileName}"
-  urlForFile = ''
+  worker
+
+WorldRegion::loadRegionFromLocal = (fileName, region_x, region_y) ->
+  unless window.localFiles[fileName]
+    @regionLoadFailure(region_x, region_y, 'local file not found')
+    return
+  # TODO: make sure the file reader is properly deallocated
+  # TODO: implement file loading fail callback
+  reader = new FileReader
+  reader.onloadend = (event) =>
+    if event.target.readyState == FileReader.DONE
+      result = event.target.result
+      console.log result
+      data = new Uint8Array(result).buffer
+      @regionLoaded({
+        data:
+          loaded: 1
+          x: region_x
+          y: region_y
+          data: data
+      })
+    return
+  console.log localFiles[fileName]
+  reader.readAsArrayBuffer window.localFiles[fileName]
+  return
+
+WorldRegion::loadRegionFromServer = (fileName, region_x, region_y, worker) ->
+  path = @gameRoot + '/' + @worldName + '/region/' + fileName
+  baseURL = ''
   if -1 == @gameRoot.indexOf(':')
-    urlForFile = document.location.href.split(/\?|#/)[0]
-    idx = urlForFile.indexOf('index')
-    if -1 != idx
-      urlForFile = urlForFile.substring(0, idx)
-  console.log urlForFile + path
-  self.postMessage
+    baseURL = document.location.href.split(/\?|#/)[0]
+    i = baseURL.indexOf('index')
+    -1 != i and (baseURL = baseURL.substring(0, i))
+  console.log baseURL + path
+  worker.postMessage
     x: region_x
     y: region_y
-    name: urlForFile + path
+    name: baseURL + path
+  return
+
+WorldRegion::regionLoadFailure = (region_x, region_y, message) ->
+  # TODO: find more aspects that need to be handled if any
+  console.log "REGION r.#{region_x}.#{region_y}.mca FAILED TO LOAD: #{message}"
+  @worldRegionData[1e3 * region_x + region_y].loaded = -1
   return
