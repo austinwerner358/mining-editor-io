@@ -3,22 +3,25 @@ window.requestAnimFrame = function() {
     window.setTimeout(after, 1E3 / 60);
   }))));
 }();
-/**
- * @return {undefined}
- */
-function tick() {
+
+chronometer.tick = function() {
   if (!_gameStop) {
     sleep(200).then(() => {
-     requestAnimFrame(tick)
+     requestAnimFrame(chronometer.tick)
     });
     /** @type {number} */
-    var now = (new Date).getTime();
+    var newTime = (new Date).getTime();
     /** @type {number} */
-    fps = 1E3 / (now - lastTime);
-    var elements = camera.getPos();
-    var imageName = camera.getRot();
-    if (0 < Math.floor(now / 100) - Math.floor(lastTime / 100) && (textDiv.innerHTML = "x: " + elements[0].toFixed(2) + "  y: " + elements[1].toFixed(2) + "  z: " + elements[2].toFixed(2), textDiv.innerHTML += "<br/>FPS: " + Math.floor(fps), textDiv.innerHTML += "<br/>Block: " + useBlock.id + "-" + useBlock.data + "  : " + (block[useBlock.id][useBlock.data].name || (block[useBlock.id].name || (block[useBlock.id][useBlock.data].defaultTexture || ""))), textDiv.innerHTML += "<br/>Est. Gpu Mem: " +
-    Math.floor(8 * gpuMem / 1048576) + " M", void 0 !== players)) {
+    fps = 1E3 / (newTime - chronometer.lastTime);
+    var pos = camera.getPos();
+    var rot = camera.getRot();
+    if (0 < Math.floor(newTime / 100) - Math.floor(chronometer.lastTime / 100)) {
+      h_u_d.gameStateHtml.innerHTML = "x: " + pos[0].toFixed(2) + "  y: " + pos[1].toFixed(2) + "  z: " + pos[2].toFixed(2);
+      h_u_d.gameStateHtml.innerHTML += "<br/>FPS: " + Math.floor(fps);
+      h_u_d.gameStateHtml.innerHTML += "<br/>Block: " + useBlock.id + "-" + useBlock.data + "  : " + (block[useBlock.id][useBlock.data].name || (block[useBlock.id].name || (block[useBlock.id][useBlock.data].defaultTexture || "")));
+      h_u_d.gameStateHtml.innerHTML += "<br/>Est. Gpu Mem: " + Math.floor(8 * chronometer.gpuMem / 1048576) + " M";
+    }
+    if (void 0 !== players) {
       /** @type {number} */
       var e = 0;
       for (key in players) {
@@ -26,21 +29,21 @@ function tick() {
           e++;
         }
       }
-      textDiv.innerHTML += "<br/>Players online: " + (e + 1) + "";
+      h_u_d.gameStateHtml.innerHTML += "<br/>Players online: " + (e + 1) + "";
     }
     /** @type {boolean} */
-    newSec = false;
-    if (lastTime % 1E3 > now % 1E3) {
+    chronometer.newSec = false;
+    if (chronometer.lastTime % 1E3 > newTime % 1E3) {
       /** @type {boolean} */
-      newSec = true;
-      sec++;
+      chronometer.newSec = true;
+      chronometer.sec++;
     }
     /** @type {boolean} */
     var y = false;
-    if (lastTime % 100 > now % 100 && (y = true), e = false, now > last50msTime + 50 && (last50msTime = now, e = true), lastTime = now, camera.updatePosition(fps), iLag += settings.loadSpeed, iLag > settings.loadLag && (iLag = settings.loadLag), settings.edit && (y && (blockSelection = mcWorld.renderSelection()), selectE)) {
-      switch(now = blockSelection, selectE = false, console.log("y: " + now.y + " z: " + now.z + " x: " + now.x + " chx: " + now.chx + " chz: " + now.chz + " side: " + now.side), selectT) {
+    if (chronometer.lastTime % 100 > newTime % 100 && (y = true), e = false, newTime > chronometer.last50msTime + 50 && (chronometer.last50msTime = newTime, e = true), chronometer.lastTime = newTime, camera.updatePosition(fps), chronometer.iLag += settings.loadSpeed, chronometer.iLag > settings.loadLag && (chronometer.iLag = settings.loadLag), settings.edit && (y && (blockSelection = mcWorld.renderSelection()), selectE)) {
+      switch(currentBlock = blockSelection, selectE = false, console.log("y: " + currentBlock.y + " z: " + currentBlock.z + " x: " + currentBlock.x + " chx: " + currentBlock.chx + " chz: " + currentBlock.chz + " side: " + currentBlock.side), selectT) {
         case 0:
-          mcWorld.updateChunkBlock(now.chx, now.chz, now.x, now.y, now.z, 0, 0);
+          mcWorld.updateChunkBlock(currentBlock.chx, currentBlock.chz, currentBlock.x, currentBlock.y, currentBlock.z, 0, 0);
           break;
         case 1:
           /** @type {number} */
@@ -49,7 +52,7 @@ function tick() {
           var z = 0;
           /** @type {number} */
           y = 0;
-          var worker = mcWorld.getChunkBlock(now.chx, now.chz, now.x, now.y, now.z);
+          var worker = mcWorld.getChunkBlock(currentBlock.chx, currentBlock.chz, currentBlock.x, currentBlock.y, currentBlock.z);
           console.log(worker.id + " " + worker.data);
           /** @type {boolean} */
           var replace = false;
@@ -63,7 +66,7 @@ function tick() {
             }
           }
           if (!replace) {
-            switch(now.side) {
+            switch(currentBlock.side) {
               case 1:
                 /** @type {number} */
                 val = -1;
@@ -89,47 +92,47 @@ function tick() {
                 y = 1;
             }
           }
-          now.x += val;
-          if (15 < now.x) {
+          currentBlock.x += val;
+          if (15 < currentBlock.x) {
             /** @type {number} */
-            now.x = 0;
-            now.chx++;
+            currentBlock.x = 0;
+            currentBlock.chx++;
           }
-          if (0 > now.x) {
+          if (0 > currentBlock.x) {
             /** @type {number} */
-            now.x = 15;
-            now.chx--;
+            currentBlock.x = 15;
+            currentBlock.chx--;
           }
-          now.z += z;
-          if (15 < now.z) {
+          currentBlock.z += z;
+          if (15 < currentBlock.z) {
             /** @type {number} */
-            now.z = 0;
-            now.chz++;
+            currentBlock.z = 0;
+            currentBlock.chz++;
           }
-          if (0 > now.z) {
+          if (0 > currentBlock.z) {
             /** @type {number} */
-            now.z = 15;
-            now.chz--;
+            currentBlock.z = 15;
+            currentBlock.chz--;
           }
-          if (0 > now.y) {
+          if (0 > currentBlock.y) {
             /** @type {number} */
-            now.y = 0;
+            currentBlock.y = 0;
           }
-          if (256 < now.y) {
+          if (256 < currentBlock.y) {
             /** @type {number} */
-            now.y = 256;
+            currentBlock.y = 256;
           }
           val = useBlock.id || 1;
           z = useBlock.data || 0;
-          mcWorld.updateChunkBlock(now.chx, now.chz, now.x, now.y + y, now.z, val, z);
+          mcWorld.updateChunkBlock(currentBlock.chx, currentBlock.chz, currentBlock.x, currentBlock.y + y, currentBlock.z, val, z);
           break;
         case 2:
           val = useBlock.id || 1;
           z = useBlock.data || 0;
-          mcWorld.updateChunkBlock(now.chx, now.chz, now.x, now.y, now.z, val, z);
+          mcWorld.updateChunkBlock(currentBlock.chx, currentBlock.chz, currentBlock.x, currentBlock.y, currentBlock.z, val, z);
           break;
         case 3:
-          mcWorld.changeChunkBlockAdd(now.chx, now.chz, now.x, now.y, now.z);
+          mcWorld.changeChunkBlockAdd(currentBlock.chx, currentBlock.chz, currentBlock.x, currentBlock.y, currentBlock.z);
       }
     }
     mcWorld.render();
@@ -147,12 +150,12 @@ function tick() {
     if (e) {
       mcWorld.new50msec();
     }
-    if (newSec) {
-      settings.setHashURL(elements, imageName, camera.name);
+    if (chronometer.newSec) {
+      settings.setHashURL(pos, rot, camera.name);
     }
-    if (10 === sec) {
+    if (10 === chronometer.sec) {
       /** @type {number} */
-      sec = 0;
+      chronometer.sec = 0;
       mcWorld.deleteBuffers();
     }
   }

@@ -219,7 +219,7 @@ RegionSrv.prototype.new50msec = function() {
     /** @type {number} */
     this.position[4] = Math.floor(100 * d[1]);
     /** @type {number} */
-    this.position[5] = Math.floor(lastTime);
+    this.position[5] = Math.floor(chronometer.lastTime);
     /** @type {number} */
     this.wsMsg.offset = 0;
     NBT.write11Tag(this.wsMsg, "Position", this.position, 6);

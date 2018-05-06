@@ -95,22 +95,15 @@ var blockSelection;
 var camera;
 /** @type {boolean} */
 var _gameStop = true;
-/** @type {number} */
-var gpuMem = 0;
-/** @type {number} */
-var lastTime = 0;
-/** @type {number} */
-var last50msTime = 0;
-/** @type {number} */
-var firstTime = 0;
-/** @type {number} */
-var fps = 0;
-/** @type {boolean} */
-var newSec = false;
-/** @type {number} */
-var sec = 0;
-/** @type {number} */
-var iLag = 0;
+var chronometer = {};
+chronometer.sec = 0;
+chronometer.newSec = false;
+chronometer.iLag = 0;
+chronometer.firstTime = 0;
+chronometer.lastTime = 0;
+chronometer.last50msTime = 0;
+chronometer.fps = 0;
+chronometer.gpuMem = 0;
 /** @type {number} */
 var click = 0;
 /** @type {boolean} */
@@ -120,7 +113,7 @@ var selectT = 0;
 /** @type {number} */
 var selectTt = 1;
 /** @type {null} */
-var textDiv = null;
+var h_u_d = {};
 var useBlock = {};
 /** @type {Array} */
 var punkty1 = [];

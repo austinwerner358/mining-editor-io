@@ -20,7 +20,7 @@ function Mob(pos, enemy, up) {
   this.przesz = this.przesy = this.przesx = 0;
   /** @type {string} */
   this.name = "";
-  this.lastTime = lastTime;
+  this.lastTime = chronometer.lastTime;
 }
 /**
  * @param {number} x

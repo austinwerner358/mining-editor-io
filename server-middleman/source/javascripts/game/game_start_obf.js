@@ -6,7 +6,7 @@ function webGLStart() {
   window.settings.initSettings()
   // # TODO: instead of cancelling all computions, load elements that don't need world file source
   if (!window.settings.ready) {
-    return;  
+    return;
   }
   /** @type {(HTMLElement|null)} */
   glCanvas = document.getElementById("webgl");
@@ -27,7 +27,7 @@ function webGLStart() {
   window.addEventListener("DOMMouseScroll", mouseWheel, false);
   document.exitPointerLock = document.exitPointerLock || (document.mozExitPointerLock || document.webkitExitPointerLock);
   /** @type {(HTMLElement|null)} */
-  textDiv = document.getElementById("game-state");
+  h_u_d.gameStateHtml = document.getElementById("game-state");
   gluu.initGL(glCanvas);
   gluu.initStandardShader(settings.worldShader);
   gluu.initLineShader();
@@ -78,11 +78,9 @@ function webGLStart() {
   document.getElementById("setBrightness_val").innerHTML = settings.brightness;
   document.getElementById("setSkyColor").color.fromRGB(settings.skyColor[0], settings.skyColor[1], settings.skyColor[2]);
   /** @type {number} */
-  firstTime = (new Date).getTime();
+  chronometer.firstTime = (new Date).getTime();
   /** @type {number} */
-  lastTime = (new Date).getTime();
-  sleep(500).then(() => {
-    tick()
-  });
+  chronometer.lastTime = (new Date).getTime();
+  chronometer.tick();
 }
 ;

@@ -1070,14 +1070,14 @@ Chunk.prototype.render = function(name, program, renderer) {
   if (0 !== renderer || -1 !== this.isInit) {
     if (1 !== renderer || -1 !== this.isInit1) {
       if (0 === renderer && 0 === this.isInit) {
-        if (1 < iLag) {
-          iLag -= 1;
+        if (1 < chronometer.iLag) {
+          chronometer.iLag -= 1;
           this.init2(0, true);
         }
       } else {
         if (1 === renderer && 0 === this.isInit1) {
-          if (1 < iLag) {
-            iLag -= 1;
+          if (1 < chronometer.iLag) {
+            chronometer.iLag -= 1;
             this.init2(1, true);
           }
         } else {
@@ -1108,7 +1108,7 @@ Chunk.prototype.deleteBuffers = function() {
         gl.deleteBuffer(program);
       });
       this.ivbo[0].forEach(function(dataAndEvents) {
-        gpuMem -= dataAndEvents;
+        chronometer.gpuMem -= dataAndEvents;
       });
     }
     if (void 0 !== this.vbo[1]) {
@@ -1116,7 +1116,7 @@ Chunk.prototype.deleteBuffers = function() {
         gl.deleteBuffer(program);
       });
       this.ivbo[1].forEach(function(dataAndEvents) {
-        gpuMem -= dataAndEvents;
+        chronometer.gpuMem -= dataAndEvents;
       });
     }
   }
@@ -5018,11 +5018,11 @@ Chunk.prototype.init2 = function(recurring) {
   if (void 0 !== this.vbo && (0 === recurring && (void 0 !== this.vbo[0] && (this.vbo[0].forEach(function(program) {
     gl.deleteBuffer(program);
   }), this.ivbo[0].forEach(function(dataAndEvents) {
-    gpuMem -= dataAndEvents;
+    chronometer.gpuMem -= dataAndEvents;
   }))), 1 === recurring && (void 0 !== this.vbo[1] && (this.vbo[1].forEach(function(program) {
     gl.deleteBuffer(program);
   }), this.ivbo[1].forEach(function(dataAndEvents) {
-    gpuMem -= dataAndEvents;
+    chronometer.gpuMem -= dataAndEvents;
   })))), 0 === recurring) {
     /** @type {Array} */
     this.ivbo[0] = [];
@@ -5037,7 +5037,7 @@ Chunk.prototype.init2 = function(recurring) {
         /** @type {number} */
         this.ivbo[0][name] = data.length;
         this.vbo[0][name] = gl.createBuffer();
-        gpuMem += data.length;
+        chronometer.gpuMem += data.length;
         gl.bindBuffer(gl.ARRAY_BUFFER, this.vbo[0][name]);
         gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
         /** @type {null} */
@@ -5061,7 +5061,7 @@ Chunk.prototype.init2 = function(recurring) {
         /** @type {number} */
         this.ivbo[1][name] = data.length;
         this.vbo[1][name] = gl.createBuffer();
-        gpuMem += data.length;
+        chronometer.gpuMem += data.length;
         gl.bindBuffer(gl.ARRAY_BUFFER, this.vbo[1][name]);
         gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
         /** @type {null} */

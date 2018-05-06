@@ -4,7 +4,7 @@
  */
 function keyDown(e) {
   if (lastTarget === glCanvas) {
-    switch(camera.keyDown(e, fps), e.keyCode) {
+    switch(camera.keyDown(e, chronometer.fps), e.keyCode) {
       case 81:
         if (0 === camera.upY) {
           /** @type {number} */
@@ -136,7 +136,7 @@ function mouseDown(e) {
       }
       selectT = 0 === e.button ? 0 : selectTt;
     }
-    camera.mouseDown(fps);
+    camera.mouseDown(chronometer.fps);
   }
 }
 /**
@@ -145,7 +145,7 @@ function mouseDown(e) {
  */
 function mouseUp(evt) {
   if (lastTarget === glCanvas) {
-    camera.mouseUp(fps);
+    camera.mouseUp(chronometer.fps);
   }
 }
 /**
@@ -156,7 +156,7 @@ function mouseMove(e) {
   if (lastTarget === glCanvas) {
     var x = e.clientX;
     e = e.clientY;
-    camera.mouseMove(camera.starex - x, camera.starey - e, fps);
+    camera.mouseMove(camera.starex - x, camera.starey - e, chronometer.fps);
     camera.starex = x;
     camera.starey = e;
   }

@@ -192,12 +192,12 @@ World.prototype.render = function() {
             }
           }
           if (void 0 === self) {
-            if (1 < iLag) {
-              iLag -= 1;
+            if (1 < chronometer.iLag) {
+              chronometer.iLag -= 1;
               this.worldData.requestChunk(expectationResult, restoreScript);
             }
           } else {
-            self.timestamp = lastTime;
+            self.timestamp = chronometer.lastTime;
             if (dest[1] >= settings.waterlevel || 160 > transformMatrix) {
               self.render(dim, shader, 0);
             }
@@ -261,12 +261,12 @@ World.prototype.renderSelection = function() {
         if (-1 !== res) {
           if (-2 !== res) {
             if (void 0 === res) {
-              if (1 < iLag) {
-                iLag -= 1;
+              if (1 < chronometer.iLag) {
+                chronometer.iLag -= 1;
                 this.worldData.requestChunk(px, restoreScript);
               }
             } else {
-              res.timestamp = lastTime;
+              res.timestamp = chronometer.lastTime;
               res.render(requestedView, data, 0);
               res.render(requestedView, data, 1);
             }
