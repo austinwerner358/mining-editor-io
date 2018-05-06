@@ -82,6 +82,27 @@
         </table>
         Get URL<br/>
         <input type="text" id="settingsURL" class="settingsInput" />
+        <div id="localWorldPanel" style="font-family: monospace;" hidden>
+          <p></p>
+          X:
+          <input id="local_x" type="number" step="1" placeholder="0"><br>
+          Y:
+          <input id="local_y" type="number" step="1" placeholder="100"><br>
+          Z:
+          <input id="local_z" type="number" step="1" placeholder="0"><br>
+          <br>
+          <button onclick="document.getElementById('regionFileSelector').click(); return false;">Select World</button>
+          <form action="/help" style="display: inline;" target="_blank">
+            <input type="submit" value="help" />
+          </form>
+          <br>
+          <input type="file" id="regionFileSelector" style="visibility: hidden; display: none;" multiple onchange="handleRegionFiles()">
+          <!-- <input id="fileSelector" class="localWorldSelector" style="visibility: hidden; display: none;" type="file" webkitdirectory onchange="getFiles()"><br> -->
+          <br>
+          <button onclick="webGLStart()">Start</button>
+          <ul id="selectedFiles">
+          </ul>
+        </div>
     </div>
     <div id="info2">
         Read more about <a href="http://koniec.org/mca/about" target="_blank"> MCA</a><br/> Textures based on <a href="http://www.minecraftforum.net/topic/72747-faithful-32x32-pack-updateocelot-two-cats-new-saplings-ctm-17/" target="_blank"> Faithful 32x32 Pack.</a>

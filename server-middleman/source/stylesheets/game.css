@@ -89,6 +89,10 @@
     padding-bottom: 10px;
     border: 1px solid #C86E32;
 }
+#localWorldPanel {
+  overflow-y: auto;
+  height: 230px;
+}
 #tools {
     width: 600px;
     display: none;

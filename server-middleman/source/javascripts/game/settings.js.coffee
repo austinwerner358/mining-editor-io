@@ -2,7 +2,6 @@ Settings = ->
   # Init settings.
   @local = false
   @ready = false
-  @initSettings()
   return
 
 Settings::initSettings = ->
@@ -20,7 +19,10 @@ Settings::initSettings = ->
     @setLocalMode(true)
     @local = true
     @ready = false
-    document.getElementById('worldSelectOverlay').style.visibility = 'visible';
+    settingsPanel = document.getElementById("settings")
+    settingsPanel.style.display = "block"
+    settingsPanel = document.getElementById("localWorldPanel")
+    settingsPanel.style.display = "block"
     return
   else
     @ready = true

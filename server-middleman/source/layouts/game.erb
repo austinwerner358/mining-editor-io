@@ -16,6 +16,7 @@
     <%= javascript_include_tag "game/graphics/intersection_obf" %>
     <%= javascript_include_tag "game/graphics/gui_elements_obf" %>
     <%= javascript_include_tag "game/asset_loading/blocks_init_obf.js" %>
+    <%= javascript_include_tag "game/uploading/upload_data_utils.js" %>
     <%= javascript_include_tag "game/file_utils_obf" %>
     <%= javascript_include_tag "game/nbt_utils_obf" %>
     <%= javascript_include_tag "game/game_start_obf" %>
@@ -41,7 +42,7 @@
     <!-- Color Picker -->
     <%= javascript_include_tag "jscolor/jscolor" %>
   </head>
-  <body oncontextmenu="return false;" onload='webGLStart();' style="margin: 0px; border: none;">
+  <body oncontextmenu="return false;" onload='webGLStart();' style="margin: 0px; border: none; overflow: hidden" scroll="no">
     <%= yield %>
   </body>
 </html>
