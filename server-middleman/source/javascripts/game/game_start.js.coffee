@@ -1,7 +1,7 @@
 window.webGLStart = ->
   # #### Init Settings and WebGL ####
   window.settings.initSettings()
-  # # TODO: instead of cancelling all computions, load elements that don't need world file source
+  # TODO: instead of cancelling all computions, load elements that don't need world file source
   if !window.settings.ready
     return
   window.controls.initControls()

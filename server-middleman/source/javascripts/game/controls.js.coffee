@@ -21,9 +21,7 @@ window.controls = new Controls
 
 ###*
 # @param {HTMLElement} e
-# @return {undefined}
 ###
-
 Controls::keyDown = (e) ->
   if @lastTarget == window.glCanvas
     window.camera.keyDown e, chronometer.fps

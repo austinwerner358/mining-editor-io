@@ -13,6 +13,8 @@ chronometer.tick = ->
     if 0 < Math.floor(newTime / 100) - Math.floor(chronometer.lastTime / 100)
       h_u_d.gameStateHtml.innerHTML = 'x: ' + pos[0].toFixed(2) + '  y: ' + pos[1].toFixed(2) + '  z: ' + pos[2].toFixed(2)
       h_u_d.gameStateHtml.innerHTML += "<br/>File: r.#{pos[0] >> 9}.#{pos[2] >> 9}.mca"
+      h_u_d.gameStateHtml.innerHTML += "<br/>Chunk in region: #{(pos[0] >> 4) % 32}, #{(pos[2] >> 4) % 32}"
+      h_u_d.gameStateHtml.innerHTML += "<br/>Chunk: #{pos[0] >> 4}, #{pos[2] >> 4}"
       h_u_d.gameStateHtml.innerHTML += '<br/>FPS: ' + Math.floor(chronometer.fps)
       h_u_d.gameStateHtml.innerHTML += '<br/>Block: ' + useBlock.id + '-' + useBlock.data + '  : ' + (window.block[useBlock.id][useBlock.data].name or window.block[useBlock.id].name or window.block[useBlock.id][useBlock.data].defaultTexture or '')
       h_u_d.gameStateHtml.innerHTML += '<br/>Est. Gpu Mem: ' + Math.floor(8 * chronometer.gpuMem / 1048576) + ' M'
