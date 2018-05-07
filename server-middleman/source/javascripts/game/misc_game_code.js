@@ -107,12 +107,6 @@ chronometer.gpuMem = 0;
 var controls = {};
 /** @type {number} */
 var click = 0;
-/** @type {boolean} */
-var selectE = false;
-/** @type {number} */
-var selectT = 0;
-/** @type {number} */
-var selectTt = 1;
 /** @type {null} */
 var h_u_d = {};
 var useBlock = {};

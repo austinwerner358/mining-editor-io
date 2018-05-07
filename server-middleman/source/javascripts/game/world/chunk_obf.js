@@ -1756,7 +1756,7 @@ Chunk.prototype.init2 = function(recurring) {
   /** @type {number} */
   var o = 0;
   var t;
-  var tags = punkty1;
+  var tags = window.punkty1;
   /** @type {number} */
   tags[0].o = 0;
   /** @type {number} */
@@ -5095,7 +5095,7 @@ Chunk.prototype.getBuffer = function(buf) {
   /** @type {boolean} */
   var isString = false;
   /** @type {number} */
-  var blockX = p = punkty1[0].o = 0;
+  var blockX = p = window.punkty1[0].o = 0;
   /** @type {number} */
   var index = 0;
   /** @type {number} */
@@ -5507,7 +5507,7 @@ Chunk.prototype.getBuffer = function(buf) {
                   continue;
                 }
               }
-              if ((handler || (handlers || (elem || (events || (context || callback))))) && (iLine = punkty1[0], index = c.blocks[name], p = name % 2, 0 === p ? (blockX = c.data[name / 2] & 15 & block[c.blocks[name]].mask, i = c.add[name / 2] & 15) : (blockX = c.data[name / 2 - 0.5] >> 4 & 15 & block[c.blocks[name]].mask, i = c.add[name / 2 - 0.5] >> 4 & 15), o = void 0 === block[index][blockX] ? block[index][0] : block[index][blockX], void 0 !== o.shapeType)) {
+              if ((handler || (handlers || (elem || (events || (context || callback))))) && (iLine = window.punkty1[0], index = c.blocks[name], p = name % 2, 0 === p ? (blockX = c.data[name / 2] & 15 & block[c.blocks[name]].mask, i = c.add[name / 2] & 15) : (blockX = c.data[name / 2 - 0.5] >> 4 & 15 & block[c.blocks[name]].mask, i = c.add[name / 2 - 0.5] >> 4 & 15), o = void 0 === block[index][blockX] ? block[index][0] : block[index][blockX], void 0 !== o.shapeType)) {
                 if (1 === o.shapeType || 11 === o.shapeType) {
                   if (r = p = o.shape, name = 0, 1 === o.useBiomeColor && (name = this.getBiomeColor(old, r20, 0)), 0 < i && (r = block[200][i - 1].shape), handler) {
                     /** @type {number} */
@@ -6506,5 +6506,5 @@ Chunk.prototype.getBuffer = function(buf) {
       }
     }
   }
-  return 0 < punkty1[0].o ? new Float32Array(punkty1[0].d.buffer, 0, punkty1[0].o) : false;
+  return 0 < window.punkty1[0].o ? new Float32Array(window.punkty1[0].d.buffer, 0, window.punkty1[0].o) : false;
 };

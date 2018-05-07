@@ -40,11 +40,11 @@ chronometer.tick = ->
       chronometer.iLag = settings.loadLag
     if settings.edit and timeHasPassed
       window.blockSelection = mcWorld.renderSelection()
-    if window.selectE
+    if controls.selectE
       currentBlock = window.blockSelection
-      window.selectE = false
+      controls.selectE = false
       console.log 'y: ' + currentBlock.y + ' z: ' + currentBlock.z + ' x: ' + currentBlock.x + ' chx: ' + currentBlock.chx + ' chz: ' + currentBlock.chz + ' side: ' + currentBlock.side
-      switch (window.selectT)
+      switch (controls.selectT)
         when 0
           mcWorld.updateChunkBlock currentBlock.chx, currentBlock.chz, currentBlock.x, currentBlock.y, currentBlock.z, 0, 0
         when 1
