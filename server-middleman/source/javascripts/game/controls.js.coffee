@@ -26,11 +26,8 @@ Controls::keyDown = (e) ->
   if @lastTarget == window.glCanvas
     window.camera.keyDown e, chronometer.fps
     switch e.keyCode
-      when 81
+      when keyMap.changeMovement
         if 0 == window.camera.upY
-
-          ###* @type {number} ###
-
           window.camera.upY = 200
       when 90
         useNextBlock useBlock
@@ -39,44 +36,23 @@ Controls::keyDown = (e) ->
       when 67
         useNextBlockData useBlock
       when 49
-
-        ###* @type {number} ###
-
         @selectTt = 0
       when 50
-
-        ###* @type {number} ###
-
         @selectTt = 1
       when 51
-
-        ###* @type {number} ###
-
         @selectTt = 2
       when 52
-
-        ###* @type {number} ###
-
         @selectTt = 3
-      when 80
+      when keyMap.saveWorld
         mcWorld.save()
-      when 71
+      when keyMap.useCodeEditor
         if !settings.allowTools
           break
-
-        ###* @type {(HTMLElement|null)} ###
-
         e = document.getElementById('settings')
         if 'none' == e.style.display
-
-          ###* @type {string} ###
-
           e.style.display = 'block'
         else
           if 'block' == e.style.display
-
-            ###* @type {string} ###
-
             e.style.display = 'none'
         if undefined != window.ace
           if settings.edit
@@ -85,29 +61,14 @@ Controls::keyDown = (e) ->
               window.codeEditor.setTheme 'ace/theme/tomorrow_night'
               window.codeEditor.getSession().setMode 'ace/mode/javascript'
               window.codeEditor.setValue 'var pos = window.camera.getXYZPos();\nvar block = { id: 17, data: 0};\n\nfor(var i = -2; i < 3; i++)\n    for(var j = -2; j < 3; j++){\n    if(i > -2 && i < 2 && j > -2 && j < 2) continue;\n    useNextBlockData(block);\n    mcWorld.setBlock(pos.x+i,pos.y,pos.z+j,block.id,block.data);\n}\n\nmcWorld.updateChunks();'
-
-            ###* @type {(HTMLElement|null)} ###
-
             e = document.getElementById('tools')
             if 'none' == e.style.display
-
-              ###* @type {string} ###
-
               e.style.display = 'block'
             else
               if 'block' == e.style.display
-
-                ###* @type {string} ###
-
                 e.style.display = 'none'
         document.exitPointerLock()
-
-        ###* @type {number} ###
-
         window.camera.moveX = 0
-
-        ###* @type {number} ###
-
         window.camera.moveY = 0
       when 72
         if !settings.allowTools
@@ -131,9 +92,6 @@ Controls::keyDown = (e) ->
               1
               0
             ])
-
-        ###* @type {number} ###
-
         window.camera.sensitivity = 2 * settings.sensitivity
   return
 
@@ -159,9 +117,6 @@ Controls::mouseDown = (e) ->
     window.camera.starey = e.clientY
     if settings.edit
       if window.camera.autoMove
-
-        ###* @type {boolean} ###
-
         @selectE = true
       @selectT = if 0 == e.button then 0 else @selectTt
     window.camera.mouseDown chronometer.fps
@@ -231,12 +186,6 @@ Controls::pointerChange = (element) ->
   else
     element.onclick = canvasOn
     window.removeEventListener 'mousemove', @pointerMove, false
-
-    ###* @type {number} ###
-
     window.camera.moveX = 0
-
-    ###* @type {number} ###
-
     window.camera.moveY = 0
   return
