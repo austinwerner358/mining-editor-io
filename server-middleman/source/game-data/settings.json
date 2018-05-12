@@ -9,7 +9,7 @@
     "url": true
 },
 "distanceLevel": {
-    "value": "10-10-10",
+    "value": "5-5-5",
     "url": true
 },
 "mouseSensitivity": {
@@ -65,7 +65,7 @@
     "url": true
 },
 "skyColor": {
-    "value": "230-248-255",
+    "value": "73-92-255",
     "url": true
 },
 "sun": {

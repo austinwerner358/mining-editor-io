@@ -12,6 +12,8 @@ chronometer.resetTimeFlags = ->
 
 chronometer.tick = ->
   if !chronometer.stopGame
+    if chronometer.runawayFrames
+      requestAnimFrame(chronometer.tick)
     _newTime = (new Date).getTime()
     _performanceStart = performance.now()
     # Calculate the speed of the last frame
@@ -66,10 +68,11 @@ chronometer.tick = ->
     # Show the info for this frame
     chronometer.updateVisibleInfo(_lastTimeStart, _elapsedFramePerformance)
     # If this render was fast, slow things down
-    if (1e3 / chronometer.fpsCap > _elapsedFramePerformance)
-      sleep(1e3 / chronometer.fpsCap - _elapsedFramePerformance).then () -> requestAnimFrame(chronometer.tick)
-    else
-      requestAnimFrame(chronometer.tick)
+    if !chronometer.runawayFrames
+      if (1e3 / chronometer.fpsCap > _elapsedFramePerformance)
+        sleep(1e3 / chronometer.fpsCap - _elapsedFramePerformance).then () -> requestAnimFrame(chronometer.tick)
+      else
+        requestAnimFrame(chronometer.tick)
   return
 
 chronometer.interactionAndLoading = ->

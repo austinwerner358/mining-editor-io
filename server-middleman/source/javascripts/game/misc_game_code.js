@@ -108,8 +108,9 @@ chronometer.lastPerformanceEnd = 0;
 chronometer.last50msTime = 0;
 chronometer.fpsTime = 0;
 chronometer.fpsPerformance = 0;
-chronometer.fpsCap = 60;
+chronometer.fpsCap = 10;
 chronometer.gpuMem = 0;
+chronometer.runawayFrames = false;
 var controls = {};
 /** @type {number} */
 var click = 0;
