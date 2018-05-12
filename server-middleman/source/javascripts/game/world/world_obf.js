@@ -197,7 +197,7 @@ World.prototype.render = function() {
               this.worldData.requestChunk(expectationResult, restoreScript);
             }
           } else {
-            self.timestamp = chronometer.lastTime;
+            self.timestamp = chronometer.lastTimeStart;
             if (dest[1] >= settings.waterlevel || 160 > transformMatrix) {
               self.render(dim, shader, 0);
             }
@@ -266,7 +266,7 @@ World.prototype.renderSelection = function() {
                 this.worldData.requestChunk(px, restoreScript);
               }
             } else {
-              res.timestamp = chronometer.lastTime;
+              res.timestamp = chronometer.lastTimeStart;
               res.render(requestedView, data, 0);
               res.render(requestedView, data, 1);
             }

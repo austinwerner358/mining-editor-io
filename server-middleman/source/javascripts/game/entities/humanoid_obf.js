@@ -30,7 +30,7 @@ function Humanoid(dataAndEvents, details, up) {
   this.drawName = true;
   /** @type {string} */
   this.name = "";
-  this.lastTime = chronometer.lastTime;
+  this.lastTime = chronometer.lastTimeStart;
   this.texture = playerTexture;
   this.renderShape = ShapeLib.getObj("game-data/steve.obj");
 }

@@ -93,16 +93,22 @@ var playerTexture = {
 };
 var blockSelection;
 var camera;
-/** @type {boolean} */
-var _gameStop = true;
 var chronometer = {};
+chronometer.timeHasPassed = false;
+chronometer.hasBeen50ms = false;
+chronometer.stopGame = true;
 chronometer.sec = 0;
 chronometer.newSec = false;
 chronometer.iLag = 0;
 chronometer.firstTime = 0;
-chronometer.lastTime = 0;
+chronometer.lastTimeStart = 0;
+chronometer.lastTimeEnd = 0;
+chronometer.lastPerformanceStart = 0;
+chronometer.lastPerformanceEnd = 0;
 chronometer.last50msTime = 0;
-chronometer.fps = 0;
+chronometer.fpsTime = 0;
+chronometer.fpsPerformance = 0;
+chronometer.fpsCap = 60;
 chronometer.gpuMem = 0;
 var controls = {};
 /** @type {number} */

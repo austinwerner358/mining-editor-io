@@ -78,6 +78,6 @@ window.webGLStart = ->
   document.getElementById('setBrightness_val').innerHTML = settings.brightness
   document.getElementById('setSkyColor').color.fromRGB settings.skyColor[0], settings.skyColor[1], settings.skyColor[2]
   chronometer.firstTime = (new Date).getTime()
-  chronometer.lastTime = (new Date).getTime()
+  chronometer.lastTimeStart = (new Date).getTime()
   chronometer.tick()
   return

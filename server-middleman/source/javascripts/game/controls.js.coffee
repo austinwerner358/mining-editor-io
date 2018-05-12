@@ -24,7 +24,7 @@ window.controls = new Controls
 ###
 Controls::keyDown = (e) ->
   if @lastTarget == window.glCanvas
-    window.camera.keyDown e, chronometer.fps
+    window.camera.keyDown e, chronometer.fpsTime
     switch e.keyCode
       when keyMap.changeMovement
         if 0 == window.camera.upY
@@ -119,7 +119,7 @@ Controls::mouseDown = (e) ->
       if window.camera.autoMove
         @selectE = true
       @selectT = if 0 == e.button then 0 else @selectTt
-    window.camera.mouseDown chronometer.fps
+    window.camera.mouseDown chronometer.fpsTime
   return
 
 ###*
@@ -129,7 +129,7 @@ Controls::mouseDown = (e) ->
 
 Controls::mouseUp = (evt) ->
   if @lastTarget == window.glCanvas
-    window.camera.mouseUp chronometer.fps
+    window.camera.mouseUp chronometer.fpsTime
   return
 
 ###*
@@ -141,7 +141,7 @@ Controls::mouseMove = (e) ->
   if @lastTarget == window.glCanvas
     x = e.clientX
     e = e.clientY
-    window.camera.mouseMove window.camera.starex - x, window.camera.starey - e, chronometer.fps
+    window.camera.mouseMove window.camera.starex - x, window.camera.starey - e, chronometer.fpsTime
     window.camera.starex = x
     window.camera.starey = e
   return

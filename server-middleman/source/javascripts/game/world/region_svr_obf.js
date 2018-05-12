@@ -137,7 +137,7 @@ RegionSrv.prototype.connect = function(message, url) {
                   /** @type {string} */
                   document.getElementById("webgl").style["-moz-filter"] = "none";
                   /** @type {boolean} */
-                  _gameStop = false;
+                  chronometer.stopGame = false;
                   requestAnimFrame(tick);
               }
               break;
@@ -183,7 +183,7 @@ RegionSrv.prototype.connectionClosed = function(txt) {
   /** @type {string} */
   document.getElementById("webgl").style["-moz-filter"] = "blur(5px)";
   /** @type {boolean} */
-  _gameStop = true;
+  chronometer.stopGame = true;
   this.deleteBuffers(true);
   /** @type {Array} */
   this.rchunk = [];
@@ -219,7 +219,7 @@ RegionSrv.prototype.new50msec = function() {
     /** @type {number} */
     this.position[4] = Math.floor(100 * d[1]);
     /** @type {number} */
-    this.position[5] = Math.floor(chronometer.lastTime);
+    this.position[5] = Math.floor(chronometer.lastTimeStart);
     /** @type {number} */
     this.wsMsg.offset = 0;
     NBT.write11Tag(this.wsMsg, "Position", this.position, 6);
@@ -480,7 +480,7 @@ RegionSrv.prototype.save = function() {
  */
 RegionSrv.prototype.requestChunk = function(deepDataAndEvents, opt_obj2, dataAndEvents) {
   var unlock = 1E4 * deepDataAndEvents + opt_obj2;
-  return void 0 === dataAndEvents && (dataAndEvents = true), void 0 !== this.rchunk[unlock] || !dataAndEvents ? this.rchunk[unlock] : _gameStop ? void 0 : (this.wsMsg.offset = 0, NBT.write10Tag(this.wsMsg, "Chunk"), NBT.write3Tag(this.wsMsg, "xPos", deepDataAndEvents), NBT.write3Tag(this.wsMsg, "zPos", opt_obj2), NBT.write0Tag(this.wsMsg), this.ws.send(new Uint8Array(this.wsMsg.data.buffer, 0, this.wsMsg.offset)), this.rchunk[unlock] = -2, this.rchunk[unlock]);
+  return void 0 === dataAndEvents && (dataAndEvents = true), void 0 !== this.rchunk[unlock] || !dataAndEvents ? this.rchunk[unlock] : chronometer.stopGame ? void 0 : (this.wsMsg.offset = 0, NBT.write10Tag(this.wsMsg, "Chunk"), NBT.write3Tag(this.wsMsg, "xPos", deepDataAndEvents), NBT.write3Tag(this.wsMsg, "zPos", opt_obj2), NBT.write0Tag(this.wsMsg), this.ws.send(new Uint8Array(this.wsMsg.data.buffer, 0, this.wsMsg.offset)), this.rchunk[unlock] = -2, this.rchunk[unlock]);
 };
 /**
  * @param {number} string
