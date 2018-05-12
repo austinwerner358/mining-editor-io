@@ -5,7 +5,7 @@ Settings = ->
   return
 
 Settings::initSettings = ->
-  urlParams = {distanceLevel: '10-10-10', pos: '20+80+70', rot: '-5.5+0.0', skyColor: '230-248-255'}
+  urlParams = {}
   window.location.search.substr(1).split('&').forEach (param) ->
     keyValue = param.split('=')
     urlParams[keyValue[0]] = keyValue[1]
@@ -26,138 +26,188 @@ Settings::initSettings = ->
     return
   else
     @ready = true
-  d = JSON.parse(Readfile.readTxt('game-data/settings.json'))
-  console.log(d)
-  @gameRoot = d.gameroot.value
-  undefined != urlParams.gameroot and d.gameroot.url and (@gameRoot = urlParams.gameroot)
-  @worldName = d.worldname.value
-  undefined != urlParams.worldname and d.worldname.url and (@worldName = urlParams.worldname)
-  @server = undefined
-  undefined != d.server and (@server = d.server.value)
   undefined != urlParams.server and (@server = urlParams.server)
+  #### Set File Source Status ####
+  # @local = false unless Object.keys(window.localFiles).length > 0
+  document.getElementById('getUrlStatus').innerHTML = '' unless @local
+  #### Load JSON Settings ####
+  jsonSettings = JSON.parse(window.settings.readTxt('game-data/settings.json'))
+  console.log('Settings raw:')
+  console.log jsonSettings
+  #### Set Path To World ####
+  @gameRoot = jsonSettings.gameRoot.value
+  undefined != urlParams.gameRoot and jsonSettings.gameRoot.url and (@gameRoot = urlParams.gameRoot)
+  #### Set World Name ####
+  @worldName = ''
+  unless @local
+    @worldName = document.getElementById('worldName').value
+    if !@worldName
+      @worldName = jsonSettings.worldName.value
+    undefined != urlParams.worldName and jsonSettings.worldName.url and (@worldName = urlParams.worldName)
+  console.log('Selected World Name: ' + @worldName)
+  document.getElementById('world_name').innerHTML = @worldName unless @local
+  #### Set Distance Level ####
   @distanceLevel = [
     10
     10
     10
   ]
-  undefined != d.distanceLevel and @distanceLevel[0] = parseInt(d.distanceLevel.value.split('-')[0]) or @distanceLevel[0]
-  @distanceLevel[1] = parseInt(d.distanceLevel.value.split('-')[1]) or @distanceLevel[1]
-  @distanceLevel[2] = parseInt(d.distanceLevel.value.split('-')[2]) or @distanceLevel[2]
-
-  undefined != urlParams.distanceLevel and d.distanceLevel.url and @distanceLevel[0] = parseInt(urlParams.distanceLevel.split('-')[0]) or @distanceLevel[0]
-  @distanceLevel[1] = parseInt(urlParams.distanceLevel.split('-')[1]) or @distanceLevel[1]
-  @distanceLevel[2] = parseInt(urlParams.distanceLevel.split('-')[2]) or @distanceLevel[2]
-
-  10 > @distanceLevel[0] and (@distanceLevel[0] = 10)
+  if undefined != jsonSettings.distanceLevel
+    @distanceLevel[0] = parseInt(jsonSettings.distanceLevel.value.split('-')[0]) or @distanceLevel[0]
+    @distanceLevel[1] = parseInt(jsonSettings.distanceLevel.value.split('-')[1]) or @distanceLevel[1]
+    @distanceLevel[2] = parseInt(jsonSettings.distanceLevel.value.split('-')[2]) or @distanceLevel[2]
+  if undefined != urlParams.distanceLevel and jsonSettings.distanceLevel.url
+    @distanceLevel[0] = parseInt(urlParams.distanceLevel.split('-')[0]) or @distanceLevel[0]
+    @distanceLevel[1] = parseInt(urlParams.distanceLevel.split('-')[1]) or @distanceLevel[1]
+    @distanceLevel[2] = parseInt(urlParams.distanceLevel.split('-')[2]) or @distanceLevel[2]
+  # 10 > @distanceLevel[0] and (@distanceLevel[0] = 10)
   @distanceLevel[1] < @distanceLevel[0] and (@distanceLevel[1] = @distanceLevel[0])
   @distanceLevel[2] < @distanceLevel[0] and (@distanceLevel[2] = @distanceLevel[0])
   100 < @distanceLevel[0] and (@distanceLevel[0] = 100)
   100 < @distanceLevel[1] and (@distanceLevel[1] = 100)
   100 < @distanceLevel[2] and (@distanceLevel[2] = 100)
   @waterlevel = 49
-  undefined != d.waterlevel and (@waterlevel = parseInt(d.waterlevel.value))
-  undefined != urlParams.waterlevel and d.waterlevel.url and (@waterlevel = parseInt(urlParams.waterlevel))
+  undefined != jsonSettings.waterlevel and (@waterlevel = parseInt(jsonSettings.waterlevel.value))
+  undefined != urlParams.waterlevel and jsonSettings.waterlevel.url and (@waterlevel = parseInt(urlParams.waterlevel))
+  #### Set Sensitivity ####
   @sensitivity = 50
-  undefined != d.mouseSensitivity and (@sensitivity = parseInt(d.mouseSensitivity.value))
-  undefined != urlParams.mouseSensitivity and d.mouseSensitivity.url and (@sensitivity = parseInt(urlParams.mouseSensitivity))
+  undefined != jsonSettings.mouseSensitivity and (@sensitivity = parseInt(jsonSettings.mouseSensitivity.value))
+  undefined != urlParams.mouseSensitivity and jsonSettings.mouseSensitivity.url and (@sensitivity = parseInt(urlParams.mouseSensitivity))
   10 > @sensitivity and (@sensitivity = 10)
   100 < @sensitivity and (@sensitivity = 100)
+  #### Set Position ####
   @pos = [
     0
     100
     0
   ]
+  if document.contains(document.getElementById('local_x')) and @local
+    @pos[0] = parseInt(document.getElementById('local_x').value) if document.getElementById('local_x').value
+    @pos[1] = parseInt(document.getElementById('local_y').value) if document.getElementById('local_y').value
+    @pos[2] = parseInt(document.getElementById('local_z').value) if document.getElementById('local_z').value
+  else
+    dbPos = document.getElementById('dbPos').value
+    if !!dbPos
+      # NOTE: currently unused
+      @pos[0] = parseInt(dbPos.split('+')[0]) or @pos[0]
+      @pos[1] = parseInt(dbPos.split('+')[1]) or @pos[1]
+      @pos[2] = parseInt(dbPos.split('+')[2]) or @pos[2]
+    else if undefined != jsonSettings.pos && !!jsonSettings.pos[@worldName]
+      @pos[0] = parseFloat(jsonSettings.pos[@worldName].split('+')[0]) or @pos[0]
+      @pos[1] = parseFloat(jsonSettings.pos[@worldName].split('+')[1]) or @pos[1]
+      @pos[2] = parseFloat(jsonSettings.pos[@worldName].split('+')[2]) or @pos[2]
+  if undefined != urlParams.pos and jsonSettings.pos.url
+    @pos[0] = parseFloat(urlParams.pos.split('+')[0]) or @pos[0]
+    @pos[1] = parseFloat(urlParams.pos.split('+')[1]) or @pos[1]
+    @pos[2] = parseFloat(urlParams.pos.split('+')[2]) or @pos[2]
+  #### Set Rotation ####
   @rot = [
     0
     0
   ]
-  undefined != d.pos and @pos[0] = parseFloat(d.pos.value.split('+')[0]) or @pos[0]
-  @pos[1] = parseFloat(d.pos.value.split('+')[1]) or @pos[1]
-  @pos[2] = parseFloat(d.pos.value.split('+')[2]) or @pos[2]
-
-  undefined != urlParams.pos and d.pos.url and @pos[0] = parseFloat(urlParams.pos.split('+')[0]) or @pos[0]
-  @pos[1] = parseFloat(urlParams.pos.split('+')[1]) or @pos[1]
-  @pos[2] = parseFloat(urlParams.pos.split('+')[2]) or @pos[2]
-
-  undefined != d.rot and @rot[0] = parseFloat(d.rot.value.split('+')[0]) or @rot[0]
-  @rot[1] = parseFloat(d.rot.value.split('+')[1]) or @rot[1]
-
-  undefined != urlParams.rot and d.rot.url and @rot[0] = parseFloat(urlParams.rot.split('+')[0]) or @rot[0]
-  @rot[1] = parseFloat(urlParams.rot.split('+')[1]) or @rot[1]
-
+  if undefined != jsonSettings.rot && !!jsonSettings.rot[@worldName]
+    @rot[0] = parseFloat(jsonSettings.rot[@worldName].split('+')[0]) or @rot[0]
+    @rot[1] = parseFloat(jsonSettings.rot[@worldName].split('+')[1]) or @rot[1]
+  if undefined != urlParams.rot and jsonSettings.rot.url
+    @rot[0] = parseFloat(urlParams.rot.split('+')[0]) or @rot[0]
+    @rot[1] = parseFloat(urlParams.rot.split('+')[1]) or @rot[1]
+  #### Set Sky Color ####
+  # TODO: set sky color based on config file (eventually per world) instead of the static value (and update the static value when it is updated in the settings object)
   @skyColor = new Float32Array([
     1
     1
     1
     1
   ])
-  undefined != d.skyColor and @skyColor[0] = parseFloat(d.skyColor.value.split('-')[0]) / 255 or @skyColor[0]
-  @skyColor[1] = parseFloat(d.skyColor.value.split('-')[1]) / 255 or @skyColor[1]
-  @skyColor[2] = parseFloat(d.skyColor.value.split('-')[2]) / 255 or @skyColor[2]
-
-  undefined != urlParams.skyColor and d.skyColor.url and @skyColor[0] = parseFloat(urlParams.skyColor.split('-')[0]) / 255 or @skyColor[0]
-  @skyColor[1] = parseFloat(urlParams.skyColor.split('-')[1]) / 255 or @skyColor[1]
-  @skyColor[2] = parseFloat(urlParams.skyColor.split('-')[2]) / 255 or @skyColor[2]
-
+  if undefined != jsonSettings.skyColor
+    @skyColor[0] = parseFloat(jsonSettings.skyColor.value.split('-')[0]) / 255 or @skyColor[0]
+    @skyColor[1] = parseFloat(jsonSettings.skyColor.value.split('-')[1]) / 255 or @skyColor[1]
+    @skyColor[2] = parseFloat(jsonSettings.skyColor.value.split('-')[2]) / 255 or @skyColor[2]
+  if undefined != urlParams.skyColor and jsonSettings.skyColor.url
+    @skyColorByURL = true
+    @skyColor[0] = parseFloat(urlParams.skyColor.split('-')[0]) / 255 or @skyColor[0]
+    @skyColor[1] = parseFloat(urlParams.skyColor.split('-')[1]) / 255 or @skyColor[1]
+    @skyColor[2] = parseFloat(urlParams.skyColor.split('-')[2]) / 255 or @skyColor[2]
+  #### Set Sun Level ####
   @sun = 1
-  undefined != d.sun and (@sun = parseFloat(d.sun.value) + 0.01 or @sun)
-  undefined != urlParams.sun and d.sun.url and (@sun = parseFloat(urlParams.sun) + 0.01 or @sun)
+  undefined != jsonSettings.sun and (@sun = parseFloat(jsonSettings.sun.value) + 0.01 or @sun)
+  undefined != urlParams.sun and jsonSettings.sun.url and (@sun = parseFloat(urlParams.sun) + 0.01 or @sun)
   1 < @sun and (@sun = 1)
+  #### Set Brightness ####
   @brightness = 0.3
-  undefined != d.brightness and (@brightness = parseFloat(d.brightness.value) + 0.01 or @brightness)
-  undefined != urlParams.brightness and d.brightness.url and (@brightness = parseFloat(urlParams.brightness) + 0.01 or @brightness)
+  undefined != jsonSettings.brightness and (@brightness = parseFloat(jsonSettings.brightness.value) + 0.01 or @brightness)
+  undefined != urlParams.brightness and jsonSettings.brightness.url and (@brightness = parseFloat(urlParams.brightness) + 0.01 or @brightness)
+  #### Set Load Lag ####
   @loadLag = 3
-  undefined != d.loadLag and (@loadLag = parseFloat(d.loadLag.value) or @loadLag)
-  undefined != urlParams.loadLag and d.loadLag.url and (@loadLag = parseFloat(urlParams.loadLag) or @loadLag)
+  undefined != jsonSettings.loadLag and (@loadLag = parseFloat(jsonSettings.loadLag.value) or @loadLag)
+  undefined != urlParams.loadLag and jsonSettings.loadLag.url and (@loadLag = parseFloat(urlParams.loadLag) or @loadLag)
+  #### Set Load Speed ####
   @loadSpeed = 1
-  undefined != d.loadSpeed and (@loadSpeed = parseFloat(d.loadSpeed.value) or @loadSpeed)
-  undefined != urlParams.loadSpeed and d.loadSpeed.url and (@loadSpeed = parseFloat(urlParams.loadSpeed) or @loadSpeed)
+  undefined != jsonSettings.loadSpeed and (@loadSpeed = parseFloat(jsonSettings.loadSpeed.value) or @loadSpeed)
+  undefined != urlParams.loadSpeed and jsonSettings.loadSpeed.url and (@loadSpeed = parseFloat(urlParams.loadSpeed) or @loadSpeed)
+  #### Set World Shader ####
   @worldShader = 'standard'
-  undefined != d.worldShader and (@worldShader = d.worldShader.value or @worldShader)
-  undefined != urlParams.worldShader and d.worldShader.url and (@worldShader = urlParams.worldShader or @worldShader)
+  undefined != jsonSettings.worldShader and (@worldShader = jsonSettings.worldShader.value or @worldShader)
+  undefined != urlParams.worldShader and jsonSettings.worldShader.url and (@worldShader = urlParams.worldShader or @worldShader)
+  #### Set Editing State ####
   @edit = !0
-  undefined != d.edit and (@edit = d.edit.value)
-  undefined != d.edit and d.edit.url and 'true' == urlParams.edit and (@edit = !0)
+  undefined != jsonSettings.edit and (@edit = jsonSettings.edit.value)
+  undefined != jsonSettings.edit and jsonSettings.edit.url and 'true' == urlParams.edit and (@edit = !0)
   'false' == urlParams.edit and (@edit = !1)
-
+  #### Set Light Init State ####
   @lightInit = !1
-  undefined != d.lightInit and (@lightInit = d.lightInit.value)
-  undefined != d.lightInit and d.lightInit.url and 'true' == urlParams.lightInit and (@lightInit = !0)
+  undefined != jsonSettings.lightInit and (@lightInit = jsonSettings.lightInit.value)
+  undefined != jsonSettings.lightInit and jsonSettings.lightInit.url and 'true' == urlParams.lightInit and (@lightInit = !0)
   'false' == urlParams.lightInit and (@lightInit = !1)
-
+  #### Set Camera Type ####
+  @cameraType = jsonSettings.camera.value
+  undefined != urlParams.camera and jsonSettings.camera.url and (@cameraType = urlParams.camera)
+  #### Set Movement Configs ####
+  @jumpHeight = 200
+  @sinkHeight = 400
+  @cameraGhostNormalSpeed = 1
+  @cameraGhostFastSpeed = 5
+  #### Set Utility Configs ####
+  @pointerOn = true
+  @firstClick = true
+  #### Set Server Settings ####
+  @server = undefined
+  undefined != jsonSettings.server and (@server = jsonSettings.server.value)
   @allowTools = !0
-  @cameraType = d.camera.value
-  undefined != urlParams.camera and d.camera.url and (@cameraType = urlParams.camera)
-  return
 
-Settings::setDistanceLevel = (b) ->
+Settings::togglePointer = ->
+  document.getElementById('togglePointer').checked = @pointerOn = !@pointerOn
+
+Settings::toggleEditMode = ->
+  document.getElementById('togglePointer').checked = document.getElementById('toggleEditMode').checked = @pointerOn = @edit = !@edit
+
+Settings::setDistanceLevel = (value) ->
   @distanceLevel = [
-    b
-    b
-    b
+    value
+    value
+    value
   ]
   document.getElementById('setDstLvl_val').innerHTML = @distanceLevel[0]
   @getSettingsURL()
-  return
 
-Settings::setSkyColor = (b) ->
-  @skyColor[0] = b[0]
-  @skyColor[1] = b[1]
-  @skyColor[2] = b[2]
+Settings::setSkyColor = (rgb) ->
+  if @skyColorByURL
+    @skyColorByURL = false
+  else
+    @skyColor[0] = rgb[0]
+    @skyColor[1] = rgb[1]
+    @skyColor[2] = rgb[2]
   @getSettingsURL()
-  return
 
-Settings::setSun = (b) ->
-  @sun = b
+Settings::setSun = (value) ->
+  @sun = value
   document.getElementById('setSun_val').innerHTML = @sun
   @getSettingsURL()
-  return
 
-Settings::setBrightness = (b) ->
-  @brightness = b
+Settings::setBrightness = (value) ->
+  @brightness = value
   document.getElementById('setBrightness_val').innerHTML = @brightness
   @getSettingsURL()
-  return
 
 Settings::getSettingsURL = ->
   # Ignore the hash portion of the url.
@@ -197,8 +247,32 @@ Settings::getSettingsURL = ->
   !0 != hasParam.skyColor and (urlUpdated += '&skyColor=' + Math.floor(255 * @skyColor[0]) + '-' + Math.floor(255 * @skyColor[1]) + '-' + Math.floor(255 * @skyColor[2]))
   document.getElementById('settingsURL').value = urlUpdated + window.location.hash
 
-Settings::setHashURL = (b, d, c) ->
-  window.location.hash = 'pos=' + b[0].toFixed(2) + '+' + b[1].toFixed(2) + '+' + b[2].toFixed(2) + '&rot=' + d[0].toFixed(2) + '+' + d[1].toFixed(2) + '&camera=' + c
+Settings::setHashURL = (pos, rot, cameraType) ->
+  window.location.hash = 'pos=' + pos[0].toFixed(2) + '+' + pos[1].toFixed(2) + '+' + pos[2].toFixed(2) + '&rot=' + rot[0].toFixed(2) + '+' + rot[1].toFixed(2) + '&camera=' + cameraType
+
+Settings::updateCopyURL = ->
+  pos = window.camera.getPos()
+  rot = window.camera.getRot()
+  window.settings.setHashURL(pos, rot, window.camera.name)
+  window.settings.getSettingsURL()
+
+# NOTE: currently unused
+Settings::readRAW = (path) ->
+  xhr = new XMLHttpRequest
+  xhr.open 'GET', path, false
+  xhr.responseType = 'arraybuffer'
+  xhr.send()
+  if xhr.status == 200
+    return new Uint8Array(xhr.response)
+  return
+
+Settings::readTxt = (path) ->
+  xhr = new XMLHttpRequest
+  xhr.open 'GET', path, false
+  xhr.responseType = 'application/json'
+  xhr.send()
+  if xhr.status == 200
+    return xhr.response
   return
 
 Settings::setLocalMode = (enabled) ->

@@ -4,6 +4,7 @@
 .sass-cache
 build/
 source/worlds/**/*
+source/_worlds
 !source/worlds/.keep
 Gemfile.lock
 .ruby-version
