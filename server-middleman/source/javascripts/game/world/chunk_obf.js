@@ -1,7 +1,7 @@
 /**
  * @return {undefined}
  */
-function Chunk() {
+function ChunkMCA() {
   /** @type {Array} */
   this.section = [];
   /** @type {number} */
@@ -20,95 +20,95 @@ function Chunk() {
   this.mxaVal = 0;
 }
 /** @type {Array} */
-Chunk.stairsData = [];
+ChunkMCA.stairsData = [];
 /** @type {string} */
-Chunk.stairsData["20xx2"] = "0001";
+ChunkMCA.stairsData["20xx2"] = "0001";
 /** @type {string} */
-Chunk.stairsData["21x2x"] = "0010";
+ChunkMCA.stairsData["21x2x"] = "0010";
 /** @type {string} */
-Chunk.stairsData["11x2x"] = "0010";
+ChunkMCA.stairsData["11x2x"] = "0010";
 /** @type {string} */
-Chunk.stairsData["1x13x"] = "1000";
+ChunkMCA.stairsData["1x13x"] = "1000";
 /** @type {string} */
-Chunk.stairsData["3x0x3"] = "0100";
+ChunkMCA.stairsData["3x0x3"] = "0100";
 /** @type {string} */
-Chunk.stairsData["3x13x"] = "1000";
+ChunkMCA.stairsData["3x13x"] = "1000";
 /** @type {string} */
-Chunk.stairsData["00xx2"] = "0001";
+ChunkMCA.stairsData["00xx2"] = "0001";
 /** @type {string} */
-Chunk.stairsData["0x0x3"] = "0100";
+ChunkMCA.stairsData["0x0x3"] = "0100";
 /** @type {string} */
-Chunk.stairsData["31xx3"] = "1110";
+ChunkMCA.stairsData["31xx3"] = "1110";
 /** @type {string} */
-Chunk.stairsData["30x3x"] = "1101";
+ChunkMCA.stairsData["30x3x"] = "1101";
 /** @type {string} */
-Chunk.stairsData["00x3x"] = "1101";
+ChunkMCA.stairsData["00x3x"] = "1101";
 /** @type {string} */
-Chunk.stairsData["0x02x"] = "0111";
+ChunkMCA.stairsData["0x02x"] = "0111";
 /** @type {string} */
-Chunk.stairsData["2x1x2"] = "1011";
+ChunkMCA.stairsData["2x1x2"] = "1011";
 /** @type {string} */
-Chunk.stairsData["2x02x"] = "0111";
+ChunkMCA.stairsData["2x02x"] = "0111";
 /** @type {string} */
-Chunk.stairsData["11xx3"] = "1110";
+ChunkMCA.stairsData["11xx3"] = "1110";
 /** @type {string} */
-Chunk.stairsData["1x1x2"] = "1011";
+ChunkMCA.stairsData["1x1x2"] = "1011";
 /** @type {string} */
-Chunk.stairsData["64xx6"] = "0001";
+ChunkMCA.stairsData["64xx6"] = "0001";
 /** @type {string} */
-Chunk.stairsData["65x6x"] = "0010";
+ChunkMCA.stairsData["65x6x"] = "0010";
 /** @type {string} */
-Chunk.stairsData["55x6x"] = "0010";
+ChunkMCA.stairsData["55x6x"] = "0010";
 /** @type {string} */
-Chunk.stairsData["5x57x"] = "1000";
+ChunkMCA.stairsData["5x57x"] = "1000";
 /** @type {string} */
-Chunk.stairsData["7x4x7"] = "0100";
+ChunkMCA.stairsData["7x4x7"] = "0100";
 /** @type {string} */
-Chunk.stairsData["7x57x"] = "1000";
+ChunkMCA.stairsData["7x57x"] = "1000";
 /** @type {string} */
-Chunk.stairsData["44xx6"] = "0001";
+ChunkMCA.stairsData["44xx6"] = "0001";
 /** @type {string} */
-Chunk.stairsData["4x4x7"] = "0100";
+ChunkMCA.stairsData["4x4x7"] = "0100";
 /** @type {string} */
-Chunk.stairsData["75xx7"] = "1110";
+ChunkMCA.stairsData["75xx7"] = "1110";
 /** @type {string} */
-Chunk.stairsData["74x7x"] = "1101";
+ChunkMCA.stairsData["74x7x"] = "1101";
 /** @type {string} */
-Chunk.stairsData["44x7x"] = "1101";
+ChunkMCA.stairsData["44x7x"] = "1101";
 /** @type {string} */
-Chunk.stairsData["4x46x"] = "0111";
+ChunkMCA.stairsData["4x46x"] = "0111";
 /** @type {string} */
-Chunk.stairsData["6x5x6"] = "1011";
+ChunkMCA.stairsData["6x5x6"] = "1011";
 /** @type {string} */
-Chunk.stairsData["6x46x"] = "0111";
+ChunkMCA.stairsData["6x46x"] = "0111";
 /** @type {string} */
-Chunk.stairsData["55xx7"] = "1110";
+ChunkMCA.stairsData["55xx7"] = "1110";
 /** @type {string} */
-Chunk.stairsData["5x5x6"] = "1011";
+ChunkMCA.stairsData["5x5x6"] = "1011";
 /** @type {Float32Array} */
-Chunk.cacheSlight = new Float32Array(83592);
+ChunkMCA.cacheSlight = new Float32Array(83592);
 /** @type {Float32Array} */
-Chunk.cacheBlight = new Float32Array(83592);
+ChunkMCA.cacheBlight = new Float32Array(83592);
 /** @type {Float32Array} */
-Chunk.cacheData = new Float32Array(83592);
+ChunkMCA.cacheData = new Float32Array(83592);
 /** @type {Float32Array} */
-Chunk.cacheId = new Float32Array(83592);
+ChunkMCA.cacheId = new Float32Array(83592);
 /** @type {Float32Array} */
-Chunk.cacheBlock = new Float32Array(5832);
+ChunkMCA.cacheBlock = new Float32Array(5832);
 /** @type {Uint8Array} */
-Chunk.cacheHeightMap9 = new Uint8Array(2304);
+ChunkMCA.cacheHeightMap9 = new Uint8Array(2304);
 /** @type {Uint8Array} */
-Chunk.cacheHeightMap9hMax = new Uint8Array(2304);
+ChunkMCA.cacheHeightMap9hMax = new Uint8Array(2304);
 /** @type {Uint8Array} */
-Chunk.cacheSlight9 = new Uint8Array(594432);
+ChunkMCA.cacheSlight9 = new Uint8Array(594432);
 /** @type {Uint8Array} */
-Chunk.cacheBlight9 = new Uint8Array(594432);
+ChunkMCA.cacheBlight9 = new Uint8Array(594432);
 /** @type {Int32Array} */
-Chunk.cacheId9 = new Int32Array(594432);
+ChunkMCA.cacheId9 = new Int32Array(594432);
 /**
  * @return {undefined}
  */
-Chunk.prototype.initHeightMap = function() {
+ChunkMCA.prototype.initHeightMap = function() {
   /** @type {number} */
   var i = 0;
   /** @type {Uint32Array} */
@@ -149,7 +149,7 @@ Chunk.prototype.initHeightMap = function() {
  * @param {boolean} dataAndEvents
  * @return {?}
  */
-Chunk.prototype.refreshLight = function(opt_attributes, dataAndEvents) {
+ChunkMCA.prototype.refreshLight = function(opt_attributes, dataAndEvents) {
   /** @type {number} */
   var index = 0;
   /** @type {number} */
@@ -172,11 +172,11 @@ Chunk.prototype.refreshLight = function(opt_attributes, dataAndEvents) {
   b = block.lightSource;
   var keys = block.lightTransmission;
   /** @type {Uint8Array} */
-  var data = Chunk.cacheSlight9;
+  var data = ChunkMCA.cacheSlight9;
   /** @type {Uint8Array} */
-  var a = Chunk.cacheBlight9;
+  var a = ChunkMCA.cacheBlight9;
   /** @type {Int32Array} */
-  var array = Chunk.cacheId9;
+  var array = ChunkMCA.cacheId9;
   /** @type {number} */
   var tag = 256;
   /** @type {number} */
@@ -189,7 +189,7 @@ Chunk.prototype.refreshLight = function(opt_attributes, dataAndEvents) {
     /** @type {number} */
     var size = 0;
     for (;48 > size;size++) {
-      value = Chunk.cacheHeightMap9[48 * to + size];
+      value = ChunkMCA.cacheHeightMap9[48 * to + size];
       if (value > index) {
         index = value;
       }
@@ -208,7 +208,7 @@ Chunk.prototype.refreshLight = function(opt_attributes, dataAndEvents) {
             if (!(0 > size + offset)) {
               if (!(47 < to + name)) {
                 if (!(47 < size + offset)) {
-                  value = Chunk.cacheHeightMap9[48 * (to + name) + (size + offset)];
+                  value = ChunkMCA.cacheHeightMap9[48 * (to + name) + (size + offset)];
                   if (value > r) {
                     r = value;
                   }
@@ -218,7 +218,7 @@ Chunk.prototype.refreshLight = function(opt_attributes, dataAndEvents) {
           }
         }
       }
-      Chunk.cacheHeightMap9hMax[48 * to + size] = r + 1;
+      ChunkMCA.cacheHeightMap9hMax[48 * to + size] = r + 1;
     }
   }
   /** @type {number} */
@@ -227,8 +227,8 @@ Chunk.prototype.refreshLight = function(opt_attributes, dataAndEvents) {
     /** @type {number} */
     size = 2;
     for (;46 > size;size++) {
-      value = Chunk.cacheHeightMap9hMax[48 * to + size];
-      for (;value >= Chunk.cacheHeightMap9[48 * to + size];value--) {
+      value = ChunkMCA.cacheHeightMap9hMax[48 * to + size];
+      for (;value >= ChunkMCA.cacheHeightMap9[48 * to + size];value--) {
         /** @type {number} */
         offset = 2304 * value + 48 * to + size;
         /** @type {number} */
@@ -456,7 +456,7 @@ Chunk.prototype.refreshLight = function(opt_attributes, dataAndEvents) {
       size = 1;
       for (;47 > size;size++) {
         value = tag;
-        for (;value < Chunk.cacheHeightMap9hMax[48 * to + size];value++) {
+        for (;value < ChunkMCA.cacheHeightMap9hMax[48 * to + size];value++) {
           /** @type {number} */
           index = 2304 * value + 48 * to + size;
           /** @type {number} */
@@ -599,7 +599,7 @@ Chunk.prototype.refreshLight = function(opt_attributes, dataAndEvents) {
  * @param {number} i
  * @return {?}
  */
-Chunk.prototype.getBiomeColor1 = function(str, regex, i) {
+ChunkMCA.prototype.getBiomeColor1 = function(str, regex, i) {
   var t;
   var p;
   var tmp;
@@ -613,7 +613,7 @@ Chunk.prototype.getBiomeColor1 = function(str, regex, i) {
  * @param {number} i
  * @return {?}
  */
-Chunk.prototype.getBiomeColor2 = function(str, regex, i) {
+ChunkMCA.prototype.getBiomeColor2 = function(str, regex, i) {
   var t;
   var p;
   var tmp;
@@ -627,7 +627,7 @@ Chunk.prototype.getBiomeColor2 = function(str, regex, i) {
  * @param {number} i
  * @return {?}
  */
-Chunk.prototype.getBiomeColor3 = function(str, regex, i) {
+ChunkMCA.prototype.getBiomeColor3 = function(str, regex, i) {
   var t;
   var p;
   var tmp;
@@ -641,7 +641,7 @@ Chunk.prototype.getBiomeColor3 = function(str, regex, i) {
  * @param {number} i
  * @return {?}
  */
-Chunk.prototype.getBiomeColor4 = function(str, regex, i) {
+ChunkMCA.prototype.getBiomeColor4 = function(str, regex, i) {
   var t;
   var p;
   var tmp;
@@ -655,7 +655,7 @@ Chunk.prototype.getBiomeColor4 = function(str, regex, i) {
  * @param {number} lab
  * @return {?}
  */
-Chunk.prototype.getBiomeColor = function(str, regex, lab) {
+ChunkMCA.prototype.getBiomeColor = function(str, regex, lab) {
   var sectionLength;
   var unsigned;
   var ticks;
@@ -669,12 +669,12 @@ Chunk.prototype.getBiomeColor = function(str, regex, lab) {
  * @param {Array} match
  * @return {?}
  */
-Chunk.prototype.getNearestPosition = function(match) {
+ChunkMCA.prototype.getNearestPosition = function(match) {
   if (-1 === this.isInit || !this.getCache(0, 256)) {
     return false;
   }
   /** @type {Float32Array} */
-  var items = Chunk.cacheId;
+  var items = ChunkMCA.cacheId;
   /** @type {Array} */
   match = [Math.floor(match[0]), Math.floor(match[1]), Math.floor(match[2])];
   /** @type {number} */
@@ -729,7 +729,7 @@ Chunk.prototype.getNearestPosition = function(match) {
  * @param {Array} thing
  * @return {?}
  */
-Chunk.prototype.getBlock = function(name, t, thing) {
+ChunkMCA.prototype.getBlock = function(name, t, thing) {
   if (-1 === this.isInit) {
     return{
       id : 0,
@@ -750,7 +750,7 @@ Chunk.prototype.getBlock = function(name, t, thing) {
  * @param {Object} data
  * @return {?}
  */
-Chunk.prototype.getNBT = function(data) {
+ChunkMCA.prototype.getNBT = function(data) {
   data = {
     offset : 0
   };
@@ -778,7 +778,7 @@ Chunk.prototype.getNBT = function(data) {
  * @param {number} name
  * @return {undefined}
  */
-Chunk.prototype.newSection = function(name) {
+ChunkMCA.prototype.newSection = function(name) {
   this.section[name] = {};
   /** @type {number} */
   this.section[name].y = name;
@@ -805,7 +805,7 @@ Chunk.prototype.newSection = function(name) {
  * @param {number} dataAndEvents
  * @return {undefined}
  */
-Chunk.prototype.changeAdd = function(optionsString, m1, dataAndEvents) {
+ChunkMCA.prototype.changeAdd = function(optionsString, m1, dataAndEvents) {
   if (-1 !== this.isInit) {
     /** @type {number} */
     var klass = Math.floor(m1 / 16);
@@ -843,7 +843,7 @@ Chunk.prototype.changeAdd = function(optionsString, m1, dataAndEvents) {
  * @param {number} dataAndEvents
  * @return {undefined}
  */
-Chunk.prototype.updateBlock = function(_, k, deepDataAndEvents, i, dataAndEvents) {
+ChunkMCA.prototype.updateBlock = function(_, k, deepDataAndEvents, i, dataAndEvents) {
   if (-1 !== this.isInit) {
     /** @type {number} */
     var key = (new Date).getTime();
@@ -953,7 +953,7 @@ Chunk.prototype.updateBlock = function(_, k, deepDataAndEvents, i, dataAndEvents
 /**
  * @return {undefined}
  */
-Chunk.prototype.update = function() {
+ChunkMCA.prototype.update = function() {
   if (-1 !== this.isInit) {
     var a = this.refreshLight(-1);
     /** @type {number} */
@@ -997,7 +997,7 @@ Chunk.prototype.update = function() {
  * @param {number} value
  * @return {undefined}
  */
-Chunk.prototype.setBlock = function(x, y, type, pos, value) {
+ChunkMCA.prototype.setBlock = function(x, y, type, pos, value) {
   if (-1 !== this.isInit) {
     /** @type {boolean} */
     this.changed = true;
@@ -1055,7 +1055,7 @@ Chunk.prototype.setBlock = function(x, y, type, pos, value) {
  * @param {number} deepDataAndEvents
  * @return {?}
  */
-Chunk.prototype.getSunLightValue = function(replacement, y, deepDataAndEvents) {
+ChunkMCA.prototype.getSunLightValue = function(replacement, y, deepDataAndEvents) {
   /** @type {number} */
   var match = Math.floor(y / 16);
   return y -= 16 * match, void 0 === this.section[match] && this.newSection(match), replacement = 256 * y + 16 * deepDataAndEvents + replacement, 16 > match ? 0 === replacement % 2 ? this.section[match].skyLight[replacement / 2] & 15 : this.section[match].skyLight[replacement / 2 - 0.5] >> 4 & 15 : 16;
@@ -1066,7 +1066,7 @@ Chunk.prototype.getSunLightValue = function(replacement, y, deepDataAndEvents) {
  * @param {number} renderer
  * @return {undefined}
  */
-Chunk.prototype.render = function(name, program, renderer) {
+ChunkMCA.prototype.render = function(name, program, renderer) {
   if (0 !== renderer || -1 !== this.isInit) {
     if (1 !== renderer || -1 !== this.isInit1) {
       if (0 === renderer && 0 === this.isInit) {
@@ -1099,7 +1099,7 @@ Chunk.prototype.render = function(name, program, renderer) {
 /**
  * @return {undefined}
  */
-Chunk.prototype.deleteBuffers = function() {
+ChunkMCA.prototype.deleteBuffers = function() {
   /** @type {number} */
   this.isInit1 = this.isInit = 0;
   if (void 0 !== this.vbo) {
@@ -1126,7 +1126,7 @@ Chunk.prototype.deleteBuffers = function() {
  * @param {number} opt_attributes
  * @return {?}
  */
-Chunk.prototype.getCache = function(key, opt_attributes) {
+ChunkMCA.prototype.getCache = function(key, opt_attributes) {
   /** @type {number} */
   var srcIndex = 0;
   /** @type {number} */
@@ -1138,13 +1138,13 @@ Chunk.prototype.getCache = function(key, opt_attributes) {
   /** @type {Int32Array} */
   this.cacheHeightMap = new Int32Array(324);
   /** @type {Float32Array} */
-  var values = Chunk.cacheSlight;
+  var values = ChunkMCA.cacheSlight;
   /** @type {Float32Array} */
-  var o = Chunk.cacheBlight;
+  var o = ChunkMCA.cacheBlight;
   /** @type {Float32Array} */
-  var patterns = Chunk.cacheData;
+  var patterns = ChunkMCA.cacheData;
   /** @type {Float32Array} */
-  var vec = Chunk.cacheId;
+  var vec = ChunkMCA.cacheId;
   /** @type {boolean} */
   var waiting = i = false;
   /** @type {boolean} */
@@ -1563,17 +1563,17 @@ Chunk.prototype.getCache = function(key, opt_attributes) {
 /**
  * @return {?}
  */
-Chunk.prototype.getCacheL9 = function() {
+ChunkMCA.prototype.getCacheL9 = function() {
   /** @type {number} */
   var index = 0;
   /** @type {number} */
   var key = 0;
   /** @type {Uint8Array} */
-  var data = Chunk.cacheSlight9;
+  var data = ChunkMCA.cacheSlight9;
   /** @type {Uint8Array} */
-  var cache = Chunk.cacheBlight9;
+  var cache = ChunkMCA.cacheBlight9;
   /** @type {Int32Array} */
-  var result = Chunk.cacheId9;
+  var result = ChunkMCA.cacheId9;
   /** @type {Array} */
   var opt_nodes = [];
   /** @type {number} */
@@ -1633,7 +1633,7 @@ Chunk.prototype.getCacheL9 = function() {
           /** @type {number} */
           x = 0;
           for (;16 > x;x++) {
-            Chunk.cacheHeightMap9[48 * (16 * col + f) + 16 * cols + x] = node.heightMap[16 * f + x];
+            ChunkMCA.cacheHeightMap9[48 * (16 * col + f) + 16 * cols + x] = node.heightMap[16 * f + x];
           }
         }
         /** @type {number} */
@@ -1710,7 +1710,7 @@ Chunk.prototype.getCacheL9 = function() {
  * @param {number} recurring
  * @return {?}
  */
-Chunk.prototype.init2 = function(recurring) {
+ChunkMCA.prototype.init2 = function(recurring) {
   if (0 === recurring) {
     var m1 = settings.waterlevel;
     /** @type {number} */
@@ -1738,13 +1738,13 @@ Chunk.prototype.init2 = function(recurring) {
     this.isInit1 = -1;
   }
   /** @type {Float32Array} */
-  var buffer = Chunk.cacheSlight;
+  var buffer = ChunkMCA.cacheSlight;
   /** @type {Float32Array} */
-  var map = Chunk.cacheBlight;
+  var map = ChunkMCA.cacheBlight;
   /** @type {Float32Array} */
-  var a = Chunk.cacheData;
+  var a = ChunkMCA.cacheData;
   /** @type {Float32Array} */
-  var keys = Chunk.cacheId;
+  var keys = ChunkMCA.cacheId;
   /** @type {number} */
   var target = 0;
   /** @type {number} */
@@ -3510,7 +3510,7 @@ Chunk.prototype.init2 = function(recurring) {
                         sum = type === array ? sum + a[k] : sum + "x";
                         /** @type {number} */
                         var Fb = 0;
-                        var body = Chunk.stairsData[sum];
+                        var body = ChunkMCA.stairsData[sum];
                         if (void 0 !== body && (p = 3 < a[j] ? block[key][9].shape : block[key][8].shape, Fb = 1), to) {
                           t = 8 < item && 0 === target ? tags[target + 1] : tags[target];
                           /** @type {number} */
@@ -5077,7 +5077,7 @@ Chunk.prototype.init2 = function(recurring) {
  * @param {Array} buf
  * @return {?}
  */
-Chunk.prototype.getBuffer = function(buf) {
+ChunkMCA.prototype.getBuffer = function(buf) {
   /** @type {number} */
   var r20 = 0;
   /** @type {number} */
@@ -5235,11 +5235,11 @@ Chunk.prototype.getBuffer = function(buf) {
             name = 256 * fn + 16 * r20 + old;
             /** @type {number} */
             type = 324 * (fn + 1) + 18 * (r20 + 1) + (old + 1);
-            Chunk.cacheBlock[type] = block[c.blocks[name]].type;
+            ChunkMCA.cacheBlock[type] = block[c.blocks[name]].type;
             /** @type {number} */
             p = name % 2;
             /** @type {number} */
-            Chunk.cacheData[type] = 0 === p ? c.data[name / 2] & 15 & block[c.blocks[name]].mask : c.data[name / 2 - 0.5] >> 4 & 15 & block[c.blocks[name]].mask;
+            ChunkMCA.cacheData[type] = 0 === p ? c.data[name / 2] & 15 & block[c.blocks[name]].mask : c.data[name / 2 - 0.5] >> 4 & 15 & block[c.blocks[name]].mask;
           }
           this.cacheBiomes[18 * (fn + 1) + r20 + 1] = this.biomes[16 * fn + r20];
         }
@@ -5254,7 +5254,7 @@ Chunk.prototype.getBuffer = function(buf) {
             /** @type {number} */
             type = 0 + 18 * (r20 + 1) + (old + 1);
             /** @type {number} */
-            Chunk.cacheBlock[type] = 0 === k ? 1 : 0;
+            ChunkMCA.cacheBlock[type] = 0 === k ? 1 : 0;
           }
         }
       } else {
@@ -5268,7 +5268,7 @@ Chunk.prototype.getBuffer = function(buf) {
             name = 3840 + 16 * r20 + old;
             /** @type {number} */
             type = 0 + 18 * (r20 + 1) + (old + 1);
-            Chunk.cacheBlock[type] = block[context.blocks[name]].type;
+            ChunkMCA.cacheBlock[type] = block[context.blocks[name]].type;
           }
         }
       }
@@ -5282,7 +5282,7 @@ Chunk.prototype.getBuffer = function(buf) {
             /** @type {number} */
             type = 5508 + 18 * (r20 + 1) + (old + 1);
             /** @type {number} */
-            Chunk.cacheBlock[type] = 15 === k ? 1 : 0;
+            ChunkMCA.cacheBlock[type] = 15 === k ? 1 : 0;
           }
         }
       } else {
@@ -5296,7 +5296,7 @@ Chunk.prototype.getBuffer = function(buf) {
             name = 0 + 16 * r20 + old;
             /** @type {number} */
             type = 5508 + 18 * (r20 + 1) + (old + 1);
-            Chunk.cacheBlock[type] = block[handler.blocks[name]].type;
+            ChunkMCA.cacheBlock[type] = block[handler.blocks[name]].type;
           }
         }
       }
@@ -5310,7 +5310,7 @@ Chunk.prototype.getBuffer = function(buf) {
             /** @type {number} */
             type = 324 * (fn + 1) + 306 + (old + 1);
             /** @type {number} */
-            Chunk.cacheBlock[type] = Extension ? 1 : 0;
+            ChunkMCA.cacheBlock[type] = Extension ? 1 : 0;
           }
         }
       } else {
@@ -5324,7 +5324,7 @@ Chunk.prototype.getBuffer = function(buf) {
             name = 256 * fn + 0 + old;
             /** @type {number} */
             type = 324 * (fn + 1) + 306 + (old + 1);
-            Chunk.cacheBlock[type] = block[node.blocks[name]].type;
+            ChunkMCA.cacheBlock[type] = block[node.blocks[name]].type;
           }
         }
       }
@@ -5338,7 +5338,7 @@ Chunk.prototype.getBuffer = function(buf) {
             /** @type {number} */
             type = 324 * (fn + 1) + 0 + (old + 1);
             /** @type {number} */
-            Chunk.cacheBlock[type] = listener ? 1 : 0;
+            ChunkMCA.cacheBlock[type] = listener ? 1 : 0;
           }
         }
       } else {
@@ -5352,7 +5352,7 @@ Chunk.prototype.getBuffer = function(buf) {
             name = 256 * fn + 240 + old;
             /** @type {number} */
             type = 324 * (fn + 1) + 0 + (old + 1);
-            Chunk.cacheBlock[type] = block[child.blocks[name]].type;
+            ChunkMCA.cacheBlock[type] = block[child.blocks[name]].type;
           }
         }
       }
@@ -5366,7 +5366,7 @@ Chunk.prototype.getBuffer = function(buf) {
             /** @type {number} */
             type = 324 * (fn + 1) + 18 * (r20 + 1) + 0;
             /** @type {number} */
-            Chunk.cacheBlock[type] = next ? 1 : 0;
+            ChunkMCA.cacheBlock[type] = next ? 1 : 0;
           }
         }
       } else {
@@ -5380,7 +5380,7 @@ Chunk.prototype.getBuffer = function(buf) {
             name = 256 * fn + 16 * r20 + 15;
             /** @type {number} */
             type = 324 * (fn + 1) + 18 * (r20 + 1) + 0;
-            Chunk.cacheBlock[type] = block[parent.blocks[name]].type;
+            ChunkMCA.cacheBlock[type] = block[parent.blocks[name]].type;
           }
         }
       }
@@ -5394,7 +5394,7 @@ Chunk.prototype.getBuffer = function(buf) {
             /** @type {number} */
             type = 324 * (fn + 1) + 18 * (r20 + 1) + 17;
             /** @type {number} */
-            Chunk.cacheBlock[type] = isString ? 1 : 0;
+            ChunkMCA.cacheBlock[type] = isString ? 1 : 0;
           }
         }
       } else {
@@ -5408,7 +5408,7 @@ Chunk.prototype.getBuffer = function(buf) {
             name = 256 * fn + 16 * r20 + 0;
             /** @type {number} */
             type = 324 * (fn + 1) + 18 * (r20 + 1) + 17;
-            Chunk.cacheBlock[type] = block[content.blocks[name]].type;
+            ChunkMCA.cacheBlock[type] = block[content.blocks[name]].type;
           }
         }
       }
@@ -5439,66 +5439,66 @@ Chunk.prototype.getBuffer = function(buf) {
           /** @type {number} */
           old = expr;
           for (;old < T;old++) {
-            if (elem = events = handlers = handler = callback = context = false, r = 324 * (fn + 1) + 18 * (r20 + 1) + (old + 1), p = Chunk.cacheBlock[r], 0 !== p) {
+            if (elem = events = handlers = handler = callback = context = false, r = 324 * (fn + 1) + 18 * (r20 + 1) + (old + 1), p = ChunkMCA.cacheBlock[r], 0 !== p) {
               if (m = r + 18, t = r - 18, e = r - 1, n = r + 1, on = r + 324, iLine = r - 324, name = 256 * fn + 16 * r20 + old, params = this.xPos % 5, 0 > params && (params += 5), index = this.zPos % 5, 0 > index && (index += 5), params = 65536 * (type + fn) + 256 * (16 * r20 + old) + 10 * (5 * params + index), 1 === p || (2 === p || (4 === p || 6 === p))) {
-                if (1 !== Chunk.cacheBlock[on]) {
+                if (1 !== ChunkMCA.cacheBlock[on]) {
                   /** @type {boolean} */
                   callback = true;
                 }
-                if (1 !== Chunk.cacheBlock[iLine]) {
+                if (1 !== ChunkMCA.cacheBlock[iLine]) {
                   /** @type {boolean} */
                   context = true;
                 }
-                if (1 !== Chunk.cacheBlock[t]) {
+                if (1 !== ChunkMCA.cacheBlock[t]) {
                   /** @type {boolean} */
                   elem = true;
                 }
-                if (1 !== Chunk.cacheBlock[m]) {
+                if (1 !== ChunkMCA.cacheBlock[m]) {
                   /** @type {boolean} */
                   events = true;
                 }
-                if (1 !== Chunk.cacheBlock[e]) {
+                if (1 !== ChunkMCA.cacheBlock[e]) {
                   /** @type {boolean} */
                   handler = true;
                 }
-                if (1 !== Chunk.cacheBlock[n]) {
+                if (1 !== ChunkMCA.cacheBlock[n]) {
                   /** @type {boolean} */
                   handlers = true;
                 }
               } else {
                 if (3 < p) {
-                  if (1 !== Chunk.cacheBlock[on]) {
-                    if (Chunk.cacheBlock[on] !== p) {
+                  if (1 !== ChunkMCA.cacheBlock[on]) {
+                    if (ChunkMCA.cacheBlock[on] !== p) {
                       /** @type {boolean} */
                       callback = true;
                     }
                   }
-                  if (1 !== Chunk.cacheBlock[iLine]) {
-                    if (Chunk.cacheBlock[iLine] !== p) {
+                  if (1 !== ChunkMCA.cacheBlock[iLine]) {
+                    if (ChunkMCA.cacheBlock[iLine] !== p) {
                       /** @type {boolean} */
                       context = true;
                     }
                   }
-                  if (1 !== Chunk.cacheBlock[t]) {
-                    if (Chunk.cacheBlock[t] !== p) {
+                  if (1 !== ChunkMCA.cacheBlock[t]) {
+                    if (ChunkMCA.cacheBlock[t] !== p) {
                       /** @type {boolean} */
                       elem = true;
                     }
                   }
-                  if (1 !== Chunk.cacheBlock[m]) {
-                    if (Chunk.cacheBlock[m] !== p) {
+                  if (1 !== ChunkMCA.cacheBlock[m]) {
+                    if (ChunkMCA.cacheBlock[m] !== p) {
                       /** @type {boolean} */
                       events = true;
                     }
                   }
-                  if (1 !== Chunk.cacheBlock[e]) {
-                    if (Chunk.cacheBlock[e] !== p) {
+                  if (1 !== ChunkMCA.cacheBlock[e]) {
+                    if (ChunkMCA.cacheBlock[e] !== p) {
                       /** @type {boolean} */
                       handler = true;
                     }
                   }
-                  if (1 !== Chunk.cacheBlock[n]) {
-                    if (Chunk.cacheBlock[n] !== p) {
+                  if (1 !== ChunkMCA.cacheBlock[n]) {
+                    if (ChunkMCA.cacheBlock[n] !== p) {
                       /** @type {boolean} */
                       handlers = true;
                     }
@@ -5799,8 +5799,8 @@ Chunk.prototype.getBuffer = function(buf) {
                       }
                     } else {
                       if (8 === o.shapeType) {
-                        if (p = o.shape, name = 0, 1 === o.useBiomeColor && (name = this.getBiomeColor(old, r20, 0)), on = "", on += Chunk.cacheData[r], on = Chunk.cacheBlock[r] === Chunk.cacheBlock[m] ? on + Chunk.cacheData[m] : on + "x", on = Chunk.cacheBlock[r] === Chunk.cacheBlock[t] ? on + Chunk.cacheData[t] : on + "x", on = Chunk.cacheBlock[r] === Chunk.cacheBlock[e] ? on + Chunk.cacheData[e] : on + "x", on = Chunk.cacheBlock[r] === Chunk.cacheBlock[n] ? on + Chunk.cacheData[n] : on + "x",
-                        t = 0, m = Chunk.stairsData[on], void 0 !== m && (p = 3 < Chunk.cacheData[r] ? block[index][9].shape : block[index][8].shape, t = 1), handler) {
+                        if (p = o.shape, name = 0, 1 === o.useBiomeColor && (name = this.getBiomeColor(old, r20, 0)), on = "", on += ChunkMCA.cacheData[r], on = ChunkMCA.cacheBlock[r] === ChunkMCA.cacheBlock[m] ? on + ChunkMCA.cacheData[m] : on + "x", on = ChunkMCA.cacheBlock[r] === ChunkMCA.cacheBlock[t] ? on + ChunkMCA.cacheData[t] : on + "x", on = ChunkMCA.cacheBlock[r] === ChunkMCA.cacheBlock[e] ? on + ChunkMCA.cacheData[e] : on + "x", on = ChunkMCA.cacheBlock[r] === ChunkMCA.cacheBlock[n] ? on + ChunkMCA.cacheData[n] : on + "x",
+                        t = 0, m = ChunkMCA.stairsData[on], void 0 !== m && (p = 3 < ChunkMCA.cacheData[r] ? block[index][9].shape : block[index][8].shape, t = 1), handler) {
                           /** @type {number} */
                           i = 0;
                           for (;i < p.front.length;i += 5) {
@@ -5912,7 +5912,7 @@ Chunk.prototype.getBuffer = function(buf) {
                           p = block[index][10].shape;
                           /** @type {number} */
                           e = t = 0;
-                          if (3 < Chunk.cacheData[r]) {
+                          if (3 < ChunkMCA.cacheData[r]) {
                             /** @type {number} */
                             e = -0.5;
                           }
@@ -6044,11 +6044,11 @@ Chunk.prototype.getBuffer = function(buf) {
                             i = 0;
                             for (;i < p.front.length;i += 5) {
                               if (0 === i % 30) {
-                                if ((60 === i || 120 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[m] && 1 !== Chunk.cacheBlock[m])) {
+                                if ((60 === i || 120 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[m] && 1 !== ChunkMCA.cacheBlock[m])) {
                                   i += 25;
                                   continue;
                                 }
-                                if ((30 === i || 90 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[t] && 1 !== Chunk.cacheBlock[t])) {
+                                if ((30 === i || 90 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[t] && 1 !== ChunkMCA.cacheBlock[t])) {
                                   i += 25;
                                   continue;
                                 }
@@ -6070,11 +6070,11 @@ Chunk.prototype.getBuffer = function(buf) {
                             i = 0;
                             for (;i < p.back.length;i += 5) {
                               if (0 === i % 30) {
-                                if ((60 === i || 120 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[m] && 1 !== Chunk.cacheBlock[m])) {
+                                if ((60 === i || 120 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[m] && 1 !== ChunkMCA.cacheBlock[m])) {
                                   i += 25;
                                   continue;
                                 }
-                                if ((30 === i || 90 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[t] && 1 !== Chunk.cacheBlock[t])) {
+                                if ((30 === i || 90 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[t] && 1 !== ChunkMCA.cacheBlock[t])) {
                                   i += 25;
                                   continue;
                                 }
@@ -6096,11 +6096,11 @@ Chunk.prototype.getBuffer = function(buf) {
                             i = 0;
                             for (;i < p.right.length;i += 5) {
                               if (0 === i % 30) {
-                                if ((30 === i || 90 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[e] && 1 !== Chunk.cacheBlock[e])) {
+                                if ((30 === i || 90 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[e] && 1 !== ChunkMCA.cacheBlock[e])) {
                                   i += 25;
                                   continue;
                                 }
-                                if ((60 === i || 120 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[n] && 1 !== Chunk.cacheBlock[n])) {
+                                if ((60 === i || 120 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[n] && 1 !== ChunkMCA.cacheBlock[n])) {
                                   i += 25;
                                   continue;
                                 }
@@ -6122,11 +6122,11 @@ Chunk.prototype.getBuffer = function(buf) {
                             i = 0;
                             for (;i < p.left.length;i += 5) {
                               if (0 === i % 30) {
-                                if ((30 === i || 90 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[e] && 1 !== Chunk.cacheBlock[e])) {
+                                if ((30 === i || 90 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[e] && 1 !== ChunkMCA.cacheBlock[e])) {
                                   i += 25;
                                   continue;
                                 }
-                                if ((60 === i || 120 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[n] && 1 !== Chunk.cacheBlock[n])) {
+                                if ((60 === i || 120 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[n] && 1 !== ChunkMCA.cacheBlock[n])) {
                                   i += 25;
                                   continue;
                                 }
@@ -6148,19 +6148,19 @@ Chunk.prototype.getBuffer = function(buf) {
                             i = 0;
                             for (;i < p.bottom.length;i += 5) {
                               if (0 === i % 30) {
-                                if ((30 === i || 150 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[t] && 1 !== Chunk.cacheBlock[t])) {
+                                if ((30 === i || 150 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[t] && 1 !== ChunkMCA.cacheBlock[t])) {
                                   i += 25;
                                   continue;
                                 }
-                                if ((60 === i || 180 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[m] && 1 !== Chunk.cacheBlock[m])) {
+                                if ((60 === i || 180 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[m] && 1 !== ChunkMCA.cacheBlock[m])) {
                                   i += 25;
                                   continue;
                                 }
-                                if ((90 === i || 210 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[e] && 1 !== Chunk.cacheBlock[e])) {
+                                if ((90 === i || 210 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[e] && 1 !== ChunkMCA.cacheBlock[e])) {
                                   i += 25;
                                   continue;
                                 }
-                                if ((120 === i || 240 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[n] && 1 !== Chunk.cacheBlock[n])) {
+                                if ((120 === i || 240 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[n] && 1 !== ChunkMCA.cacheBlock[n])) {
                                   i += 25;
                                   continue;
                                 }
@@ -6182,19 +6182,19 @@ Chunk.prototype.getBuffer = function(buf) {
                             i = 0;
                             for (;i < p.top.length;i += 5) {
                               if (0 === i % 30) {
-                                if ((30 === i || 150 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[t] && 1 !== Chunk.cacheBlock[t])) {
+                                if ((30 === i || 150 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[t] && 1 !== ChunkMCA.cacheBlock[t])) {
                                   i += 25;
                                   continue;
                                 }
-                                if ((60 === i || 180 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[m] && 1 !== Chunk.cacheBlock[m])) {
+                                if ((60 === i || 180 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[m] && 1 !== ChunkMCA.cacheBlock[m])) {
                                   i += 25;
                                   continue;
                                 }
-                                if ((90 === i || 210 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[e] && 1 !== Chunk.cacheBlock[e])) {
+                                if ((90 === i || 210 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[e] && 1 !== ChunkMCA.cacheBlock[e])) {
                                   i += 25;
                                   continue;
                                 }
-                                if ((120 === i || 240 === i) && (Chunk.cacheBlock[r] !== Chunk.cacheBlock[n] && 1 !== Chunk.cacheBlock[n])) {
+                                if ((120 === i || 240 === i) && (ChunkMCA.cacheBlock[r] !== ChunkMCA.cacheBlock[n] && 1 !== ChunkMCA.cacheBlock[n])) {
                                   i += 25;
                                   continue;
                                 }
@@ -6401,7 +6401,7 @@ Chunk.prototype.getBuffer = function(buf) {
                               }
                             } else {
                               if (10 === o.shapeType && (p = o.shape, name = 0, 1 === o.useBiomeColor && (name = this.getBiomeColor(old, r20, 0)), handler || (handlers || (elem || (events || (context || callback)))))) {
-                                if (8 === (Chunk.cacheData[r] & 8)) {
+                                if (8 === (ChunkMCA.cacheData[r] & 8)) {
                                   /** @type {number} */
                                   i = 0;
                                   for (;i < p.front.length;i += 5) {
@@ -6419,7 +6419,7 @@ Chunk.prototype.getBuffer = function(buf) {
                                     iLine.d[iLine.o++] = name;
                                   }
                                 }
-                                if (2 === (Chunk.cacheData[r] & 2)) {
+                                if (2 === (ChunkMCA.cacheData[r] & 2)) {
                                   /** @type {number} */
                                   i = 0;
                                   for (;i < p.back.length;i += 5) {
@@ -6437,7 +6437,7 @@ Chunk.prototype.getBuffer = function(buf) {
                                     iLine.d[iLine.o++] = name;
                                   }
                                 }
-                                if (1 === (Chunk.cacheData[r] & 1)) {
+                                if (1 === (ChunkMCA.cacheData[r] & 1)) {
                                   /** @type {number} */
                                   i = 0;
                                   for (;i < p.right.length;i += 5) {
@@ -6455,7 +6455,7 @@ Chunk.prototype.getBuffer = function(buf) {
                                     iLine.d[iLine.o++] = name;
                                   }
                                 }
-                                if (4 === (Chunk.cacheData[r] & 4)) {
+                                if (4 === (ChunkMCA.cacheData[r] & 4)) {
                                   /** @type {number} */
                                   i = 0;
                                   for (;i < p.left.length;i += 5) {
@@ -6473,7 +6473,7 @@ Chunk.prototype.getBuffer = function(buf) {
                                     iLine.d[iLine.o++] = name;
                                   }
                                 }
-                                if (1 === Chunk.cacheBlock[on] || 0 === Chunk.cacheData[r]) {
+                                if (1 === ChunkMCA.cacheBlock[on] || 0 === ChunkMCA.cacheData[r]) {
                                   /** @type {number} */
                                   i = 0;
                                   for (;i < p.bottom.length;i += 5) {

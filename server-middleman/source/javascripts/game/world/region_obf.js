@@ -501,7 +501,7 @@ RegionMCA.prototype.requestChunk = function(m1, ticks, data) {
   }
 }, RegionMCA.loadChunk = function(obj, data, dataAndEvents) {
   var parent = {};
-  var self = new Chunk;
+  var self = new ChunkMCA;
   /** @type {number} */
   parent.offset = 0;
   try {

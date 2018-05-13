@@ -515,7 +515,7 @@ RegionSrv.prototype.chunkDataReceived = function() {
  */
 RegionSrv.prototype.loadChunk = function(obj, data, dataAndEvents) {
   var parent = {};
-  var self = new Chunk;
+  var self = new ChunkMCA;
   /** @type {number} */
   parent.offset = 0;
   try {
