@@ -11,9 +11,9 @@ function RegionMCA(dataAndEvents, deepDataAndEvents) {
   /** @type {Array} */
   this.regionData = [];
   /** @type {Array} */
-  this.localIChunk = [];
+  this.localChunksIndex = [];
   /** @type {Array} */
-  this.rchunk = [];
+  this.chunkData = [];
   /** @type {number} */
   this.iChunk = 0;
   /** @type {boolean} */
@@ -75,7 +75,7 @@ RegionMCA.prototype.connect = function(opt_connectCb, disconnect) {
  * @return {?}
  */
 RegionMCA.prototype.getChunkBlock = function(digit, carry, pos, deepDataAndEvents, sqlt) {
-  return digit = 1E4 * digit + carry, void 0 !== this.rchunk[digit] && (-1 !== this.rchunk[digit] && -2 !== this.rchunk[digit]) ? this.rchunk[digit].getBlock(pos, deepDataAndEvents, sqlt) : {
+  return digit = 1E4 * digit + carry, void 0 !== this.chunkData[digit] && (-1 !== this.chunkData[digit] && -2 !== this.chunkData[digit]) ? this.chunkData[digit].getBlock(pos, deepDataAndEvents, sqlt) : {
     id : 0,
     data : 0
   };
@@ -91,7 +91,7 @@ RegionMCA.prototype.getNearestPosition = function(until) {
   var c = Math.floor(until[2] / 16);
   /** @type {number} */
   var indexLast = 1E4 * l + c;
-  return void 0 !== this.rchunk[indexLast] && (-1 !== this.rchunk[indexLast] && (-2 !== this.rchunk[indexLast] && (until[0] -= 16 * l, 0 > until[0] && (until[0] += 16), until[2] -= 16 * c, 0 > until[2] && (until[2] += 16), until = this.rchunk[indexLast].getNearestPosition(until), false !== until))) ? [16 * l + until[0], until[1], 16 * c + until[2]] : false;
+  return void 0 !== this.chunkData[indexLast] && (-1 !== this.chunkData[indexLast] && (-2 !== this.chunkData[indexLast] && (until[0] -= 16 * l, 0 > until[0] && (until[0] += 16), until[2] -= 16 * c, 0 > until[2] && (until[2] += 16), until = this.chunkData[indexLast].getNearestPosition(until), false !== until))) ? [16 * l + until[0], until[1], 16 * c + until[2]] : false;
 };
 /**
  * @param {number} pos
@@ -106,7 +106,7 @@ RegionMCA.prototype.getBlock = function(pos, deepDataAndEvents, t) {
   var firstNum = Math.floor(t / 16);
   /** @type {number} */
   var blockId = 1E4 * diff + firstNum;
-  return void 0 !== this.rchunk[blockId] && (-1 !== this.rchunk[blockId] && -2 !== this.rchunk[blockId]) ? (pos -= 16 * diff, 0 > pos && (pos += 16), t -= 16 * firstNum, 0 > t && (t += 16), this.rchunk[blockId].getBlock(pos, deepDataAndEvents, t)) : {
+  return void 0 !== this.chunkData[blockId] && (-1 !== this.chunkData[blockId] && -2 !== this.chunkData[blockId]) ? (pos -= 16 * diff, 0 > pos && (pos += 16), t -= 16 * firstNum, 0 > t && (t += 16), this.chunkData[blockId].getBlock(pos, deepDataAndEvents, t)) : {
     id : 0,
     data : 0
   };
@@ -123,10 +123,10 @@ RegionMCA.prototype.getBlock = function(pos, deepDataAndEvents, t) {
  */
 RegionMCA.prototype.updateChunkBlock = function(digit, carry, m1, startAt, hue, deepDataAndEvents, triggerRoute) {
   digit = 1E4 * digit + carry;
-  if (void 0 !== this.rchunk[digit]) {
-    if (-1 !== this.rchunk[digit]) {
-      if (-2 !== this.rchunk[digit]) {
-        this.rchunk[digit].updateBlock(m1, startAt, hue, deepDataAndEvents, triggerRoute);
+  if (void 0 !== this.chunkData[digit]) {
+    if (-1 !== this.chunkData[digit]) {
+      if (-2 !== this.chunkData[digit]) {
+        this.chunkData[digit].updateBlock(m1, startAt, hue, deepDataAndEvents, triggerRoute);
       }
     }
   }
@@ -146,9 +146,9 @@ RegionMCA.prototype.updateBlock = function(num, startAt, hue, deepDataAndEvents,
   var k = Math.floor(hue / 16);
   /** @type {number} */
   var secret = 1E4 * dataSrcLen + k;
-  if (void 0 !== this.rchunk[secret]) {
-    if (-1 !== this.rchunk[secret]) {
-      if (-2 !== this.rchunk[secret]) {
+  if (void 0 !== this.chunkData[secret]) {
+    if (-1 !== this.chunkData[secret]) {
+      if (-2 !== this.chunkData[secret]) {
         num -= 16 * dataSrcLen;
         if (0 > num) {
           num += 16;
@@ -157,7 +157,7 @@ RegionMCA.prototype.updateBlock = function(num, startAt, hue, deepDataAndEvents,
         if (0 > hue) {
           hue += 16;
         }
-        this.rchunk[secret].updateBlock(Math.floor(num), Math.floor(startAt), Math.floor(hue), deepDataAndEvents, triggerRoute);
+        this.chunkData[secret].updateBlock(Math.floor(num), Math.floor(startAt), Math.floor(hue), deepDataAndEvents, triggerRoute);
       }
     }
   }
@@ -177,9 +177,9 @@ RegionMCA.prototype.setBlock = function(t, channel, y, deepDataAndEvents, shallo
   var c = Math.floor(y / 16);
   /** @type {number} */
   var indexLast = 1E4 * l + c;
-  if (void 0 !== this.rchunk[indexLast]) {
-    if (-1 !== this.rchunk[indexLast]) {
-      if (-2 !== this.rchunk[indexLast]) {
+  if (void 0 !== this.chunkData[indexLast]) {
+    if (-1 !== this.chunkData[indexLast]) {
+      if (-2 !== this.chunkData[indexLast]) {
         t -= 16 * l;
         if (0 > t) {
           t += 16;
@@ -188,7 +188,7 @@ RegionMCA.prototype.setBlock = function(t, channel, y, deepDataAndEvents, shallo
         if (0 > y) {
           y += 16;
         }
-        this.rchunk[indexLast].setBlock(Math.floor(t), Math.floor(channel), Math.floor(y), deepDataAndEvents, shallow);
+        this.chunkData[indexLast].setBlock(Math.floor(t), Math.floor(channel), Math.floor(y), deepDataAndEvents, shallow);
       }
     }
   }
@@ -203,10 +203,10 @@ RegionMCA.prototype.setBlock = function(t, channel, y, deepDataAndEvents, shallo
  */
 RegionMCA.prototype.changeChunkBlockAdd = function(digit, carry, deepDataAndEvents, opt_obj2, walkers) {
   digit = 1E4 * digit + carry;
-  if (void 0 !== this.rchunk[digit]) {
-    if (-1 !== this.rchunk[digit]) {
-      if (-2 !== this.rchunk[digit]) {
-        this.rchunk[digit].changeAdd(deepDataAndEvents, opt_obj2, walkers);
+  if (void 0 !== this.chunkData[digit]) {
+    if (-1 !== this.chunkData[digit]) {
+      if (-2 !== this.chunkData[digit]) {
+        this.chunkData[digit].changeAdd(deepDataAndEvents, opt_obj2, walkers);
       }
     }
   }
@@ -220,12 +220,12 @@ RegionMCA.prototype.updateChunks = function() {
   /** @type {number} */
   var reply = 0;
   var i;
-  for (i in this.rchunk) {
-    if (void 0 !== this.rchunk[i]) {
-      if (-1 !== this.rchunk[i]) {
-        if (-2 !== this.rchunk[i]) {
-          if (true === this.rchunk[i].needsUpdate) {
-            this.rchunk[i].update();
+  for (i in this.chunkData) {
+    if (void 0 !== this.chunkData[i]) {
+      if (-1 !== this.chunkData[i]) {
+        if (-2 !== this.chunkData[i]) {
+          if (true === this.chunkData[i].needsUpdate) {
+            this.chunkData[i].update();
             reply++;
           }
         }
@@ -245,15 +245,15 @@ RegionMCA.prototype.deleteBuffers = function() {
   /** @type {number} */
   var reply = 0;
   var id;
-  for (id in this.rchunk) {
-    if (void 0 !== this.rchunk[id]) {
-      if (-1 !== this.rchunk[id]) {
-        if (-2 !== this.rchunk[id]) {
-          if (true !== this.rchunk[id].changed) {
-            if (1 === this.rchunk[id].isInit || 1 === this.rchunk[id].isInit1) {
-              if (this.rchunk[id].timestamp + 1E4 < offset) {
-                this.rchunk[id].deleteBuffers();
-                this.rchunk[id] = void 0;
+  for (id in this.chunkData) {
+    if (void 0 !== this.chunkData[id]) {
+      if (-1 !== this.chunkData[id]) {
+        if (-2 !== this.chunkData[id]) {
+          if (true !== this.chunkData[id].changed) {
+            if (1 === this.chunkData[id].isInit || 1 === this.chunkData[id].isInit1) {
+              if (this.chunkData[id].timestamp + 1E4 < offset) {
+                this.chunkData[id].deleteBuffers();
+                this.chunkData[id] = void 0;
                 reply++;
               }
             }
@@ -271,14 +271,14 @@ RegionMCA.prototype.deleteBuffers = function() {
  */
 RegionMCA.prototype.save = function() {
   var i;
-  for (i in this.rchunk) {
-    if (void 0 !== this.rchunk[i]) {
-      if (-1 !== this.rchunk[i]) {
-        if (-2 !== this.rchunk[i]) {
-          if (this.rchunk[i].changed) {
-            this.saveChunkToStorage(this.rchunk[i].xPos, this.rchunk[i].zPos);
+  for (i in this.chunkData) {
+    if (void 0 !== this.chunkData[i]) {
+      if (-1 !== this.chunkData[i]) {
+        if (-2 !== this.chunkData[i]) {
+          if (this.chunkData[i].changed) {
+            this.saveChunkToStorage(this.chunkData[i].xPos, this.chunkData[i].zPos);
             /** @type {boolean} */
-            this.rchunk[i].changed = false;
+            this.chunkData[i].changed = false;
           }
         }
       }
@@ -292,8 +292,8 @@ RegionMCA.prototype.save = function() {
  */
 RegionMCA.prototype.saveChunkToStorage = function(dataAndEvents, length) {
   var i = 1E4 * dataAndEvents + length;
-  if (void 0 !== this.rchunk[i] && (-1 !== this.rchunk[i] && -2 !== this.rchunk[i])) {
-    var data = this.rchunk[i].getNBT();
+  if (void 0 !== this.chunkData[i] && (-1 !== this.chunkData[i] && -2 !== this.chunkData[i])) {
+    var data = this.chunkData[i].getNBT();
     data = (new Zlib.Deflate(data)).compress();
     /** @type {Uint8Array} */
     var r = new Uint8Array(data.length + 5);
@@ -341,7 +341,7 @@ RegionMCA.prototype.loadChunkFromStorage = function(m1, ticks, dataAndEvents) {
   if (dataAndEvents) {
     return exports;
   }
-  this.rchunk[1E4 * m1 + ticks] = exports;
+  this.chunkData[1E4 * m1 + ticks] = exports;
   /** @type {boolean} */
   var Case = exports = dataAndEvents = false;
   /** @type {boolean} */
@@ -439,32 +439,7 @@ RegionMCA.prototype.loadRegionFile = function(element, size) {
     element.chunkLen[index] = value[i + 3];
   }
 };
-RegionMCA.prototype.requestChunk = function(m1, ticks, data) {
-  var unlock = 1E4 * m1 + ticks;
-  if (void 0 === data && (data = true), void 0 !== this.rchunk[unlock] || !data) {
-    return this.rchunk[unlock];
-  }
-  if (1 !== this.localIChunk[unlock] && (data = -1, this.localIChunk[unlock] = 1, -1 !== (data = this.loadChunkFromStorage(m1, ticks, true)))) {
-    return this.rchunk[unlock] = data;
-  }
-  /** @type {number} */
-  data = Math.floor(m1 / 32);
-  /** @type {number} */
-  var attempted = Math.floor(ticks / 32);
-  if (void 0 === this.regionData[1E3 * data + attempted] && this.loadRegion(data, attempted), -1 === this.regionData[1E3 * data + attempted].loaded) {
-    return this.rchunk[unlock] = -1;
-  }
-  if (-2 === this.regionData[1E3 * data + attempted].loaded) {
-    return-2;
-  }
-  if (0 === this.regionData[1E3 * data + attempted].loaded) {
-    if (m1 %= 32, 0 > m1 && (m1 += 32), ticks %= 32, 0 > ticks && (ticks += 32), ticks = m1 + 32 * ticks, 0 < this.regionData[1E3 * data + attempted].chunkPos[ticks]) {
-      return console.log("chunk " + unlock + " : " + this.regionData[1E3 * data + attempted].chunkPos[ticks] + " " + this.regionData[1E3 * data + attempted].chunkLen[ticks]), this.iChunk++, this.rchunk[unlock] = RegionMCA.loadChunk(4096 * this.regionData[1E3 * data + attempted].chunkPos[ticks], this.regionData[1E3 * data + attempted].regionData, true), this.rchunk[unlock];
-    }
-    /** @type {number} */
-    this.rchunk[unlock] = -1;
-  }
-}, RegionMCA.loadChunk = function(obj, data, dataAndEvents) {
+RegionMCA.loadChunk = function(obj, data, dataAndEvents) {
   var parent = {};
   var self = new ChunkMCA;
   /** @type {number} */

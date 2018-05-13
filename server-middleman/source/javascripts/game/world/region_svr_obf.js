@@ -4,7 +4,7 @@
  */
 function RegionSrv(intensity) {
   /** @type {Array} */
-  this.rchunk = [];
+  this.chunkData = [];
   /** @type {number} */
   this.iChunk = 0;
   /** @type {boolean} */
@@ -151,7 +151,7 @@ RegionSrv.prototype.connect = function(message, url) {
               self = this.regionSrv.loadChunk(self.offset + 13, self.data, true);
               if (void 0 !== self.xPos) {
                 if (void 0 !== self.zPos) {
-                  this.regionSrv.rchunk[1E4 * e + res] = self;
+                  this.regionSrv.chunkData[1E4 * e + res] = self;
                 }
               }
             ;
@@ -186,7 +186,7 @@ RegionSrv.prototype.connectionClosed = function(txt) {
   chronometer.stopGame = true;
   this.deleteBuffers(true);
   /** @type {Array} */
-  this.rchunk = [];
+  this.chunkData = [];
   /** @type {Array} */
   players = [];
   document.exitPointerLock();
@@ -237,7 +237,7 @@ RegionSrv.prototype.getNearestPosition = function(dataAndEvents) {
   var c = Math.floor(dataAndEvents[2] / 16);
   /** @type {number} */
   var indexLast = 1E4 * width4 + c;
-  if (void 0 !== this.rchunk[indexLast] && (-1 !== this.rchunk[indexLast] && -2 !== this.rchunk[indexLast])) {
+  if (void 0 !== this.chunkData[indexLast] && (-1 !== this.chunkData[indexLast] && -2 !== this.chunkData[indexLast])) {
     /** @type {number} */
     var getNearestPosition = dataAndEvents[0] - 16 * width4;
     if (0 > getNearestPosition) {
@@ -245,7 +245,7 @@ RegionSrv.prototype.getNearestPosition = function(dataAndEvents) {
     }
     /** @type {number} */
     var l = dataAndEvents[2] - 16 * c;
-    if (0 > l && (l += 16), dataAndEvents = this.rchunk[indexLast].getNearestPosition([getNearestPosition, dataAndEvents[1], l]), false !== dataAndEvents) {
+    if (0 > l && (l += 16), dataAndEvents = this.chunkData[indexLast].getNearestPosition([getNearestPosition, dataAndEvents[1], l]), false !== dataAndEvents) {
       return[16 * width4 + dataAndEvents[0], dataAndEvents[1], 16 * c + dataAndEvents[2]];
     }
   }
@@ -260,7 +260,7 @@ RegionSrv.prototype.getNearestPosition = function(dataAndEvents) {
  * @return {?}
  */
 RegionSrv.prototype.getChunkBlock = function(digit, carry, pos, deepDataAndEvents, sqlt) {
-  return digit = 1E4 * digit + carry, void 0 !== this.rchunk[digit] && (-1 !== this.rchunk[digit] && -2 !== this.rchunk[digit]) ? this.rchunk[digit].getBlock(pos, deepDataAndEvents, sqlt) : {
+  return digit = 1E4 * digit + carry, void 0 !== this.chunkData[digit] && (-1 !== this.chunkData[digit] && -2 !== this.chunkData[digit]) ? this.chunkData[digit].getBlock(pos, deepDataAndEvents, sqlt) : {
     id : 0,
     data : 0
   };
@@ -280,7 +280,7 @@ RegionSrv.prototype.getBlock = function(pos, deepDataAndEvents, t) {
   var message = 1E4 * imgWidth + englishyPredicate;
   /** @type {number} */
   message = 1E4 * imgWidth + englishyPredicate;
-  return void 0 !== this.rchunk[message] && (-1 !== this.rchunk[message] && -2 !== this.rchunk[message]) ? (pos -= 16 * imgWidth, 0 > pos && (pos += 16), t -= 16 * englishyPredicate, 0 > t && (t += 16), this.rchunk[message].getBlock(pos, deepDataAndEvents, t)) : {
+  return void 0 !== this.chunkData[message] && (-1 !== this.chunkData[message] && -2 !== this.chunkData[message]) ? (pos -= 16 * imgWidth, 0 > pos && (pos += 16), t -= 16 * englishyPredicate, 0 > t && (t += 16), this.chunkData[message].getBlock(pos, deepDataAndEvents, t)) : {
     id : 0,
     data : 0
   };
@@ -297,10 +297,10 @@ RegionSrv.prototype.getBlock = function(pos, deepDataAndEvents, t) {
  */
 RegionSrv.prototype.updateChunkBlock = function(m2, idx, m1, startAt, hue, deepDataAndEvents, walkers) {
   var accessor = 1E4 * m2 + idx;
-  if (void 0 !== this.rchunk[accessor]) {
-    if (-1 !== this.rchunk[accessor]) {
-      if (-2 !== this.rchunk[accessor]) {
-        this.rchunk[accessor].updateBlock(m1, startAt, hue, deepDataAndEvents, walkers);
+  if (void 0 !== this.chunkData[accessor]) {
+    if (-1 !== this.chunkData[accessor]) {
+      if (-2 !== this.chunkData[accessor]) {
+        this.chunkData[accessor].updateBlock(m1, startAt, hue, deepDataAndEvents, walkers);
       }
     }
   }
@@ -344,9 +344,9 @@ RegionSrv.prototype.updateBlock = function(num, startAt, hue, deepDataAndEvents,
   if (isXML) {
     this.sendBlockData(num, startAt, hue, deepDataAndEvents, obj);
   }
-  if (void 0 !== this.rchunk[Z]) {
-    if (-1 !== this.rchunk[Z]) {
-      if (-2 !== this.rchunk[Z]) {
+  if (void 0 !== this.chunkData[Z]) {
+    if (-1 !== this.chunkData[Z]) {
+      if (-2 !== this.chunkData[Z]) {
         num -= 16 * t;
         if (0 > num) {
           num += 16;
@@ -355,7 +355,7 @@ RegionSrv.prototype.updateBlock = function(num, startAt, hue, deepDataAndEvents,
         if (0 > hue) {
           hue += 16;
         }
-        this.rchunk[Z].updateBlock(Math.floor(num), Math.floor(startAt), Math.floor(hue), deepDataAndEvents, obj);
+        this.chunkData[Z].updateBlock(Math.floor(num), Math.floor(startAt), Math.floor(hue), deepDataAndEvents, obj);
       }
     }
   }
@@ -375,9 +375,9 @@ RegionSrv.prototype.setBlock = function(t, channel, y, deepDataAndEvents, shallo
   var c = Math.floor(y / 16);
   /** @type {number} */
   var indexLast = 1E4 * l + c;
-  if (void 0 !== this.rchunk[indexLast]) {
-    if (-1 !== this.rchunk[indexLast]) {
-      if (-2 !== this.rchunk[indexLast]) {
+  if (void 0 !== this.chunkData[indexLast]) {
+    if (-1 !== this.chunkData[indexLast]) {
+      if (-2 !== this.chunkData[indexLast]) {
         t -= 16 * l;
         if (0 > t) {
           t += 16;
@@ -386,7 +386,7 @@ RegionSrv.prototype.setBlock = function(t, channel, y, deepDataAndEvents, shallo
         if (0 > y) {
           y += 16;
         }
-        this.rchunk[indexLast].setBlock(Math.floor(t), Math.floor(channel), Math.floor(y), deepDataAndEvents, shallow);
+        this.chunkData[indexLast].setBlock(Math.floor(t), Math.floor(channel), Math.floor(y), deepDataAndEvents, shallow);
       }
     }
   }
@@ -401,10 +401,10 @@ RegionSrv.prototype.setBlock = function(t, channel, y, deepDataAndEvents, shallo
  */
 RegionSrv.prototype.changeChunkBlockAdd = function(digit, carry, deepDataAndEvents, opt_obj2, walkers) {
   digit = 1E4 * digit + carry;
-  if (void 0 !== this.rchunk[digit]) {
-    if (-1 !== this.rchunk[digit]) {
-      if (-2 !== this.rchunk[digit]) {
-        this.rchunk[digit].changeAdd(deepDataAndEvents, opt_obj2, walkers);
+  if (void 0 !== this.chunkData[digit]) {
+    if (-1 !== this.chunkData[digit]) {
+      if (-2 !== this.chunkData[digit]) {
+        this.chunkData[digit].changeAdd(deepDataAndEvents, opt_obj2, walkers);
       }
     }
   }
@@ -418,12 +418,12 @@ RegionSrv.prototype.updateChunks = function() {
   /** @type {number} */
   var reply = 0;
   var i;
-  for (i in this.rchunk) {
-    if (void 0 !== this.rchunk[i]) {
-      if (-1 !== this.rchunk[i]) {
-        if (-2 !== this.rchunk[i]) {
-          if (true === this.rchunk[i].needsUpdate) {
-            this.rchunk[i].update();
+  for (i in this.chunkData) {
+    if (void 0 !== this.chunkData[i]) {
+      if (-1 !== this.chunkData[i]) {
+        if (-2 !== this.chunkData[i]) {
+          if (true === this.chunkData[i].needsUpdate) {
+            this.chunkData[i].update();
             reply++;
           }
         }
@@ -445,15 +445,15 @@ RegionSrv.prototype.deleteBuffers = function(max) {
   /** @type {number} */
   var reply = 0;
   var id;
-  for (id in this.rchunk) {
-    if (!(void 0 === this.rchunk[id])) {
-      if (!(-1 === this.rchunk[id])) {
-        if (!(-2 === this.rchunk[id])) {
-          if (!(true === this.rchunk[id].changed)) {
-            if (!(1 !== this.rchunk[id].isInit && 1 !== this.rchunk[id].isInit1)) {
-              if (!!(this.rchunk[id].timestamp + 1E4 < min || max)) {
-                this.rchunk[id].deleteBuffers();
-                this.rchunk[id] = void 0;
+  for (id in this.chunkData) {
+    if (!(void 0 === this.chunkData[id])) {
+      if (!(-1 === this.chunkData[id])) {
+        if (!(-2 === this.chunkData[id])) {
+          if (!(true === this.chunkData[id].changed)) {
+            if (!(1 !== this.chunkData[id].isInit && 1 !== this.chunkData[id].isInit1)) {
+              if (!!(this.chunkData[id].timestamp + 1E4 < min || max)) {
+                this.chunkData[id].deleteBuffers();
+                this.chunkData[id] = void 0;
                 reply++;
               }
             }
@@ -480,7 +480,7 @@ RegionSrv.prototype.save = function() {
  */
 RegionSrv.prototype.requestChunk = function(deepDataAndEvents, opt_obj2, dataAndEvents) {
   var unlock = 1E4 * deepDataAndEvents + opt_obj2;
-  return void 0 === dataAndEvents && (dataAndEvents = true), void 0 !== this.rchunk[unlock] || !dataAndEvents ? this.rchunk[unlock] : chronometer.stopGame ? void 0 : (this.wsMsg.offset = 0, NBT.write10Tag(this.wsMsg, "Chunk"), NBT.write3Tag(this.wsMsg, "xPos", deepDataAndEvents), NBT.write3Tag(this.wsMsg, "zPos", opt_obj2), NBT.write0Tag(this.wsMsg), this.ws.send(new Uint8Array(this.wsMsg.data.buffer, 0, this.wsMsg.offset)), this.rchunk[unlock] = -2, this.rchunk[unlock]);
+  return void 0 === dataAndEvents && (dataAndEvents = true), void 0 !== this.chunkData[unlock] || !dataAndEvents ? this.chunkData[unlock] : chronometer.stopGame ? void 0 : (this.wsMsg.offset = 0, NBT.write10Tag(this.wsMsg, "Chunk"), NBT.write3Tag(this.wsMsg, "xPos", deepDataAndEvents), NBT.write3Tag(this.wsMsg, "zPos", opt_obj2), NBT.write0Tag(this.wsMsg), this.ws.send(new Uint8Array(this.wsMsg.data.buffer, 0, this.wsMsg.offset)), this.chunkData[unlock] = -2, this.chunkData[unlock]);
 };
 /**
  * @param {number} string

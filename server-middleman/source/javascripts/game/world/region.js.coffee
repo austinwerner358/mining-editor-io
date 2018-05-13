@@ -65,6 +65,7 @@ RegionMCA::loadRegionFromServer = (fileName, region_x, region_y, worker) ->
 
 RegionMCA::regionLoadFailure = (region_x, region_y, message) ->
   # TODO: find more aspects that need to be handled if any
+  # TODO: have UI error message
   console.log "REGION r.#{region_x}.#{region_y}.mca FAILED TO LOAD > #{message}"
   @regionData[1e3 * region_x + region_y].loaded = -1
   return
@@ -78,20 +79,64 @@ RegionMCA::regionLoaded = (loadedRegionMessage) ->
   if 1 != loadedRegionMessage.data.loaded
     @regionLoadFailure region_x, region_y, "Error with http request: #{loadedRegion.data.error}"
   else
-    data = new Uint8Array(loadedRegionMessage.data.data)
-    if 1e3 > data.length
+    buffer = new Uint8Array(loadedRegionMessage.data.data)
+    if 1e3 > buffer.length
       @regionLoadFailure region_x, region_y, "Can not load region with data of size #{data.length}."
     else
+      console.log "REGION r.#{region_x}.#{region_y}.mca LOADED"
       loadedRegion = @regionData[1e3 * region_x + region_y]
-      ###* @type {Uint8Array} ###
-      loadedRegion.regionData = data
+      loadedRegion.regionData = buffer
       loadedRegion.loaded = 0
+      # Only the chunk data (and size/length of chunk) is loaded in this method; the header (chunk offset data and timestamps) is kept in the raw buffer.
       loadedRegion.chunkPos = []
       loadedRegion.chunkLen = []
-      i = region_y = 0
-      while 4096 > region_y
-        loadedRegion.chunkPos[i] = 65536 * data[region_y] + 256 * data[region_y + 1] + data[region_y + 2]
-        loadedRegion.chunkLen[i] = data[region_y + 3]
-        region_y += 4
-        i++
+      # There are up to 4096 chunks in a region file.
+      chunk_offset = 0
+      # The buffer_offset is 4 times the chunk_offset because each chunk has 4 bytes of data in the first half of the header.
+      buffer_offset = 0
+      while 4096 > buffer_offset
+        # Retrieve the position of the first byte of the chunk by finding its offset (stored in 3 bytes with big-endian format).
+        loadedRegion.chunkPos[chunk_offset] = 65536 * buffer[buffer_offset] + 256 * buffer[buffer_offset + 1] + buffer[buffer_offset + 2]
+        # The fourth byte at this chunk_offset holds the length of the chunk (chunk length always less than 1MiB).
+        loadedRegion.chunkLen[chunk_offset] = buffer[buffer_offset + 3]
+        buffer_offset += 4
+        chunk_offset++
+  return
+
+RegionMCA::requestChunk = (chunk_x, chunk_y, chunkFlag) ->
+  # Input chunk coordinates (as opposed to region or player coordinates).
+  chunk_index = 1e4 * chunk_x + chunk_y
+  # TODO: figure out where the chunkFlag comes from.
+  undefined == chunkFlag and (chunkFlag = true)
+  if undefined != @chunkData[chunk_index] || !chunkFlag
+    return @chunkData[chunk_index]
+  # If chunk has not been established as loaded from browser storage, check if it is in local storage, and potentially load it.
+  if 1 != @localChunksIndex[chunk_index]
+    chunkFlag = -1
+    @localChunksIndex[chunk_index] = 1
+    if -1 != (local_chunk = @loadChunkFromStorage(chunk_x, chunk_y, !0))
+      return @chunkData[chunk_index] = local_chunk
+  region_x = Math.floor(chunk_x / 32)
+  region_y = Math.floor(chunk_y / 32)
+  # Check if region is undefined and if so, load region file (and set region state).
+  undefined == @regionData[1e3 * region_x + region_y] and @loadRegion(region_x, region_y)
+  # Region load failed, so chunk load failed.
+  if -1 == @regionData[1e3 * region_x + region_y].loaded
+    return @chunkData[chunk_index] = -1
+  # Region loading and therefore chunk loading in process.
+  if -2 == @regionData[1e3 * region_x + region_y].loaded
+    return -2
+  if 0 == @regionData[1e3 * region_x + region_y].loaded
+    chunk_offset_x = chunk_x % 32
+    0 > chunk_offset_x and (chunk_offset_x += 32)
+    chunk_offset_y = chunk_y % 32
+    0 > chunk_offset_y and (chunk_offset_y += 32)
+    # The chunk_offset is the position (out of 4096) of the chunk in the region file.
+    chunk_offset = chunk_offset_x + 32 * chunk_offset_y
+    if 0 < @regionData[1e3 * region_x + region_y].chunkPos[chunk_offset]
+      # console.log('chunk #: ' + chunk_index + ' : ' + this.regionData[1e3 * region_x + region_y].chunkPos[chunk_offset] + ' ' + this.regionData[1e3 * region_x + region_y].chunkLen[chunk_offset]);
+      @chunkCount++
+      @chunkData[chunk_index] = RegionMCA.loadChunk(4096 * @regionData[1e3 * region_x + region_y].chunkPos[chunk_offset], @regionData[1e3 * region_x + region_y].regionData, !0)
+      return @chunkData[chunk_index]
+    @chunkData[chunk_index] = -1
   return
