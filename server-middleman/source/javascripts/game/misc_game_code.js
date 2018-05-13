@@ -111,6 +111,7 @@ chronometer.fpsPerformance = 0;
 chronometer.fpsCap = 10;
 chronometer.gpuMem = 0;
 chronometer.runawayFrames = false;
+chronometer.warnings = [];
 var controls = {};
 /** @type {number} */
 var click = 0;

@@ -66,7 +66,9 @@ RegionMCA::loadRegionFromServer = (fileName, region_x, region_y, worker) ->
 RegionMCA::regionLoadFailure = (region_x, region_y, message) ->
   # TODO: find more aspects that need to be handled if any
   # TODO: have UI error message
-  console.log "REGION r.#{region_x}.#{region_y}.mca FAILED TO LOAD > #{message}"
+  messageDetails = "REGION r.#{region_x}.#{region_y}.mca FAILED TO LOAD > #{message}"
+  console.log messageDetails
+  chronometer.warnings.push(new UIMessage(messageDetails, 6000))
   @regionList[1e3 * region_x + region_y].loaded = -1
   return
 
@@ -77,7 +79,7 @@ RegionMCA::regionLoaded = (loadedRegionMessage) ->
   region_x = loadedRegionMessage.data.x
   region_y = loadedRegionMessage.data.y
   if 1 != loadedRegionMessage.data.loaded
-    @regionLoadFailure region_x, region_y, "Error with http request: #{loadedRegion.data.error}"
+    @regionLoadFailure region_x, region_y, "Error with http request: #{loadedRegionMessage.data.error}"
   else
     buffer = new Uint8Array(loadedRegionMessage.data.data)
     if 1e3 > buffer.length

@@ -157,6 +157,16 @@ chronometer.updateVisibleInfo = (_lastTimeStart, _elapsedFramePerformance) ->
     h_u_d.gameStateHtml.innerHTML += "<br/>FPS Delay: #{1e3 / chronometer.fpsCap > _elapsedFramePerformance}"
     h_u_d.gameStateHtml.innerHTML += '<br/>Block: ' + useBlock.id + '-' + useBlock.data + '  : ' + (window.block[useBlock.id][useBlock.data].name or window.block[useBlock.id].name or window.block[useBlock.id][useBlock.data].defaultTexture or '')
     h_u_d.gameStateHtml.innerHTML += '<br/>Est. Gpu Mem: ' + Math.floor(8 * chronometer.gpuMem / 1048576) + ' M'
+    if settings.showWarningsToUser
+      if chronometer.warnings.length > 0
+        for message, index in chronometer.warnings
+          if message
+            if message.messageExpired()
+              # TODO: setting the message to null successfully deallocates it, but the array needs to be shortened at certain intervals
+              chronometer.warnings[index] = null
+              # chronometer.warnings.splice(index, 1)
+            else
+              h_u_d.gameStateHtml.innerHTML += "<br/>#{message.messageText}"
   if undefined != players
     e = 0
     for key of players

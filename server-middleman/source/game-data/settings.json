@@ -96,8 +96,12 @@
     "value": true,
     "url": true
   },
-  "waterlevel": {
-    "value": "49",
-    "url": true
+"waterlevel": {
+  "value": "49",
+  "url": true
+},
+"showWarningsToUser": {
+  "value": true,
+  "url": true
 }
 }

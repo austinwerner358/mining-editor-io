@@ -2,6 +2,7 @@ Settings = ->
   # Init settings.
   @local = false
   @ready = false
+  @showWarningsToUser = false
   return
 
 Settings::initSettings = ->
@@ -34,6 +35,9 @@ Settings::initSettings = ->
   jsonSettings = JSON.parse(window.settings.readTxt('game-data/settings.json'))
   console.log('Settings raw:')
   console.log jsonSettings
+  #### Set Warning Level ####
+  if jsonSettings.showWarningsToUser
+    @showWarningsToUser = jsonSettings.showWarningsToUser.value
   #### Set Path To World ####
   @gameRoot = jsonSettings.gameRoot.value
   undefined != urlParams.gameRoot and jsonSettings.gameRoot.url and (@gameRoot = urlParams.gameRoot)
