@@ -412,41 +412,6 @@ RegionMCA.prototype.loadChunkFromStorage = function(m1, ticks, dataAndEvents) {
   }
 };
 /**
- * @param {Uint8Array} data
- * @return {undefined}
- */
-RegionMCA.prototype.regionLoaded = function(data) {
-  var t = data.data.x;
-  var b = data.data.y;
-  if (1 !== data.data.loaded) {
-    t = this.regionData[1E3 * t + b];
-    /** @type {number} */
-    t.loaded = -1;
-  } else {
-    if (data = new Uint8Array(data.data.data), 1E3 > data.length) {
-      t = this.regionData[1E3 * t + b];
-      /** @type {number} */
-      t.loaded = -1;
-    } else {
-      t = this.regionData[1E3 * t + b];
-      /** @type {Uint8Array} */
-      t.regionData = data;
-      /** @type {number} */
-      t.loaded = 0;
-      /** @type {Array} */
-      t.chunkPos = [];
-      /** @type {Array} */
-      t.chunkLen = [];
-      /** @type {number} */
-      var i = b = 0;
-      for (;4096 > b;b += 4, i++) {
-        t.chunkPos[i] = 65536 * data[b] + 256 * data[b + 1] + data[b + 2];
-        t.chunkLen[i] = data[b + 3];
-      }
-    }
-  }
-};
-/**
  * @param {Object} element
  * @param {?} size
  * @return {undefined}

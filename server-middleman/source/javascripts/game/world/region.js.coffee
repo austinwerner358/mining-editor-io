@@ -21,7 +21,7 @@ RegionMCA::workerFromCodeBlob = (blobUrl, region_x, region_y) ->
   worker.onerror = (event) =>
     alert('REGION LOADING WORKER ERROR')
     console.error(event)
-    @regionLoadFailure(region_x, region_y, message)
+    @regionLoadFailure(region_x, region_y, "Worker error: #{event}")
     return
   worker
 
@@ -65,6 +65,33 @@ RegionMCA::loadRegionFromServer = (fileName, region_x, region_y, worker) ->
 
 RegionMCA::regionLoadFailure = (region_x, region_y, message) ->
   # TODO: find more aspects that need to be handled if any
-  console.log "REGION r.#{region_x}.#{region_y}.mca FAILED TO LOAD: #{message}"
+  console.log "REGION r.#{region_x}.#{region_y}.mca FAILED TO LOAD > #{message}"
   @regionData[1e3 * region_x + region_y].loaded = -1
+  return
+
+###*
+# @param {worker message with Uint8Array} loadedRegionMessage
+###
+RegionMCA::regionLoaded = (loadedRegionMessage) ->
+  region_x = loadedRegionMessage.data.x
+  region_y = loadedRegionMessage.data.y
+  if 1 != loadedRegionMessage.data.loaded
+    @regionLoadFailure region_x, region_y, "Error with http request: #{loadedRegion.data.error}"
+  else
+    data = new Uint8Array(loadedRegionMessage.data.data)
+    if 1e3 > data.length
+      @regionLoadFailure region_x, region_y, "Can not load region with data of size #{data.length}."
+    else
+      loadedRegion = @regionData[1e3 * region_x + region_y]
+      ###* @type {Uint8Array} ###
+      loadedRegion.regionData = data
+      loadedRegion.loaded = 0
+      loadedRegion.chunkPos = []
+      loadedRegion.chunkLen = []
+      i = region_y = 0
+      while 4096 > region_y
+        loadedRegion.chunkPos[i] = 65536 * data[region_y] + 256 * data[region_y + 1] + data[region_y + 2]
+        loadedRegion.chunkLen[i] = data[region_y + 3]
+        region_y += 4
+        i++
   return
