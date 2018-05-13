@@ -140,3 +140,68 @@ RegionMCA::requestChunk = (chunk_x, chunk_y, chunkFlag) ->
       return @chunkData[chunk_index]
     @chunkData[chunk_index] = -1
   return
+
+RegionMCA.loadChunk = (chunk_pos, data, compressed) ->
+  # The data parameter can be raw region data or a chunk from storage.
+  chunk_data = {}
+  new_chunk = new ChunkMCA
+  chunk_data.offset = 0
+  try
+    if compressed
+      compressed_chunk_data = new (Zlib.Inflate)(data, index: chunk_pos + 5)
+      chunk_data.data = compressed_chunk_data.decompress()
+    else
+      chunk_data.data = data
+  catch error
+    console.error('Zlib failed to decompress chunk_data')
+    console.error(error)
+    return -1
+  i = 0
+  while 2e3 > i and -1 != (key_pair = NBT.nextTag(chunk_data))
+    switch key_pair.name
+      when 'xPos'
+        new_chunk.xPos = key_pair.value
+      when 'zPos'
+        new_chunk.zPos = key_pair.value
+      when 'HeightMap'
+        new_chunk.heightMap = key_pair.data
+      when 'Biomes'
+        new_chunk.biomes = key_pair.data
+      when 'LightPopulated'
+        new_chunk.lightPopulated = key_pair.value
+      when 'Sections'
+        RegionMCA.readSections key_pair, new_chunk, chunk_data
+        i++
+        continue
+    NBT.read9(key_pair, new_chunk, chunk_data) if 9 == key_pair.type
+    i++
+  undefined == new_chunk.heightMap and new_chunk.initHeightMap()
+  new_chunk.isInit = 0
+  new_chunk.isInit1 = 0
+  new_chunk
+
+RegionMCA.readSections = (sections, new_chunk, chunk_data) ->
+  new_section = undefined
+  key_pair = undefined
+  new_section = {}
+  i = 0
+  while i < sections.length and -1 != (key_pair = NBT.nextTag(chunk_data))
+    if 0 == key_pair.type
+      undefined == new_section.add and (new_section.add = new Uint8Array(2048))
+      new_chunk.section[new_section.y] = new_section
+      new_section = {}
+      i++
+    switch key_pair.name
+      when 'Y'
+        new_section.y = key_pair.value
+      when 'Blocks'
+        new_section.blocks = key_pair.data
+      when 'SkyLight'
+        new_section.skyLight = key_pair.data
+      when 'BlockLight'
+        new_section.blockLight = key_pair.data
+      when 'Add'
+        new_section.add = key_pair.data
+      when 'Data'
+        new_section.data = key_pair.data
+  return
