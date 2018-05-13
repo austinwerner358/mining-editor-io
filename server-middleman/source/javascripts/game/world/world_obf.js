@@ -3,7 +3,7 @@
  * @return {undefined}
  */
 function WorldMCA(cfg) {
-  this.worldData = void 0 !== cfg.server ? new RegionSrv(cfg.server) : new RegionMCA(cfg.gameRoot, cfg.worldName);
+  this.worldRegionData = void 0 !== cfg.server ? new RegionSrv(cfg.server) : new RegionMCA(cfg.gameRoot, cfg.worldName);
 }
 /**
  * @param {?} dbname
@@ -11,7 +11,7 @@ function WorldMCA(cfg) {
  * @return {undefined}
  */
 WorldMCA.prototype.connect = function(dbname, description) {
-  this.worldData.connect(dbname, description);
+  this.worldRegionData.connect(dbname, description);
 };
 /**
  * @param {?} deepDataAndEvents
@@ -22,7 +22,7 @@ WorldMCA.prototype.connect = function(dbname, description) {
  * @return {?}
  */
 WorldMCA.prototype.getChunkBlock = function(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents) {
-  return this.worldData.getChunkBlock(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents);
+  return this.worldRegionData.getChunkBlock(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents);
 };
 /**
  * @param {?} deepDataAndEvents
@@ -31,7 +31,7 @@ WorldMCA.prototype.getChunkBlock = function(deepDataAndEvents, shallow, emptyGet
  * @return {?}
  */
 WorldMCA.prototype.getBlock = function(deepDataAndEvents, shallow, emptyGet) {
-  return this.worldData.getBlock(deepDataAndEvents, shallow, emptyGet);
+  return this.worldRegionData.getBlock(deepDataAndEvents, shallow, emptyGet);
 };
 /**
  * @param {?} deepDataAndEvents
@@ -44,7 +44,7 @@ WorldMCA.prototype.getBlock = function(deepDataAndEvents, shallow, emptyGet) {
  * @return {undefined}
  */
 WorldMCA.prototype.updateChunkBlock = function(deepDataAndEvents, emptyGet, specDefinitions, dataAndEvents, traditional, shallow, until) {
-  this.worldData.updateChunkBlock(deepDataAndEvents, emptyGet, specDefinitions, dataAndEvents, traditional, shallow, until);
+  this.worldRegionData.updateChunkBlock(deepDataAndEvents, emptyGet, specDefinitions, dataAndEvents, traditional, shallow, until);
 };
 /**
  * @param {?} deepDataAndEvents
@@ -55,7 +55,7 @@ WorldMCA.prototype.updateChunkBlock = function(deepDataAndEvents, emptyGet, spec
  * @return {undefined}
  */
 WorldMCA.prototype.updateBlock = function(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents) {
-  this.worldData.updateBlock(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents);
+  this.worldRegionData.updateBlock(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents);
 };
 /**
  * @param {?} pos
@@ -66,7 +66,7 @@ WorldMCA.prototype.updateBlock = function(deepDataAndEvents, shallow, emptyGet, 
  * @return {undefined}
  */
 WorldMCA.prototype.setBlock = function(pos, setting, deepDataAndEvents, shallow, emptyGet) {
-  this.worldData.setBlock(pos, setting, deepDataAndEvents, shallow, emptyGet);
+  this.worldRegionData.setBlock(pos, setting, deepDataAndEvents, shallow, emptyGet);
 };
 /**
  * @param {?} deepDataAndEvents
@@ -77,25 +77,25 @@ WorldMCA.prototype.setBlock = function(pos, setting, deepDataAndEvents, shallow,
  * @return {undefined}
  */
 WorldMCA.prototype.changeChunkBlockAdd = function(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents) {
-  this.worldData.changeChunkBlockAdd(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents);
+  this.worldRegionData.changeChunkBlockAdd(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents);
 };
 /**
  * @return {undefined}
  */
 WorldMCA.prototype.updateChunks = function() {
-  this.worldData.updateChunks();
+  this.worldRegionData.updateChunks();
 };
 /**
  * @return {undefined}
  */
 WorldMCA.prototype.deleteBuffers = function() {
-  this.worldData.deleteBuffers();
+  this.worldRegionData.deleteBuffers();
 };
 /**
  * @return {undefined}
  */
 WorldMCA.prototype.save = function() {
-  this.worldData.save();
+  this.worldRegionData.save();
 };
 /**
  * @param {number} result
@@ -104,19 +104,19 @@ WorldMCA.prototype.save = function() {
  * @return {?}
  */
 WorldMCA.prototype.requestChunk = function(result, callback, recurring) {
-  return this.worldData.requestChunk(result, callback, recurring);
+  return this.worldRegionData.requestChunk(result, callback, recurring);
 };
 /**
  * @return {undefined}
  */
 WorldMCA.prototype.new100msec = function() {
-  this.worldData.new100msec();
+  this.worldRegionData.new100msec();
 };
 /**
  * @return {undefined}
  */
 WorldMCA.prototype.new50msec = function() {
-  this.worldData.new50msec();
+  this.worldRegionData.new50msec();
 };
 /**
  * @return {undefined}
@@ -194,7 +194,7 @@ WorldMCA.prototype.render = function() {
           if (void 0 === self) {
             if (1 < chronometer.iLag) {
               chronometer.iLag -= 1;
-              this.worldData.requestChunk(expectationResult, restoreScript);
+              this.worldRegionData.requestChunk(expectationResult, restoreScript);
             }
           } else {
             self.timestamp = chronometer.lastTimeStart;
@@ -263,7 +263,7 @@ WorldMCA.prototype.renderSelection = function() {
             if (void 0 === res) {
               if (1 < chronometer.iLag) {
                 chronometer.iLag -= 1;
-                this.worldData.requestChunk(px, restoreScript);
+                this.worldRegionData.requestChunk(px, restoreScript);
               }
             } else {
               res.timestamp = chronometer.lastTimeStart;
@@ -283,7 +283,7 @@ WorldMCA.prototype.renderSelection = function() {
  * @return {?}
  */
 WorldMCA.prototype.getNearestPosition = function(deepDataAndEvents) {
-  return this.worldData.getNearestPosition(deepDataAndEvents);
+  return this.worldRegionData.getNearestPosition(deepDataAndEvents);
 };
 /**
  * @return {?}

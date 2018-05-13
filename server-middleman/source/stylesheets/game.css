@@ -92,6 +92,7 @@
 #localWorldPanel {
   overflow-y: auto;
   height: 230px;
+  font-family: monospace;
 }
 #toolsPanel {
     width: 600px;
@@ -184,7 +185,7 @@ input[type='range']::-moz-range-thumb {
     top: 5px;
     color: #110B4F;
     font-size: 16px;
-    font-family: 'Lucida Console';
+    font-family: monospace;
     text-align: left;
     overflow: hidden;
     margin: 0px;

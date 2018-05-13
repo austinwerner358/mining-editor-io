@@ -9,24 +9,24 @@ function RegionMCA(dataAndEvents, deepDataAndEvents) {
   /** @type {string} */
   this.worldName = deepDataAndEvents;
   /** @type {Array} */
-  this.regionData = [];
+  this.regionList = [];
   /** @type {Array} */
   this.localChunksIndex = [];
   /** @type {Array} */
-  this.chunkData = [];
+  this.chunkList = [];
   /** @type {number} */
   this.iChunk = 0;
   /** @type {boolean} */
   chronometer.stopGame = false;
   // TODO: potentially turn the thread code object into multiple steps and add error handling (such as setting assigning a file url instead)
   this.threadCodeBlobUrlForServerFile = window.URL.createObjectURL(new Blob([ "self.addEventListener('message', (function(e) {\
-    var regionData, xhr;\
+    var regionRawData, xhr;\
     xhr = new XMLHttpRequest;\
     xhr.open('GET', e.data.name, false);\
     xhr.responseType = 'arraybuffer';\
     xhr.send();\
     if (xhr.status === 200) {\
-      regionData = new Uint8Array(xhr.response);\
+      regionRawData = new Uint8Array(xhr.response);\
     } else {\
       self.postMessage({\
         loaded: 0,\
@@ -41,8 +41,8 @@ function RegionMCA(dataAndEvents, deepDataAndEvents) {
       loaded: 1,\
       x: e.data.x,\
       y: e.data.y,\
-      data: regionData.buffer\
-    }, [regionData.buffer]);\
+      data: regionRawData.buffer\
+    }, [regionRawData.buffer]);\
     self.close();\
   }), false);"], { type: 'application/javascript' } ));
   // NOTE: if a deconstructor is made for the RegionMCA object, move the blob object to a global context or deallocate with the following
@@ -75,7 +75,7 @@ RegionMCA.prototype.connect = function(opt_connectCb, disconnect) {
  * @return {?}
  */
 RegionMCA.prototype.getChunkBlock = function(digit, carry, pos, deepDataAndEvents, sqlt) {
-  return digit = 1E4 * digit + carry, void 0 !== this.chunkData[digit] && (-1 !== this.chunkData[digit] && -2 !== this.chunkData[digit]) ? this.chunkData[digit].getBlock(pos, deepDataAndEvents, sqlt) : {
+  return digit = 1E4 * digit + carry, void 0 !== this.chunkList[digit] && (-1 !== this.chunkList[digit] && -2 !== this.chunkList[digit]) ? this.chunkList[digit].getBlock(pos, deepDataAndEvents, sqlt) : {
     id : 0,
     data : 0
   };
@@ -91,7 +91,7 @@ RegionMCA.prototype.getNearestPosition = function(until) {
   var c = Math.floor(until[2] / 16);
   /** @type {number} */
   var indexLast = 1E4 * l + c;
-  return void 0 !== this.chunkData[indexLast] && (-1 !== this.chunkData[indexLast] && (-2 !== this.chunkData[indexLast] && (until[0] -= 16 * l, 0 > until[0] && (until[0] += 16), until[2] -= 16 * c, 0 > until[2] && (until[2] += 16), until = this.chunkData[indexLast].getNearestPosition(until), false !== until))) ? [16 * l + until[0], until[1], 16 * c + until[2]] : false;
+  return void 0 !== this.chunkList[indexLast] && (-1 !== this.chunkList[indexLast] && (-2 !== this.chunkList[indexLast] && (until[0] -= 16 * l, 0 > until[0] && (until[0] += 16), until[2] -= 16 * c, 0 > until[2] && (until[2] += 16), until = this.chunkList[indexLast].getNearestPosition(until), false !== until))) ? [16 * l + until[0], until[1], 16 * c + until[2]] : false;
 };
 /**
  * @param {number} pos
@@ -106,7 +106,7 @@ RegionMCA.prototype.getBlock = function(pos, deepDataAndEvents, t) {
   var firstNum = Math.floor(t / 16);
   /** @type {number} */
   var blockId = 1E4 * diff + firstNum;
-  return void 0 !== this.chunkData[blockId] && (-1 !== this.chunkData[blockId] && -2 !== this.chunkData[blockId]) ? (pos -= 16 * diff, 0 > pos && (pos += 16), t -= 16 * firstNum, 0 > t && (t += 16), this.chunkData[blockId].getBlock(pos, deepDataAndEvents, t)) : {
+  return void 0 !== this.chunkList[blockId] && (-1 !== this.chunkList[blockId] && -2 !== this.chunkList[blockId]) ? (pos -= 16 * diff, 0 > pos && (pos += 16), t -= 16 * firstNum, 0 > t && (t += 16), this.chunkList[blockId].getBlock(pos, deepDataAndEvents, t)) : {
     id : 0,
     data : 0
   };
@@ -123,10 +123,10 @@ RegionMCA.prototype.getBlock = function(pos, deepDataAndEvents, t) {
  */
 RegionMCA.prototype.updateChunkBlock = function(digit, carry, m1, startAt, hue, deepDataAndEvents, triggerRoute) {
   digit = 1E4 * digit + carry;
-  if (void 0 !== this.chunkData[digit]) {
-    if (-1 !== this.chunkData[digit]) {
-      if (-2 !== this.chunkData[digit]) {
-        this.chunkData[digit].updateBlock(m1, startAt, hue, deepDataAndEvents, triggerRoute);
+  if (void 0 !== this.chunkList[digit]) {
+    if (-1 !== this.chunkList[digit]) {
+      if (-2 !== this.chunkList[digit]) {
+        this.chunkList[digit].updateBlock(m1, startAt, hue, deepDataAndEvents, triggerRoute);
       }
     }
   }
@@ -146,9 +146,9 @@ RegionMCA.prototype.updateBlock = function(num, startAt, hue, deepDataAndEvents,
   var k = Math.floor(hue / 16);
   /** @type {number} */
   var secret = 1E4 * dataSrcLen + k;
-  if (void 0 !== this.chunkData[secret]) {
-    if (-1 !== this.chunkData[secret]) {
-      if (-2 !== this.chunkData[secret]) {
+  if (void 0 !== this.chunkList[secret]) {
+    if (-1 !== this.chunkList[secret]) {
+      if (-2 !== this.chunkList[secret]) {
         num -= 16 * dataSrcLen;
         if (0 > num) {
           num += 16;
@@ -157,7 +157,7 @@ RegionMCA.prototype.updateBlock = function(num, startAt, hue, deepDataAndEvents,
         if (0 > hue) {
           hue += 16;
         }
-        this.chunkData[secret].updateBlock(Math.floor(num), Math.floor(startAt), Math.floor(hue), deepDataAndEvents, triggerRoute);
+        this.chunkList[secret].updateBlock(Math.floor(num), Math.floor(startAt), Math.floor(hue), deepDataAndEvents, triggerRoute);
       }
     }
   }
@@ -177,9 +177,9 @@ RegionMCA.prototype.setBlock = function(t, channel, y, deepDataAndEvents, shallo
   var c = Math.floor(y / 16);
   /** @type {number} */
   var indexLast = 1E4 * l + c;
-  if (void 0 !== this.chunkData[indexLast]) {
-    if (-1 !== this.chunkData[indexLast]) {
-      if (-2 !== this.chunkData[indexLast]) {
+  if (void 0 !== this.chunkList[indexLast]) {
+    if (-1 !== this.chunkList[indexLast]) {
+      if (-2 !== this.chunkList[indexLast]) {
         t -= 16 * l;
         if (0 > t) {
           t += 16;
@@ -188,7 +188,7 @@ RegionMCA.prototype.setBlock = function(t, channel, y, deepDataAndEvents, shallo
         if (0 > y) {
           y += 16;
         }
-        this.chunkData[indexLast].setBlock(Math.floor(t), Math.floor(channel), Math.floor(y), deepDataAndEvents, shallow);
+        this.chunkList[indexLast].setBlock(Math.floor(t), Math.floor(channel), Math.floor(y), deepDataAndEvents, shallow);
       }
     }
   }
@@ -203,10 +203,10 @@ RegionMCA.prototype.setBlock = function(t, channel, y, deepDataAndEvents, shallo
  */
 RegionMCA.prototype.changeChunkBlockAdd = function(digit, carry, deepDataAndEvents, opt_obj2, walkers) {
   digit = 1E4 * digit + carry;
-  if (void 0 !== this.chunkData[digit]) {
-    if (-1 !== this.chunkData[digit]) {
-      if (-2 !== this.chunkData[digit]) {
-        this.chunkData[digit].changeAdd(deepDataAndEvents, opt_obj2, walkers);
+  if (void 0 !== this.chunkList[digit]) {
+    if (-1 !== this.chunkList[digit]) {
+      if (-2 !== this.chunkList[digit]) {
+        this.chunkList[digit].changeAdd(deepDataAndEvents, opt_obj2, walkers);
       }
     }
   }
@@ -220,12 +220,12 @@ RegionMCA.prototype.updateChunks = function() {
   /** @type {number} */
   var reply = 0;
   var i;
-  for (i in this.chunkData) {
-    if (void 0 !== this.chunkData[i]) {
-      if (-1 !== this.chunkData[i]) {
-        if (-2 !== this.chunkData[i]) {
-          if (true === this.chunkData[i].needsUpdate) {
-            this.chunkData[i].update();
+  for (i in this.chunkList) {
+    if (void 0 !== this.chunkList[i]) {
+      if (-1 !== this.chunkList[i]) {
+        if (-2 !== this.chunkList[i]) {
+          if (true === this.chunkList[i].needsUpdate) {
+            this.chunkList[i].update();
             reply++;
           }
         }
@@ -245,15 +245,15 @@ RegionMCA.prototype.deleteBuffers = function() {
   /** @type {number} */
   var reply = 0;
   var id;
-  for (id in this.chunkData) {
-    if (void 0 !== this.chunkData[id]) {
-      if (-1 !== this.chunkData[id]) {
-        if (-2 !== this.chunkData[id]) {
-          if (true !== this.chunkData[id].changed) {
-            if (1 === this.chunkData[id].isInit || 1 === this.chunkData[id].isInit1) {
-              if (this.chunkData[id].timestamp + 1E4 < offset) {
-                this.chunkData[id].deleteBuffers();
-                this.chunkData[id] = void 0;
+  for (id in this.chunkList) {
+    if (void 0 !== this.chunkList[id]) {
+      if (-1 !== this.chunkList[id]) {
+        if (-2 !== this.chunkList[id]) {
+          if (true !== this.chunkList[id].changed) {
+            if (1 === this.chunkList[id].isInit || 1 === this.chunkList[id].isInit1) {
+              if (this.chunkList[id].timestamp + 1E4 < offset) {
+                this.chunkList[id].deleteBuffers();
+                this.chunkList[id] = void 0;
                 reply++;
               }
             }
@@ -271,14 +271,14 @@ RegionMCA.prototype.deleteBuffers = function() {
  */
 RegionMCA.prototype.save = function() {
   var i;
-  for (i in this.chunkData) {
-    if (void 0 !== this.chunkData[i]) {
-      if (-1 !== this.chunkData[i]) {
-        if (-2 !== this.chunkData[i]) {
-          if (this.chunkData[i].changed) {
-            this.saveChunkToStorage(this.chunkData[i].xPos, this.chunkData[i].zPos);
+  for (i in this.chunkList) {
+    if (void 0 !== this.chunkList[i]) {
+      if (-1 !== this.chunkList[i]) {
+        if (-2 !== this.chunkList[i]) {
+          if (this.chunkList[i].changed) {
+            this.saveChunkToStorage(this.chunkList[i].xPos, this.chunkList[i].zPos);
             /** @type {boolean} */
-            this.chunkData[i].changed = false;
+            this.chunkList[i].changed = false;
           }
         }
       }
@@ -292,8 +292,8 @@ RegionMCA.prototype.save = function() {
  */
 RegionMCA.prototype.saveChunkToStorage = function(dataAndEvents, length) {
   var i = 1E4 * dataAndEvents + length;
-  if (void 0 !== this.chunkData[i] && (-1 !== this.chunkData[i] && -2 !== this.chunkData[i])) {
-    var data = this.chunkData[i].getNBT();
+  if (void 0 !== this.chunkList[i] && (-1 !== this.chunkList[i] && -2 !== this.chunkList[i])) {
+    var data = this.chunkList[i].getNBT();
     data = (new Zlib.Deflate(data)).compress();
     /** @type {Uint8Array} */
     var r = new Uint8Array(data.length + 5);
@@ -341,7 +341,7 @@ RegionMCA.prototype.loadChunkFromStorage = function(m1, ticks, dataAndEvents) {
   if (dataAndEvents) {
     return exports;
   }
-  this.chunkData[1E4 * m1 + ticks] = exports;
+  this.chunkList[1E4 * m1 + ticks] = exports;
   /** @type {boolean} */
   var Case = exports = dataAndEvents = false;
   /** @type {boolean} */
@@ -423,7 +423,7 @@ RegionMCA.prototype.loadRegionFile = function(element, size) {
     console.log("nie ma pliku");
     return;
   }
-  element.regionData = value;
+  element.regionList = value;
   /** @type {number} */
   element.loaded = 0;
   /** @type {Array} */
