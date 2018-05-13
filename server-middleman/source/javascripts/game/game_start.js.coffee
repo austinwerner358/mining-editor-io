@@ -64,11 +64,11 @@ window.webGLStart = ->
     window.punkty1[i].d = new Float32Array(2e6)
     window.punkty1[i].o = 0
     i++
-  window.mcWorld = new World(
+  window.mcWorld = new WorldMCA(
     server: settings.server
     gameRoot: settings.gameRoot
     worldName: settings.worldName)
-  document.getElementById('tools').style.display = 'none'
+  document.getElementById('toolsPanel').style.display = 'none'
   document.getElementById('setDstLvl').value = settings.distanceLevel[0]
   document.getElementById('setDstLvl_val').innerHTML = settings.distanceLevel[0]
   document.getElementById('shaderName').value = settings.worldShader

@@ -551,7 +551,7 @@ RegionSrv.prototype.loadChunk = function(obj, data, dataAndEvents) {
         self.lightPopulated = obj.value;
         break;
       case "Sections":
-        WorldRegion.readSections(obj, self, parent);
+        RegionMCA.readSections(obj, self, parent);
         continue;
     }
     if (9 === obj.type) {

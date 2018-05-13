@@ -114,9 +114,9 @@ function windowResize() {
  */
 function canvasOn() {
   /** @type {string} */
-  document.getElementById("tools").style.display = "none";
+  document.getElementById("toolsPanel").style.display = "none";
   /** @type {string} */
-  document.getElementById("settings").style.display = "none";
+  document.getElementById("settingsPanel").style.display = "none";
   /** @type {(HTMLElement|null)} */
   var canvas = document.getElementById("webgl");
   /**

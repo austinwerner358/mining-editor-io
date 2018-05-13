@@ -2,15 +2,15 @@
  * @param {Object} cfg
  * @return {undefined}
  */
-function World(cfg) {
-  this.worldData = void 0 !== cfg.server ? new RegionSrv(cfg.server) : new WorldRegion(cfg.gameRoot, cfg.worldName);
+function WorldMCA(cfg) {
+  this.worldData = void 0 !== cfg.server ? new RegionSrv(cfg.server) : new RegionMCA(cfg.gameRoot, cfg.worldName);
 }
 /**
  * @param {?} dbname
  * @param {?} description
  * @return {undefined}
  */
-World.prototype.connect = function(dbname, description) {
+WorldMCA.prototype.connect = function(dbname, description) {
   this.worldData.connect(dbname, description);
 };
 /**
@@ -21,7 +21,7 @@ World.prototype.connect = function(dbname, description) {
  * @param {?} dataAndEvents
  * @return {?}
  */
-World.prototype.getChunkBlock = function(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents) {
+WorldMCA.prototype.getChunkBlock = function(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents) {
   return this.worldData.getChunkBlock(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents);
 };
 /**
@@ -30,7 +30,7 @@ World.prototype.getChunkBlock = function(deepDataAndEvents, shallow, emptyGet, s
  * @param {?} emptyGet
  * @return {?}
  */
-World.prototype.getBlock = function(deepDataAndEvents, shallow, emptyGet) {
+WorldMCA.prototype.getBlock = function(deepDataAndEvents, shallow, emptyGet) {
   return this.worldData.getBlock(deepDataAndEvents, shallow, emptyGet);
 };
 /**
@@ -43,7 +43,7 @@ World.prototype.getBlock = function(deepDataAndEvents, shallow, emptyGet) {
  * @param {?} until
  * @return {undefined}
  */
-World.prototype.updateChunkBlock = function(deepDataAndEvents, emptyGet, specDefinitions, dataAndEvents, traditional, shallow, until) {
+WorldMCA.prototype.updateChunkBlock = function(deepDataAndEvents, emptyGet, specDefinitions, dataAndEvents, traditional, shallow, until) {
   this.worldData.updateChunkBlock(deepDataAndEvents, emptyGet, specDefinitions, dataAndEvents, traditional, shallow, until);
 };
 /**
@@ -54,7 +54,7 @@ World.prototype.updateChunkBlock = function(deepDataAndEvents, emptyGet, specDef
  * @param {?} dataAndEvents
  * @return {undefined}
  */
-World.prototype.updateBlock = function(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents) {
+WorldMCA.prototype.updateBlock = function(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents) {
   this.worldData.updateBlock(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents);
 };
 /**
@@ -65,7 +65,7 @@ World.prototype.updateBlock = function(deepDataAndEvents, shallow, emptyGet, spe
  * @param {?} emptyGet
  * @return {undefined}
  */
-World.prototype.setBlock = function(pos, setting, deepDataAndEvents, shallow, emptyGet) {
+WorldMCA.prototype.setBlock = function(pos, setting, deepDataAndEvents, shallow, emptyGet) {
   this.worldData.setBlock(pos, setting, deepDataAndEvents, shallow, emptyGet);
 };
 /**
@@ -76,25 +76,25 @@ World.prototype.setBlock = function(pos, setting, deepDataAndEvents, shallow, em
  * @param {?} dataAndEvents
  * @return {undefined}
  */
-World.prototype.changeChunkBlockAdd = function(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents) {
+WorldMCA.prototype.changeChunkBlockAdd = function(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents) {
   this.worldData.changeChunkBlockAdd(deepDataAndEvents, shallow, emptyGet, specDefinitions, dataAndEvents);
 };
 /**
  * @return {undefined}
  */
-World.prototype.updateChunks = function() {
+WorldMCA.prototype.updateChunks = function() {
   this.worldData.updateChunks();
 };
 /**
  * @return {undefined}
  */
-World.prototype.deleteBuffers = function() {
+WorldMCA.prototype.deleteBuffers = function() {
   this.worldData.deleteBuffers();
 };
 /**
  * @return {undefined}
  */
-World.prototype.save = function() {
+WorldMCA.prototype.save = function() {
   this.worldData.save();
 };
 /**
@@ -103,25 +103,25 @@ World.prototype.save = function() {
  * @param {boolean} recurring
  * @return {?}
  */
-World.prototype.requestChunk = function(result, callback, recurring) {
+WorldMCA.prototype.requestChunk = function(result, callback, recurring) {
   return this.worldData.requestChunk(result, callback, recurring);
 };
 /**
  * @return {undefined}
  */
-World.prototype.new100msec = function() {
+WorldMCA.prototype.new100msec = function() {
   this.worldData.new100msec();
 };
 /**
  * @return {undefined}
  */
-World.prototype.new50msec = function() {
+WorldMCA.prototype.new50msec = function() {
   this.worldData.new50msec();
 };
 /**
  * @return {undefined}
  */
-World.prototype.render = function() {
+WorldMCA.prototype.render = function() {
   if (blockTexture.loaded) {
     gl.bindTexture(gl.TEXTURE_2D, blockTexture);
     var shader = gluu.standardShader;
@@ -217,7 +217,7 @@ World.prototype.render = function() {
 /**
  * @return {?}
  */
-World.prototype.renderSelection = function() {
+WorldMCA.prototype.renderSelection = function() {
   if (blockTexture.loaded) {
     var data = gluu.selectionShader;
     gl.useProgram(data);
@@ -282,13 +282,13 @@ World.prototype.renderSelection = function() {
  * @param {?} deepDataAndEvents
  * @return {?}
  */
-World.prototype.getNearestPosition = function(deepDataAndEvents) {
+WorldMCA.prototype.getNearestPosition = function(deepDataAndEvents) {
   return this.worldData.getNearestPosition(deepDataAndEvents);
 };
 /**
  * @return {?}
  */
-World.prototype.testCollisions = function() {
+WorldMCA.prototype.testCollisions = function() {
   var clip = camera.getPos();
   /** @type {number} */
   var length = Math.floor(clip[0] / 16);

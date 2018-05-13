@@ -76,11 +76,11 @@ chronometer.tick = ->
   return
 
 chronometer.interactionAndLoading = ->
-  if controls.selectE
+  if controls.editRequested
     currentBlock = window.blockSelection
-    controls.selectE = false
+    controls.editRequested = false
     console.log 'y: ' + currentBlock.y + ' z: ' + currentBlock.z + ' x: ' + currentBlock.x + ' chx: ' + currentBlock.chx + ' chz: ' + currentBlock.chz + ' side: ' + currentBlock.side
-    switch (controls.selectT)
+    switch (controls.mouseDownControl)
       when 0
         mcWorld.updateChunkBlock currentBlock.chx, currentBlock.chz, currentBlock.x, currentBlock.y, currentBlock.z, 0, 0
       when 1

@@ -19,7 +19,7 @@ Settings::initSettings = ->
     @setLocalMode(true)
     @local = true
     @ready = false
-    settingsPanel = document.getElementById("settings")
+    settingsPanel = document.getElementById("settingsPanel")
     settingsPanel.style.display = "block"
     settingsPanel = document.getElementById("localWorldPanel")
     settingsPanel.style.display = "block"

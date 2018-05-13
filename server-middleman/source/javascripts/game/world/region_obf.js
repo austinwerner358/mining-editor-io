@@ -3,13 +3,13 @@
  * @param {string} deepDataAndEvents
  * @return {undefined}
  */
-function WorldRegion(dataAndEvents, deepDataAndEvents) {
+function RegionMCA(dataAndEvents, deepDataAndEvents) {
   /** @type {string} */
   this.gameRoot = dataAndEvents;
   /** @type {string} */
   this.worldName = deepDataAndEvents;
   /** @type {Array} */
-  this.worldRegionData = [];
+  this.regionData = [];
   /** @type {Array} */
   this.localIChunk = [];
   /** @type {Array} */
@@ -45,25 +45,25 @@ function WorldRegion(dataAndEvents, deepDataAndEvents) {
     }, [regionData.buffer]);\
     self.close();\
   }), false);"], { type: 'application/javascript' } ));
-  // NOTE: if a deconstructor is made for the WorldRegion object, move the blob object to a global context or deallocate with the following
+  // NOTE: if a deconstructor is made for the RegionMCA object, move the blob object to a global context or deallocate with the following
   // window.URL.revokeObjectURL(loadFileLoadingThreadCodeUrl);
 }
 /**
  * @return {undefined}
  */
-WorldRegion.prototype.new100msec = function() {
+RegionMCA.prototype.new100msec = function() {
 };
 /**
  * @return {undefined}
  */
-WorldRegion.prototype.new50msec = function() {
+RegionMCA.prototype.new50msec = function() {
 };
 /**
  * @param {?} opt_connectCb
  * @param {?} disconnect
  * @return {undefined}
  */
-WorldRegion.prototype.connect = function(opt_connectCb, disconnect) {
+RegionMCA.prototype.connect = function(opt_connectCb, disconnect) {
   console.log("not supported");
 };
 /**
@@ -74,7 +74,7 @@ WorldRegion.prototype.connect = function(opt_connectCb, disconnect) {
  * @param {number} sqlt
  * @return {?}
  */
-WorldRegion.prototype.getChunkBlock = function(digit, carry, pos, deepDataAndEvents, sqlt) {
+RegionMCA.prototype.getChunkBlock = function(digit, carry, pos, deepDataAndEvents, sqlt) {
   return digit = 1E4 * digit + carry, void 0 !== this.rchunk[digit] && (-1 !== this.rchunk[digit] && -2 !== this.rchunk[digit]) ? this.rchunk[digit].getBlock(pos, deepDataAndEvents, sqlt) : {
     id : 0,
     data : 0
@@ -84,7 +84,7 @@ WorldRegion.prototype.getChunkBlock = function(digit, carry, pos, deepDataAndEve
  * @param {Array} until
  * @return {?}
  */
-WorldRegion.prototype.getNearestPosition = function(until) {
+RegionMCA.prototype.getNearestPosition = function(until) {
   /** @type {number} */
   var l = Math.floor(until[0] / 16);
   /** @type {number} */
@@ -99,7 +99,7 @@ WorldRegion.prototype.getNearestPosition = function(until) {
  * @param {number} t
  * @return {?}
  */
-WorldRegion.prototype.getBlock = function(pos, deepDataAndEvents, t) {
+RegionMCA.prototype.getBlock = function(pos, deepDataAndEvents, t) {
   /** @type {number} */
   var diff = Math.floor(pos / 16);
   /** @type {number} */
@@ -121,7 +121,7 @@ WorldRegion.prototype.getBlock = function(pos, deepDataAndEvents, t) {
  * @param {?} triggerRoute
  * @return {undefined}
  */
-WorldRegion.prototype.updateChunkBlock = function(digit, carry, m1, startAt, hue, deepDataAndEvents, triggerRoute) {
+RegionMCA.prototype.updateChunkBlock = function(digit, carry, m1, startAt, hue, deepDataAndEvents, triggerRoute) {
   digit = 1E4 * digit + carry;
   if (void 0 !== this.rchunk[digit]) {
     if (-1 !== this.rchunk[digit]) {
@@ -139,7 +139,7 @@ WorldRegion.prototype.updateChunkBlock = function(digit, carry, m1, startAt, hue
  * @param {?} triggerRoute
  * @return {undefined}
  */
-WorldRegion.prototype.updateBlock = function(num, startAt, hue, deepDataAndEvents, triggerRoute) {
+RegionMCA.prototype.updateBlock = function(num, startAt, hue, deepDataAndEvents, triggerRoute) {
   /** @type {number} */
   var dataSrcLen = Math.floor(num / 16);
   /** @type {number} */
@@ -170,7 +170,7 @@ WorldRegion.prototype.updateBlock = function(num, startAt, hue, deepDataAndEvent
  * @param {?} shallow
  * @return {undefined}
  */
-WorldRegion.prototype.setBlock = function(t, channel, y, deepDataAndEvents, shallow) {
+RegionMCA.prototype.setBlock = function(t, channel, y, deepDataAndEvents, shallow) {
   /** @type {number} */
   var l = Math.floor(t / 16);
   /** @type {number} */
@@ -201,7 +201,7 @@ WorldRegion.prototype.setBlock = function(t, channel, y, deepDataAndEvents, shal
  * @param {?} walkers
  * @return {undefined}
  */
-WorldRegion.prototype.changeChunkBlockAdd = function(digit, carry, deepDataAndEvents, opt_obj2, walkers) {
+RegionMCA.prototype.changeChunkBlockAdd = function(digit, carry, deepDataAndEvents, opt_obj2, walkers) {
   digit = 1E4 * digit + carry;
   if (void 0 !== this.rchunk[digit]) {
     if (-1 !== this.rchunk[digit]) {
@@ -214,7 +214,7 @@ WorldRegion.prototype.changeChunkBlockAdd = function(digit, carry, deepDataAndEv
 /**
  * @return {undefined}
  */
-WorldRegion.prototype.updateChunks = function() {
+RegionMCA.prototype.updateChunks = function() {
   /** @type {number} */
   var startIndex = (new Date).getTime();
   /** @type {number} */
@@ -239,7 +239,7 @@ WorldRegion.prototype.updateChunks = function() {
 /**
  * @return {undefined}
  */
-WorldRegion.prototype.deleteBuffers = function() {
+RegionMCA.prototype.deleteBuffers = function() {
   /** @type {number} */
   var offset = (new Date).getTime();
   /** @type {number} */
@@ -269,7 +269,7 @@ WorldRegion.prototype.deleteBuffers = function() {
 /**
  * @return {undefined}
  */
-WorldRegion.prototype.save = function() {
+RegionMCA.prototype.save = function() {
   var i;
   for (i in this.rchunk) {
     if (void 0 !== this.rchunk[i]) {
@@ -290,7 +290,7 @@ WorldRegion.prototype.save = function() {
  * @param {number} length
  * @return {undefined}
  */
-WorldRegion.prototype.saveChunkToStorage = function(dataAndEvents, length) {
+RegionMCA.prototype.saveChunkToStorage = function(dataAndEvents, length) {
   var i = 1E4 * dataAndEvents + length;
   if (void 0 !== this.rchunk[i] && (-1 !== this.rchunk[i] && -2 !== this.rchunk[i])) {
     var data = this.rchunk[i].getNBT();
@@ -322,10 +322,10 @@ WorldRegion.prototype.saveChunkToStorage = function(dataAndEvents, length) {
  * @param {number} ticks
  * @return {?}
  */
-WorldRegion.prototype.getChunkFromStorage = function(m1, ticks) {
+RegionMCA.prototype.getChunkFromStorage = function(m1, ticks) {
   /** @type {(null|string)} */
   var value = window.localStorage.getItem(this.gameRoot + " " + this.worldName + " " + m1 + " " + ticks);
-  return void 0 === value || (null === value || "" === value) ? -1 : (value = new Uint8Array(str2ab(value)), WorldRegion.loadChunk(0, value, true));
+  return void 0 === value || (null === value || "" === value) ? -1 : (value = new Uint8Array(str2ab(value)), RegionMCA.loadChunk(0, value, true));
 };
 /**
  * @param {number} m1
@@ -333,7 +333,7 @@ WorldRegion.prototype.getChunkFromStorage = function(m1, ticks) {
  * @param {boolean} dataAndEvents
  * @return {?}
  */
-WorldRegion.prototype.loadChunkFromStorage = function(m1, ticks, dataAndEvents) {
+RegionMCA.prototype.loadChunkFromStorage = function(m1, ticks, dataAndEvents) {
   var exports = this.getChunkFromStorage(m1, ticks);
   if (-1 === exports) {
     return-1;
@@ -415,20 +415,20 @@ WorldRegion.prototype.loadChunkFromStorage = function(m1, ticks, dataAndEvents) 
  * @param {Uint8Array} data
  * @return {undefined}
  */
-WorldRegion.prototype.regionLoaded = function(data) {
+RegionMCA.prototype.regionLoaded = function(data) {
   var t = data.data.x;
   var b = data.data.y;
   if (1 !== data.data.loaded) {
-    t = this.worldRegionData[1E3 * t + b];
+    t = this.regionData[1E3 * t + b];
     /** @type {number} */
     t.loaded = -1;
   } else {
     if (data = new Uint8Array(data.data.data), 1E3 > data.length) {
-      t = this.worldRegionData[1E3 * t + b];
+      t = this.regionData[1E3 * t + b];
       /** @type {number} */
       t.loaded = -1;
     } else {
-      t = this.worldRegionData[1E3 * t + b];
+      t = this.regionData[1E3 * t + b];
       /** @type {Uint8Array} */
       t.regionData = data;
       /** @type {number} */
@@ -451,7 +451,7 @@ WorldRegion.prototype.regionLoaded = function(data) {
  * @param {?} size
  * @return {undefined}
  */
-WorldRegion.prototype.loadRegionFile = function(element, size) {
+RegionMCA.prototype.loadRegionFile = function(element, size) {
   try {
     var value = Readfile.readRAW(size);
   } catch (e) {
@@ -474,7 +474,7 @@ WorldRegion.prototype.loadRegionFile = function(element, size) {
     element.chunkLen[index] = value[i + 3];
   }
 };
-WorldRegion.prototype.requestChunk = function(m1, ticks, data) {
+RegionMCA.prototype.requestChunk = function(m1, ticks, data) {
   var unlock = 1E4 * m1 + ticks;
   if (void 0 === data && (data = true), void 0 !== this.rchunk[unlock] || !data) {
     return this.rchunk[unlock];
@@ -486,20 +486,20 @@ WorldRegion.prototype.requestChunk = function(m1, ticks, data) {
   data = Math.floor(m1 / 32);
   /** @type {number} */
   var attempted = Math.floor(ticks / 32);
-  if (void 0 === this.worldRegionData[1E3 * data + attempted] && this.loadRegion(data, attempted), -1 === this.worldRegionData[1E3 * data + attempted].loaded) {
+  if (void 0 === this.regionData[1E3 * data + attempted] && this.loadRegion(data, attempted), -1 === this.regionData[1E3 * data + attempted].loaded) {
     return this.rchunk[unlock] = -1;
   }
-  if (-2 === this.worldRegionData[1E3 * data + attempted].loaded) {
+  if (-2 === this.regionData[1E3 * data + attempted].loaded) {
     return-2;
   }
-  if (0 === this.worldRegionData[1E3 * data + attempted].loaded) {
-    if (m1 %= 32, 0 > m1 && (m1 += 32), ticks %= 32, 0 > ticks && (ticks += 32), ticks = m1 + 32 * ticks, 0 < this.worldRegionData[1E3 * data + attempted].chunkPos[ticks]) {
-      return console.log("chunk " + unlock + " : " + this.worldRegionData[1E3 * data + attempted].chunkPos[ticks] + " " + this.worldRegionData[1E3 * data + attempted].chunkLen[ticks]), this.iChunk++, this.rchunk[unlock] = WorldRegion.loadChunk(4096 * this.worldRegionData[1E3 * data + attempted].chunkPos[ticks], this.worldRegionData[1E3 * data + attempted].regionData, true), this.rchunk[unlock];
+  if (0 === this.regionData[1E3 * data + attempted].loaded) {
+    if (m1 %= 32, 0 > m1 && (m1 += 32), ticks %= 32, 0 > ticks && (ticks += 32), ticks = m1 + 32 * ticks, 0 < this.regionData[1E3 * data + attempted].chunkPos[ticks]) {
+      return console.log("chunk " + unlock + " : " + this.regionData[1E3 * data + attempted].chunkPos[ticks] + " " + this.regionData[1E3 * data + attempted].chunkLen[ticks]), this.iChunk++, this.rchunk[unlock] = RegionMCA.loadChunk(4096 * this.regionData[1E3 * data + attempted].chunkPos[ticks], this.regionData[1E3 * data + attempted].regionData, true), this.rchunk[unlock];
     }
     /** @type {number} */
     this.rchunk[unlock] = -1;
   }
-}, WorldRegion.loadChunk = function(obj, data, dataAndEvents) {
+}, RegionMCA.loadChunk = function(obj, data, dataAndEvents) {
   var parent = {};
   var self = new Chunk;
   /** @type {number} */
@@ -537,7 +537,7 @@ WorldRegion.prototype.requestChunk = function(m1, ticks, data) {
         self.lightPopulated = obj.value;
         break;
       case "Sections":
-        WorldRegion.readSections(obj, self, parent);
+        RegionMCA.readSections(obj, self, parent);
         continue;
     }
     if (9 === obj.type) {
@@ -545,7 +545,7 @@ WorldRegion.prototype.requestChunk = function(m1, ticks, data) {
     }
   }
   return void 0 === self.heightMap && self.initHeightMap(), self.isInit = 0, self.isInit1 = 0, self;
-}, WorldRegion.readSections = function(val, data, parent) {
+}, RegionMCA.readSections = function(val, data, parent) {
   var self = {};
   var obj;
   /** @type {number} */

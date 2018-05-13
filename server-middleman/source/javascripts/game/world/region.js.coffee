@@ -1,6 +1,6 @@
-WorldRegion::loadRegion = (region_x, region_y) ->
-  @worldRegionData[1e3 * region_x + region_y] = {}
-  @worldRegionData[1e3 * region_x + region_y].loaded = -2
+RegionMCA::loadRegion = (region_x, region_y) ->
+  @regionData[1e3 * region_x + region_y] = {}
+  @regionData[1e3 * region_x + region_y].loaded = -2
   fileName = "r.#{region_x}.#{region_y}.mca"
   console.log fileName
   console.log "Using local files: #{settings.local}"
@@ -10,7 +10,7 @@ WorldRegion::loadRegion = (region_x, region_y) ->
     @loadRegionFromServer fileName, region_x, region_y, @workerFromCodeBlob(@threadCodeBlobUrlForServerFile, region_x, region_y)
   return
 
-WorldRegion::workerFromCodeBlob = (blobUrl, region_x, region_y) ->
+RegionMCA::workerFromCodeBlob = (blobUrl, region_x, region_y) ->
   alert('Web workers are undefined in this browser; can not load region files.') unless typeof(Worker)
   # Create new worker with url of shared Blob code (or file reference).
   worker = new Worker(blobUrl)
@@ -25,7 +25,7 @@ WorldRegion::workerFromCodeBlob = (blobUrl, region_x, region_y) ->
     return
   worker
 
-WorldRegion::loadRegionFromLocal = (fileName, region_x, region_y) ->
+RegionMCA::loadRegionFromLocal = (fileName, region_x, region_y) ->
   unless window.localFiles[fileName]
     @regionLoadFailure(region_x, region_y, 'local file not found')
     return
@@ -49,7 +49,7 @@ WorldRegion::loadRegionFromLocal = (fileName, region_x, region_y) ->
   reader.readAsArrayBuffer window.localFiles[fileName]
   return
 
-WorldRegion::loadRegionFromServer = (fileName, region_x, region_y, worker) ->
+RegionMCA::loadRegionFromServer = (fileName, region_x, region_y, worker) ->
   path = @gameRoot + '/' + @worldName + '/region/' + fileName
   baseURL = ''
   if -1 == @gameRoot.indexOf(':')
@@ -63,8 +63,8 @@ WorldRegion::loadRegionFromServer = (fileName, region_x, region_y, worker) ->
     name: baseURL + path
   return
 
-WorldRegion::regionLoadFailure = (region_x, region_y, message) ->
+RegionMCA::regionLoadFailure = (region_x, region_y, message) ->
   # TODO: find more aspects that need to be handled if any
   console.log "REGION r.#{region_x}.#{region_y}.mca FAILED TO LOAD: #{message}"
-  @worldRegionData[1e3 * region_x + region_y].loaded = -1
+  @regionData[1e3 * region_x + region_y].loaded = -1
   return
