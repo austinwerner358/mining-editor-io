@@ -4,9 +4,16 @@ RegionMCA::mapRegionToNumber = (region_x, region_y) ->
   pos_y = if region_y >= 0 then 2 * region_y else -2 * region_y - 1
   return (pos_x + pos_y) * (pos_x + pos_y + 1) / 2 + pos_x
 
+RegionMCA::printRegionsLoaded = ->
+  message = 'Regions loaded status:\n'
+  for region_index from @regionsLoadedIndex.concat(@regionsFailedIndex)
+    message += "r.#{@regionList[region_index].region_x}.#{@regionList[region_index].region_y}.mca - #{@regionList[region_index].loaded}\n"
+  console.log message
+
 RegionMCA::loadRegion = (region_x, region_y) ->
-  @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)] = {}
-  @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].loaded = -2
+  region_index = @mapRegionToNumber(region_x, region_y)
+  @regionList[region_index] = {}
+  @regionList[region_index].loaded = -2
   fileName = "r.#{region_x}.#{region_y}.mca"
   console.log fileName
   console.log "Using local files: #{settings.local}"
@@ -70,11 +77,15 @@ RegionMCA::loadRegionFromServer = (fileName, region_x, region_y, worker) ->
   return
 
 RegionMCA::regionLoadFailure = (region_x, region_y, message) ->
+  region_index = @mapRegionToNumber(region_x, region_y)
+  @regionList[region_index].loaded = -1
+  @regionList[region_index].region_x = region_x
+  @regionList[region_index].region_y = region_y
+  @regionsFailedIndex.push(region_index)
   # TODO: find more aspects that need to be handled if any
   messageDetails = "REGION r.#{region_x}.#{region_y}.mca FAILED TO LOAD > #{message}"
   console.log messageDetails
   chronometer.warnings.push(new UIMessage(messageDetails, 6000))
-  @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].loaded = -1
   return
 
 ###*
@@ -91,9 +102,12 @@ RegionMCA::regionLoaded = (loadedRegionMessage) ->
       @regionLoadFailure region_x, region_y, "Can not load region with data of size #{data.length}."
     else
       console.log "REGION r.#{region_x}.#{region_y}.mca LOADED"
-      loadedRegion = @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)]
+      region_index = @mapRegionToNumber(region_x, region_y)
+      loadedRegion = @regionList[region_index]
       loadedRegion.region_x = region_x
       loadedRegion.region_y = region_y
+      # Push the coordinate mapped index to the list of loaded regions
+      @regionsLoadedIndex.push(region_index)
       loadedRegion.regionBuffer = buffer
       loadedRegion.loaded = 0
       # Only the chunk data (and size/length of chunk) is loaded in this method; the header (chunk offset data and timestamps) is kept in the raw buffer.
@@ -127,25 +141,26 @@ RegionMCA::requestChunk = (chunk_x, chunk_y, chunkFlag) ->
       return @chunkList[chunk_index] = local_chunk
   region_x = Math.floor(chunk_x / 32)
   region_y = Math.floor(chunk_y / 32)
+  region_index = @mapRegionToNumber(region_x, region_y)
   # Check if region is undefined and if so, load region file (and set region state).
-  undefined == @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)] and @loadRegion(region_x, region_y)
+  undefined == @regionList[region_index] and @loadRegion(region_x, region_y)
   # Region load failed, so chunk load failed.
-  if -1 == @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].loaded
+  if -1 == @regionList[region_index].loaded
     return @chunkList[chunk_index] = -1
   # Region loading and therefore chunk loading in process.
-  if -2 == @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].loaded
+  if -2 == @regionList[region_index].loaded
     return -2
-  if 0 == @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].loaded
+  if 0 == @regionList[region_index].loaded
     chunk_offset_x = chunk_x % 32
     0 > chunk_offset_x and (chunk_offset_x += 32)
     chunk_offset_y = chunk_y % 32
     0 > chunk_offset_y and (chunk_offset_y += 32)
     # The chunk_offset is the position (out of 4096) of the chunk in the region file.
     chunk_offset = chunk_offset_x + 32 * chunk_offset_y
-    if 0 < @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].chunkPos[chunk_offset]
-      # console.log('chunk #: ' + chunk_index + ' : ' + this.regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].chunkPos[chunk_offset] + ' ' + this.regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].chunkLen[chunk_offset]);
+    if 0 < @regionList[region_index].chunkPos[chunk_offset]
+      # console.log('chunk #: ' + chunk_index + ' : ' + this.regionList[region_index].chunkPos[chunk_offset] + ' ' + this.regionList[region_index].chunkLen[chunk_offset]);
       @chunkCount++
-      @chunkList[chunk_index] = RegionMCA.loadChunk(4096 * @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].chunkPos[chunk_offset], @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].regionBuffer, !0)
+      @chunkList[chunk_index] = RegionMCA.loadChunk(4096 * @regionList[region_index].chunkPos[chunk_offset], @regionList[region_index].regionBuffer, !0)
       return @chunkList[chunk_index]
     @chunkList[chunk_index] = -1
   return

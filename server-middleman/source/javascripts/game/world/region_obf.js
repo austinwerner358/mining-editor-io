@@ -8,13 +8,11 @@ function RegionMCA(dataAndEvents, deepDataAndEvents) {
   this.gameRoot = dataAndEvents;
   /** @type {string} */
   this.worldName = deepDataAndEvents;
-  /** @type {Array} */
   this.regionList = [];
-  /** @type {Array} */
+  this.regionsLoadedIndex = []
+  this.regionsFailedIndex = []
   this.localChunksIndex = [];
-  /** @type {Array} */
   this.chunkList = [];
-  /** @type {number} */
   this.iChunk = 0;
   // TODO: potentially turn the thread code object into multiple steps and add error handling (such as setting assigning a file url instead)
   this.threadCodeBlobUrlForServerFile = window.URL.createObjectURL(new Blob([ "self.addEventListener('message', (function(e) {\
