@@ -1,8 +1,8 @@
 RegionMCA::mapRegionToNumber = (region_x, region_y) ->
   # Cantor pairing function: https://stackoverflow.com/a/13871379
-  x = if region_x >= 0 then 2 * region_x else -2 * region_x - 1
-  y = if region_y >= 0 then 2 * region_y else -2 * region_y - 1
-  return (x + y) * (x + y + 1) / 2 + x
+  pos_x = if region_x >= 0 then 2 * region_x else -2 * region_x - 1
+  pos_y = if region_y >= 0 then 2 * region_y else -2 * region_y - 1
+  return (pos_x + pos_y) * (pos_x + pos_y + 1) / 2 + pos_x
 
 RegionMCA::loadRegion = (region_x, region_y) ->
   @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)] = {}
@@ -92,6 +92,8 @@ RegionMCA::regionLoaded = (loadedRegionMessage) ->
     else
       console.log "REGION r.#{region_x}.#{region_y}.mca LOADED"
       loadedRegion = @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)]
+      loadedRegion.region_x = region_x
+      loadedRegion.region_y = region_y
       loadedRegion.regionBuffer = buffer
       loadedRegion.loaded = 0
       # Only the chunk data (and size/length of chunk) is loaded in this method; the header (chunk offset data and timestamps) is kept in the raw buffer.
