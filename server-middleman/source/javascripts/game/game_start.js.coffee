@@ -13,7 +13,7 @@ window.webGLStart = ->
   window.glCanvas.onclick = canvasOn
   document.exitPointerLock = document.exitPointerLock or document.mozExitPointerLock or document.webkitExitPointerLock
   ###* @type {(HTMLElement|null)} ###
-  h_u_d.gameStateHtml = document.getElementById('game-state')
+  h_u_d.gameStateHtml = document.getElementById('game-state-text')
   gluu.initGL window.glCanvas
   gluu.initStandardShader settings.worldShader
   gluu.initLineShader()
@@ -79,5 +79,5 @@ window.webGLStart = ->
   document.getElementById('setSkyColor').color.fromRGB settings.skyColor[0], settings.skyColor[1], settings.skyColor[2]
   chronometer.firstTime = (new Date).getTime()
   chronometer.lastTimeStart = (new Date).getTime()
-  chronometer.tick()
+  chronometer.gameStartButton()
   return

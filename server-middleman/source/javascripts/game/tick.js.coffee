@@ -10,8 +10,25 @@ chronometer.resetTimeFlags = ->
   chronometer.newSec = false
   chronometer.hasBeen50ms = false
 
+chronometer.stopGame = ->
+  chronometer.gameStopped = true
+
+chronometer.startGame = ->
+  chronometer.gameStopped = false
+  chronometer.tick()
+
+chronometer.gameStopButton = ->
+  chronometer.stopGame()
+  document.getElementById('startButton').style.display = 'block'
+  document.getElementById('stopButton').style.display = 'none'
+
+chronometer.gameStartButton = ->
+  chronometer.startGame()
+  document.getElementById('startButton').style.display = 'none'
+  document.getElementById('stopButton').style.display = 'block'
+
 chronometer.tick = ->
-  if !chronometer.stopGame
+  if !chronometer.gameStopped
     if chronometer.runawayFrames
       requestAnimFrame(chronometer.tick)
     _newTime = (new Date).getTime()

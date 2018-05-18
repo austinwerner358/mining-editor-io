@@ -199,3 +199,24 @@ input[type='range']::-moz-range-thumb {
     -ms-user-select: none;
     user-select: none;
 }
+
+.gameButton {
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#startButton {
+    background-color: #4CAF50;
+}
+#stopButton {
+    background-color: #db5e03;
+}
+#reloadButton {
+    background-color: #9603db;
+}

@@ -65,7 +65,6 @@ RegionMCA::loadRegionFromServer = (fileName, region_x, region_y, worker) ->
 
 RegionMCA::regionLoadFailure = (region_x, region_y, message) ->
   # TODO: find more aspects that need to be handled if any
-  # TODO: have UI error message
   messageDetails = "REGION r.#{region_x}.#{region_y}.mca FAILED TO LOAD > #{message}"
   console.log messageDetails
   chronometer.warnings.push(new UIMessage(messageDetails, 6000))

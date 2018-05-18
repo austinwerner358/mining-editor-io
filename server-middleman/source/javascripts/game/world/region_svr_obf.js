@@ -136,9 +136,7 @@ RegionSrv.prototype.connect = function(message, url) {
                   document.getElementById("webgl").style["-webkit-filter"] = "none";
                   /** @type {string} */
                   document.getElementById("webgl").style["-moz-filter"] = "none";
-                  /** @type {boolean} */
-                  chronometer.stopGame = false;
-                  requestAnimFrame(tick);
+                  chronometer.startGame();
               }
               break;
             case "Kick":
@@ -182,8 +180,7 @@ RegionSrv.prototype.connectionClosed = function(txt) {
   document.getElementById("webgl").style["-webkit-filter"] = "blur(5px)";
   /** @type {string} */
   document.getElementById("webgl").style["-moz-filter"] = "blur(5px)";
-  /** @type {boolean} */
-  chronometer.stopGame = true;
+  chronometer.stopGame();
   this.deleteBuffers(true);
   /** @type {Array} */
   this.chunkList = [];
@@ -480,7 +477,7 @@ RegionSrv.prototype.save = function() {
  */
 RegionSrv.prototype.requestChunk = function(deepDataAndEvents, opt_obj2, dataAndEvents) {
   var unlock = 1E4 * deepDataAndEvents + opt_obj2;
-  return void 0 === dataAndEvents && (dataAndEvents = true), void 0 !== this.chunkList[unlock] || !dataAndEvents ? this.chunkList[unlock] : chronometer.stopGame ? void 0 : (this.wsMsg.offset = 0, NBT.write10Tag(this.wsMsg, "Chunk"), NBT.write3Tag(this.wsMsg, "xPos", deepDataAndEvents), NBT.write3Tag(this.wsMsg, "zPos", opt_obj2), NBT.write0Tag(this.wsMsg), this.ws.send(new Uint8Array(this.wsMsg.data.buffer, 0, this.wsMsg.offset)), this.chunkList[unlock] = -2, this.chunkList[unlock]);
+  return void 0 === dataAndEvents && (dataAndEvents = true), void 0 !== this.chunkList[unlock] || !dataAndEvents ? this.chunkList[unlock] : chronometer.gameStopped ? void 0 : (this.wsMsg.offset = 0, NBT.write10Tag(this.wsMsg, "Chunk"), NBT.write3Tag(this.wsMsg, "xPos", deepDataAndEvents), NBT.write3Tag(this.wsMsg, "zPos", opt_obj2), NBT.write0Tag(this.wsMsg), this.ws.send(new Uint8Array(this.wsMsg.data.buffer, 0, this.wsMsg.offset)), this.chunkList[unlock] = -2, this.chunkList[unlock]);
 };
 /**
  * @param {number} string

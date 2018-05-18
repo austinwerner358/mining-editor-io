@@ -16,8 +16,6 @@ function RegionMCA(dataAndEvents, deepDataAndEvents) {
   this.chunkList = [];
   /** @type {number} */
   this.iChunk = 0;
-  /** @type {boolean} */
-  chronometer.stopGame = false;
   // TODO: potentially turn the thread code object into multiple steps and add error handling (such as setting assigning a file url instead)
   this.threadCodeBlobUrlForServerFile = window.URL.createObjectURL(new Blob([ "self.addEventListener('message', (function(e) {\
     var regionRawData, xhr;\

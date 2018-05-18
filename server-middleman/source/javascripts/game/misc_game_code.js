@@ -96,7 +96,7 @@ var camera;
 var chronometer = {};
 chronometer.timeHasPassed = false;
 chronometer.hasBeen50ms = false;
-chronometer.stopGame = true;
+chronometer.gameStopped = true;
 chronometer.sec = 0;
 chronometer.newSec = false;
 chronometer.iLag = 0;
