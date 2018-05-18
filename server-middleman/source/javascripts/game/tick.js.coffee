@@ -162,7 +162,7 @@ chronometer.updateVisibleInfo = (_lastTimeStart, _elapsedFramePerformance) ->
     settings.setHashURL pos, rot, camera.name
   if 0 < Math.floor(chronometer.lastTimeStart / 100) - Math.floor(_lastTimeStart / 100)
     h_u_d.gameStateHtml.innerHTML = 'x: ' + pos[0].toFixed(2) + '  y: ' + pos[1].toFixed(2) + '  z: ' + pos[2].toFixed(2)
-    h_u_d.gameStateHtml.innerHTML += "<br/>File: r.#{pos[0] >> 9}.#{pos[2] >> 9}.mca"
+    h_u_d.gameStateHtml.innerHTML += "<br/>File: #{RegionMCA::buildFileName(pos[0] >> 9, pos[2] >> 9)}"
     # TODO: optionally show detailed location
     h_u_d.gameStateHtml.innerHTML += "<br/>Chunk in region: #{(pos[0] >> 4) % 32}, #{(pos[2] >> 4) % 32}"
     h_u_d.gameStateHtml.innerHTML += "<br/>Chunk: #{pos[0] >> 4}, #{pos[2] >> 4}"

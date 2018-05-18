@@ -4,17 +4,20 @@ RegionMCA::mapRegionToNumber = (region_x, region_y) ->
   pos_y = if region_y >= 0 then 2 * region_y else -2 * region_y - 1
   return (pos_x + pos_y) * (pos_x + pos_y + 1) / 2 + pos_x
 
+RegionMCA::buildFileName = (region_x, region_y) ->
+  return "r.#{region_x}.#{region_y}.mca"
+
 RegionMCA::printRegionsLoaded = ->
   message = 'Regions loaded status:\n'
   for region_index from @regionsLoadedIndex.concat(@regionsFailedIndex)
-    message += "r.#{@regionList[region_index].region_x}.#{@regionList[region_index].region_y}.mca - #{@regionList[region_index].loaded}\n"
+    message += "#{@buildFileName(@regionList[region_index].region_x, @regionList[region_index].region_y)} - #{@regionList[region_index].loaded}\n"
   console.log message
 
 RegionMCA::loadRegion = (region_x, region_y) ->
   region_index = @mapRegionToNumber(region_x, region_y)
   @regionList[region_index] = {}
   @regionList[region_index].loaded = -2
-  fileName = "r.#{region_x}.#{region_y}.mca"
+  fileName = @buildFileName(region_x, region_y)
   console.log fileName
   console.log "Using local files: #{settings.local}"
   if window.settings.local
@@ -83,7 +86,7 @@ RegionMCA::regionLoadFailure = (region_x, region_y, message) ->
   @regionList[region_index].region_y = region_y
   @regionsFailedIndex.push(region_index)
   # TODO: find more aspects that need to be handled if any
-  messageDetails = "REGION r.#{region_x}.#{region_y}.mca FAILED TO LOAD > #{message}"
+  messageDetails = "REGION #{@buildFileName(region_x, region_y)} FAILED TO LOAD > #{message}"
   console.log messageDetails
   chronometer.warnings.push(new UIMessage(messageDetails, 6000))
   return
@@ -101,7 +104,7 @@ RegionMCA::regionLoaded = (loadedRegionMessage) ->
     if 1e3 > buffer.length
       @regionLoadFailure region_x, region_y, "Can not load region with data of size #{data.length}."
     else
-      console.log "REGION r.#{region_x}.#{region_y}.mca LOADED"
+      console.log "REGION #{@buildFileName(region_x, region_y)} LOADED"
       region_index = @mapRegionToNumber(region_x, region_y)
       loadedRegion = @regionList[region_index]
       loadedRegion.region_x = region_x
