@@ -1,6 +1,12 @@
+RegionMCA::mapRegionToNumber = (region_x, region_y) ->
+  # Cantor pairing function: https://stackoverflow.com/a/13871379
+  x = if region_x >= 0 then 2 * region_x else -2 * region_x - 1
+  y = if region_y >= 0 then 2 * region_y else -2 * region_y - 1
+  return (x + y) * (x + y + 1) / 2 + x
+
 RegionMCA::loadRegion = (region_x, region_y) ->
-  @regionList[1e3 * region_x + region_y] = {}
-  @regionList[1e3 * region_x + region_y].loaded = -2
+  @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)] = {}
+  @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].loaded = -2
   fileName = "r.#{region_x}.#{region_y}.mca"
   console.log fileName
   console.log "Using local files: #{settings.local}"
@@ -68,7 +74,7 @@ RegionMCA::regionLoadFailure = (region_x, region_y, message) ->
   messageDetails = "REGION r.#{region_x}.#{region_y}.mca FAILED TO LOAD > #{message}"
   console.log messageDetails
   chronometer.warnings.push(new UIMessage(messageDetails, 6000))
-  @regionList[1e3 * region_x + region_y].loaded = -1
+  @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].loaded = -1
   return
 
 ###*
@@ -85,8 +91,8 @@ RegionMCA::regionLoaded = (loadedRegionMessage) ->
       @regionLoadFailure region_x, region_y, "Can not load region with data of size #{data.length}."
     else
       console.log "REGION r.#{region_x}.#{region_y}.mca LOADED"
-      loadedRegion = @regionList[1e3 * region_x + region_y]
-      loadedRegion.regionList = buffer
+      loadedRegion = @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)]
+      loadedRegion.regionBuffer = buffer
       loadedRegion.loaded = 0
       # Only the chunk data (and size/length of chunk) is loaded in this method; the header (chunk offset data and timestamps) is kept in the raw buffer.
       loadedRegion.chunkPos = []
@@ -120,24 +126,24 @@ RegionMCA::requestChunk = (chunk_x, chunk_y, chunkFlag) ->
   region_x = Math.floor(chunk_x / 32)
   region_y = Math.floor(chunk_y / 32)
   # Check if region is undefined and if so, load region file (and set region state).
-  undefined == @regionList[1e3 * region_x + region_y] and @loadRegion(region_x, region_y)
+  undefined == @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)] and @loadRegion(region_x, region_y)
   # Region load failed, so chunk load failed.
-  if -1 == @regionList[1e3 * region_x + region_y].loaded
+  if -1 == @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].loaded
     return @chunkList[chunk_index] = -1
   # Region loading and therefore chunk loading in process.
-  if -2 == @regionList[1e3 * region_x + region_y].loaded
+  if -2 == @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].loaded
     return -2
-  if 0 == @regionList[1e3 * region_x + region_y].loaded
+  if 0 == @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].loaded
     chunk_offset_x = chunk_x % 32
     0 > chunk_offset_x and (chunk_offset_x += 32)
     chunk_offset_y = chunk_y % 32
     0 > chunk_offset_y and (chunk_offset_y += 32)
     # The chunk_offset is the position (out of 4096) of the chunk in the region file.
     chunk_offset = chunk_offset_x + 32 * chunk_offset_y
-    if 0 < @regionList[1e3 * region_x + region_y].chunkPos[chunk_offset]
-      # console.log('chunk #: ' + chunk_index + ' : ' + this.regionList[1e3 * region_x + region_y].chunkPos[chunk_offset] + ' ' + this.regionList[1e3 * region_x + region_y].chunkLen[chunk_offset]);
+    if 0 < @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].chunkPos[chunk_offset]
+      # console.log('chunk #: ' + chunk_index + ' : ' + this.regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].chunkPos[chunk_offset] + ' ' + this.regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].chunkLen[chunk_offset]);
       @chunkCount++
-      @chunkList[chunk_index] = RegionMCA.loadChunk(4096 * @regionList[1e3 * region_x + region_y].chunkPos[chunk_offset], @regionList[1e3 * region_x + region_y].regionList, !0)
+      @chunkList[chunk_index] = RegionMCA.loadChunk(4096 * @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].chunkPos[chunk_offset], @regionList[RegionMCA::mapRegionToNumber(region_x, region_y)].regionBuffer, !0)
       return @chunkList[chunk_index]
     @chunkList[chunk_index] = -1
   return
