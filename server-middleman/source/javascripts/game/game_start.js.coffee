@@ -30,7 +30,7 @@ window.webGLStart = ->
   console.log settings.cameraType
   switch settings.cameraType
     when 'CameraGhost'
-      window.camera = new CameraGhost(settings.pos, settings.rot, [
+      window.camera = window.cameraGhost.updatePos(settings.pos, settings.rot, [
         0
         1
         0

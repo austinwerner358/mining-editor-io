@@ -88,7 +88,7 @@ Controls::keyDown = (e) ->
           window.camera = new CameraPlayer(window.player)
         else
           if 'CameraPlayer' == window.camera.name
-            window.camera = new CameraGhost(window.camera.getEye(), window.camera.getRot(), [
+            window.camera = window.cameraGhost.updatePos(window.camera.getEye(), window.camera.getRot(), [
               0
               1
               0
