@@ -85,7 +85,7 @@ Controls::keyDown = (e) ->
         console.log window.camera.name
         if 'CameraGhost' == window.camera.name
           window.player.setPosRot window.camera.getEye(), window.camera.getRot()
-          window.camera = new CameraPlayer(window.player)
+          window.camera = window.cameraPlayer.updatePos(window.player)
         else
           if 'CameraPlayer' == window.camera.name
             window.camera = window.cameraGhost.updatePos(window.camera.getEye(), window.camera.getRot(), [

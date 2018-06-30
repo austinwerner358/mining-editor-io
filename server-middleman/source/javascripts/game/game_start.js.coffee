@@ -56,7 +56,7 @@ window.webGLStart = ->
         settings.rot[0]
         settings.rot[1]
       ]
-      window.camera = new CameraPlayer(window.player)
+      window.camera = window.cameraPlayer.updatePos(window.player)
   window.camera.sensitivity = 2 * settings.sensitivity
   i = 0
   while 4 > i
